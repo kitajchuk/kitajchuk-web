@@ -1,5 +1,5 @@
 {
-  "name": "learn-starter",
+  "name": "kitajchuk-web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,7 +9,17 @@
   },
   "dependencies": {
     "next": "^10.0.0",
-    "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "next-plugin-preact": "^3.0.3",
+    "preact": "^10.5.5",
+    "preact-render-to-string": "^5.1.11",
+    "react": "npm:@preact/compat@0.0.4",
+    "react-dom": "npm:@preact/compat@0.0.4",
+    "react-ssr-prepass": "npm:preact-ssr-prepass@^1.1.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "node-fetch": "^2.6.1",
+    "postcss": "^8.2.7",
+    "tailwindcss": "^2.0.3"
   }
 }
