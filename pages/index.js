@@ -9,13 +9,6 @@ const Home = ({ response }) => {
         <title>kitajchuk</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <section>
-        <article className="p-10 bg-indigo-100 text-indigo-500">
-          <h1 className="text-2xl">
-            Hello World
-          </h1>
-        </article>
-      </section>
     </Layout>
   )
 };
