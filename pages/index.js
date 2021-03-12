@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import Layout from '../components/layout';
 
-const Home = ({ response }) => {
+const Home = () => {
   return (
     <Layout>
       <Head>
@@ -12,17 +12,5 @@ const Home = ({ response }) => {
     </Layout>
   )
 };
-
-/*
-export async function getStaticProps({ params }) {
-  // data...
-
-  return {
-    props: {
-      data,
-    },
-  };
-}
-*/
 
 export default Home;

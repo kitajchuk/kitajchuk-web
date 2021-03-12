@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function Layout({ children }) {
+export default function Layout({children}) {
   return (
     <>
       <header className="p-5 text-black font-mono">
