@@ -1,1 +1,185 @@
-/* Styles for miles... */
+/******************************************************************************
+ * Colors
+*******************************************************************************/
+$black: #000;
+$white: #fff;
+$grey: #959595;
+$grey-dark: #333;
+$grey-black: #111;
+$green: #10ff59;
+$yellow: #eefd02;
+$red: #f30541;
+$pink: #f26d7d;
+$purple: #6441a4;
+$blue: #1795d4;
+$teal: #2affea;
+
+/******************************************************************************
+ * Fonts
+*******************************************************************************/
+$font-monospace: "panicsans";
+$font-monospace-bold: "#{$font-monospace}bold";
+
+@font-face {
+    font-family: $font-monospace;
+    src: url( "/fonts/#{$font-monospace}.woff" ) format( "woff" );
+    font-style: normal;
+    font-stretch: normal;
+}
+@font-face {
+    font-family: $font-monospace-bold;
+    src: url( "/fonts/#{$font-monospace-bold}.woff" ) format( "woff" );
+    font-style: normal;
+    font-stretch: normal;
+}
+
+/******************************************************************************
+ * Styles for miles...
+*******************************************************************************/
+html,
+body {
+  font-family: $font-monospace;
+}
+
+.navi {
+  position: relative;
+  z-index: 2;
+
+  svg {
+    height: 64px;
+    width: auto;
+    transition: fill 400ms ease;
+  }
+}
+
+.meni {
+  position: relative;
+  width: 20px;
+  height: 12px;
+  cursor: pointer;
+
+  &.is-active > div {
+    background-color: $white;
+  }
+
+  &.is-active > div:not(:nth-child(2)) {
+    display: none;
+  }
+
+  > div {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: $black;
+  }
+
+  > div:nth-child(2) {
+    top: 5px;
+  }
+
+  > div:nth-child(3) {
+    top: 10px;
+  }
+}
+
+.hero {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+
+  img {
+    width: 100%;
+    max-width: 384px;
+    height: auto;
+  }
+}
+
+.deets {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $black;
+  overflow-x: hidden;
+  overflow-y: auto;
+  pointer-events: none;
+  z-index: 1;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 400ms ease,
+              opacity 400ms ease;
+
+  &.is-active {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.mast {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  transform: translateY(-50%);
+  z-index: 1;
+
+  a {
+    transition: color 400ms ease;
+
+    &:hover {
+      color: $pink;
+    }
+  }
+
+  span {
+    font-family: $font-monospace-bold;
+  }
+}
+
+.anim {
+  opacity: 0;
+  transform: translate3d(0, 60px, 0);
+  transition: opacity 500ms ease-out, transform 500ms ease-out;
+
+  &.is-animated {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (max-width: 640px) {
+  .navi {
+    svg {
+      height: 48px;
+    }
+  }
+
+  .hero {
+    // position: relative;
+    // right: auto;
+    // bottom: auto;
+
+    img {
+      max-width: 480px;
+      margin: 0 auto;
+    }
+  }
+
+  .mast {
+    position: relative;
+    top: auto;
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    img {
+      max-width: 100%;
+    }
+  }
+}
