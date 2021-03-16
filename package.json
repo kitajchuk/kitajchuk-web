@@ -12,6 +12,8 @@
     "next-plugin-preact": "^3.0.3",
     "preact": "^10.5.5",
     "preact-render-to-string": "^5.1.11",
+    "properjs-blit": "^0.3.1",
+    "properjs-resizecontroller": "^0.3.0",
     "properjs-scrollcontroller": "^0.3.0",
     "react": "npm:@preact/compat@0.0.4",
     "react-dom": "npm:@preact/compat@0.0.4",

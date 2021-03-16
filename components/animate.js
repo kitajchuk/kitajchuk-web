@@ -37,8 +37,10 @@ export function withAnimate(WrappedComponent) {
 
     }, [elRef, scRef]);
 
+    const classes = ['anim'].concat(animated ? 'is-animated' : '').join(' ');
+
     return (
-      <div ref={elRef} className={['anim'].concat(animated ? 'is-animated' : '').join(' ')}>
+      <div ref={elRef} className={classes}>
         <WrappedComponent {...props} />
       </div>
     );

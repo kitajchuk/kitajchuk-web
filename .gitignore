@@ -34,3 +34,4 @@ yarn-error.log*
 /public/data
 /tabi
 /public/tabi
+/.notes

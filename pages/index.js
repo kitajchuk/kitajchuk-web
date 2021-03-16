@@ -4,8 +4,9 @@ import Link from 'next/link';
 import Layout from '../components/layout';
 import Logo from '../components/logo';
 import AsyncImage from '../components/asyncimage';
+import Canvas from '../components/canvas';
 
-const Menu = ({ active, handler }) => {
+const Meni = ({active, handler}) => {
   const classes = ['meni'].concat(active ? 'is-active' : '').join(' ');
 
   return (
@@ -19,12 +20,11 @@ const Menu = ({ active, handler }) => {
 
 const Home = () => {
   const [active, setActive] = useState(false);
+  const classes = ['deets'].concat(active ? 'is-active' : '').join(' ');
 
-  const onMenuClick = () => {
+  const onMeniClick = () => {
     setActive(!active);
   };
-
-  const classes = ['deets'].concat(active ? 'is-active' : '').join(' ');
 
   return (
     <Layout>
@@ -32,27 +32,28 @@ const Home = () => {
         <title>kitajchuk</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="navi p-5 sm:p-8 flex justify-between items-center">
-        <Logo fill={active ? '#fff' : '#000'} />
-        <Menu active={active} handler={onMenuClick} />
+      <div className="navi p-5 flex justify-between items-center">
+        <Logo fill="#000" />
+        <Meni active={active} handler={onMeniClick} />
       </div>
       <div className="hero flex justify-end">
         <AsyncImage src="/kitajchuk_hero.png" />
       </div>
       <div className={classes}>
+        <Canvas active={active} />
         <div className="mast pt-28 sm:pt-0">
           <div className="text-lg sm:text-2xl text-white">
             ( <span>developer</span> / <span>creative</span> )
           </div>
           <div className="text-sm sm:text-base text-white mt-2.5">
-            <Link href="mailto:bk@kitajchuk.com"><a target="_blank">Email</a></Link>,&nbsp;
-            <Link href="https://github.com/kitajchuk"><a target="_blank">Github</a></Link>,&nbsp;
+            <Link href="mailto:bk@kitajchuk.com"><a target="_blank">Email</a></Link>&nbsp;&nbsp;&nbsp;
+            <Link href="https://github.com/kitajchuk"><a target="_blank">Github</a></Link>&nbsp;&nbsp;&nbsp;
             <Link href="https://www.linkedin.com/in/brandonleekitajchuk/"><a target="_blank">Linkedin</a></Link>
           </div>
         </div>
-        <div className="hero flex justify-end">
-          <AsyncImage src="/kitajchuk_nlp.png" />
-        </div>
+        {/* <div className="hero flex justify-end">
+          <AsyncImage src="/kitajchuk_hero_grey.png" />
+        </div> */}
       </div>
     </Layout>
   )

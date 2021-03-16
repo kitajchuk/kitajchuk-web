@@ -3,7 +3,7 @@
 *******************************************************************************/
 $black: #000;
 $white: #fff;
-$grey: #959595;
+$grey: #555;
 $grey-dark: #333;
 $grey-black: #111;
 $green: #10ff59;
@@ -46,7 +46,7 @@ body {
   z-index: 2;
 
   svg {
-    height: 64px;
+    height: 48px;
     width: auto;
     transition: fill 400ms ease;
   }
@@ -127,11 +127,23 @@ body {
   transform: translateY(-50%);
   z-index: 1;
 
+  > div {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0);
+    transition: opacity 200ms ease-out, transform 200ms ease-out;
+
+    .is-active & {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
   a {
     transition: color 400ms ease;
+    color: $grey;
 
     &:hover {
-      color: $pink;
+      color: $white;
     }
   }
 
@@ -140,10 +152,29 @@ body {
   }
 }
 
+.vid {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  padding-bottom: 56.25%;
+  transform: translateY(-50%);
+
+  > video,
+  > canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $grey;
+  }
+}
+
 .anim {
   opacity: 0;
-  transform: translate3d(0, 60px, 0);
-  transition: opacity 500ms ease-out, transform 500ms ease-out;
+  transform: translate3d(0, 64px, 0);
+  transition: opacity 400ms ease-out, transform 400ms ease-out;
 
   &.is-animated {
     opacity: 1;
@@ -159,21 +190,17 @@ body {
   }
 
   .hero {
-    // position: relative;
-    // right: auto;
-    // bottom: auto;
-
     img {
       max-width: 480px;
       margin: 0 auto;
     }
   }
 
-  .mast {
-    position: relative;
-    top: auto;
-    transform: none;
-  }
+  // .mast {
+  //   position: relative;
+  //   top: auto;
+  //   transform: none;
+  // }
 }
 
 @media (max-width: 480px) {
