@@ -41,6 +41,14 @@ body {
   font-family: $font-monospace;
 }
 
+body {
+  background-color: $white;
+
+  &.is-retro {
+    background-color: $black;
+  }
+}
+
 .navi {
   position: relative;
   z-index: 2;
@@ -48,7 +56,6 @@ body {
   svg {
     height: 48px;
     width: auto;
-    transition: fill 400ms ease;
   }
 }
 
@@ -58,12 +65,10 @@ body {
   height: 12px;
   cursor: pointer;
 
-  &.is-active > div {
-    background-color: $white;
-  }
-
-  &.is-active > div:not(:nth-child(2)) {
-    display: none;
+  div:not(:nth-child(2)) {
+    .is-retro & {
+      display: none;
+    }
   }
 
   > div {
@@ -71,6 +76,10 @@ body {
     width: 100%;
     height: 2px;
     background-color: $black;
+
+    .is-retro & {
+      background-color: $white;
+    }
   }
 
   > div:nth-child(2) {
@@ -101,15 +110,13 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: $black;
+  background: transparent;
   overflow-x: hidden;
   overflow-y: auto;
   pointer-events: none;
   z-index: 1;
   visibility: hidden;
   opacity: 0;
-  transition: visibility 400ms ease,
-              opacity 400ms ease;
 
   &.is-active {
     visibility: visible;
@@ -126,17 +133,6 @@ body {
   text-align: center;
   transform: translateY(-50%);
   z-index: 1;
-
-  > div {
-    opacity: 0;
-    transform: translate3d(0, 16px, 0);
-    transition: opacity 200ms ease-out, transform 200ms ease-out;
-
-    .is-active & {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-    }
-  }
 
   a {
     transition: color 400ms ease;
@@ -167,7 +163,7 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: $grey;
+    background: transparent;
   }
 }
 
@@ -195,12 +191,6 @@ body {
       margin: 0 auto;
     }
   }
-
-  // .mast {
-  //   position: relative;
-  //   top: auto;
-  //   transform: none;
-  // }
 }
 
 @media (max-width: 480px) {

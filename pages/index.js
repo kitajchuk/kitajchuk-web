@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import classNames from 'classnames';
 import Head from 'next/head';
 import Link from 'next/link';
 import Layout from '../components/layout';
@@ -6,11 +7,9 @@ import Logo from '../components/logo';
 import AsyncImage from '../components/asyncimage';
 import Canvas from '../components/canvas';
 
-const Meni = ({active, handler}) => {
-  const classes = ['meni'].concat(active ? 'is-active' : '').join(' ');
-
+const Meni = ({handler}) => {
   return (
-    <div className={classes} onClick={handler}>
+    <div className="meni" onClick={handler}>
       <div></div>
       <div></div>
       <div></div>
@@ -18,13 +17,37 @@ const Meni = ({active, handler}) => {
   );
 };
 
+const Hero = () => {
+  return (
+    <div className="hero flex justify-end">
+      <AsyncImage src="/kitajchuk_hero.png" />
+    </div>
+  );
+};
+
 const Home = () => {
   const [active, setActive] = useState(false);
-  const classes = ['deets'].concat(active ? 'is-active' : '').join(' ');
+  const [triggered, setTriggered] = useState(false);
+  const classes = {
+    'deets': true,
+    'is-active': active,
+  };
 
   const onMeniClick = () => {
     setActive(!active);
+    
+    if (!triggered) {
+      setTriggered(true);
+    }
   };
+
+  useEffect(() => {
+    if (active) {
+      document.body.classList.add('is-retro');
+    } else {
+      document.body.classList.remove('is-retro');
+    }
+  }, [active]);
 
   return (
     <Layout>
@@ -32,15 +55,13 @@ const Home = () => {
         <title>kitajchuk</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Canvas active={triggered} source={active ? 'retro' : 'bw'} />
       <div className="navi p-5 flex justify-between items-center">
         <Logo fill="#000" />
-        <Meni active={active} handler={onMeniClick} />
+        <Meni handler={onMeniClick} />
       </div>
-      <div className="hero flex justify-end">
-        <AsyncImage src="/kitajchuk_hero.png" />
-      </div>
-      <div className={classes}>
-        <Canvas active={active} />
+      {!triggered ? <Hero /> : null}
+      <div className={classNames(classes)}>
         <div className="mast pt-28 sm:pt-0">
           <div className="text-lg sm:text-2xl text-white">
             ( <span>developer</span> / <span>creative</span> )
@@ -51,9 +72,6 @@ const Home = () => {
             <Link href="https://www.linkedin.com/in/brandonleekitajchuk/"><a target="_blank">Linkedin</a></Link>
           </div>
         </div>
-        {/* <div className="hero flex justify-end">
-          <AsyncImage src="/kitajchuk_hero_grey.png" />
-        </div> */}
       </div>
     </Layout>
   )

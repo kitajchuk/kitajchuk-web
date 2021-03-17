@@ -1,54 +1,78 @@
-import { useState, useRef, useEffect, useCallback } from 'react';
+import { useRef, useEffect, useCallback } from 'react';
 
-export default function Canvas({active}) {
-  const [images, setImages] = useState([]);
+export default function Canvas({active, source}) {
+  const imagesRef = useRef([]);
   const canvasRef = useRef();
   const blitRef = useRef();
+  const sourceRef = useRef();
   const config = {
     fps: 24,
     len: 43,
   };
 
+  // Latest and greatest `source` for canvas render...
+  sourceRef.current = source;
+
+  const clear = (ctx) => {
+    ctx.clearRect(
+      0,
+      0,
+      canvasRef.current.width,
+      canvasRef.current.height
+    );
+  };
+
+  const draw = (ctx, img) => {
+    ctx.drawImage(
+      img,
+      0,
+      0,
+      canvasRef.current.width,
+      canvasRef.current.height,
+      0,
+      0,
+      canvasRef.current.width,
+      canvasRef.current.height
+    );
+  };
+
   const handleBlit = useCallback((f) => {
-    if (canvasRef.current && images.length) {
+    if (canvasRef.current && imagesRef.current.length) {
       const idx = (f % config.len);
       const ctx = canvasRef.current.getContext('2d');
-
-      ctx.clearRect(
-        0,
-        0,
-        canvasRef.current.width,
-        canvasRef.current.height
-      );
-
-      ctx.drawImage(
-        images[idx],
-        0,
-        0,
-        canvasRef.current.width,
-        canvasRef.current.height,
-        0,
-        0,
-        canvasRef.current.width,
-        canvasRef.current.height
-      );
+      
+      clear(ctx);
+      draw(ctx, imagesRef.current[idx][sourceRef.current]);
     }
-  }, [canvasRef, images]);
+  }, [canvasRef, sourceRef, imagesRef]);
 
-  const loadImage = (src) => {
+  const loadImageSet = (obj) => {
     return new Promise((resolve) => {
-      const img = new Image();
-
-      img.onload = () => {
-        resolve(img);
+      const img1 = new Image();
+      const img2 = new Image();
+      const done = () => {
+        if (obj.bw === img1 && obj.retro === img2) {
+          resolve(obj);
+        }
       };
 
-      img.src = src;
+      img1.onload = () => {
+        obj.bw = img1;
+        done();
+      };
+
+      img2.onload = () => {
+        obj.retro = img2;
+        done();
+      };
+
+      img1.src = obj.bw;
+      img2.src = obj.retro;
     });
   };
 
   useEffect(() => {
-    if (!images.length) {
+    if (!imagesRef.current.length) {
       const imgs = [];
       const pros = [];
 
@@ -59,11 +83,14 @@ export default function Canvas({active}) {
           idx = `0${idx}`;
         }
 
-        const pro = loadImage(`/kickflip/kickflip_${idx}.png`);
+        const pro = loadImageSet({
+          bw: `/kickflip/bw/kickflip_${idx}.png`,
+          retro: `/kickflip/retro/kickflip_${idx}.png`
+        });
 
         ((index) => {
-          pro.then((img) => {
-            imgs[index] = img;
+          pro.then((res) => {
+            imgs[index] = res;
           });
         })(i - 1);
 
@@ -71,30 +98,27 @@ export default function Canvas({active}) {
       }
 
       Promise.all(pros).then(() => {
-        setImages(imgs);
+        imagesRef.current = imgs;
       });
     }
   });
 
   useEffect(() => {
     import('properjs-blit').then((Blit) => {
-      blitRef.current = new Blit.default({
-        fps: config.fps,
-        paused: true,
-      });
-
-      blitRef.current.blit(handleBlit);
-
       if (active) {
-        blitRef.current.start().play();
+        console.log('new blit');
+        blitRef.current = new Blit.default({
+          fps: config.fps,
+          paused: true,
+        });
 
-      } else {
-        blitRef.current.stop();
+        blitRef.current.blit(handleBlit);
+
+        blitRef.current.start().play();
       }
     });
 
     return function cleanup() {
-      console.log('cleanup');
       if (blitRef.current) {
         blitRef.current.stop();
       }

@@ -35,3 +35,4 @@ yarn-error.log*
 /tabi
 /public/tabi
 /.notes
+/utility.js
