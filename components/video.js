@@ -7,8 +7,8 @@ export default function Video() {
         muted 
         playsinline 
         preload="auto" 
-        poster="/kitajchuk_poster.png" 
-        src="/kitajchuk_kickflip.mp4" 
+        poster="/img/kitajchuk_poster.png" 
+        src="/media/kitajchuk_kickflip.mp4" 
         width="1920" 
         height="1080"
       ></video>

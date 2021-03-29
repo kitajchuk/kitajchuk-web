@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import classNames from 'classnames';
-import Head from 'next/head';
 import Link from 'next/link';
 import Layout from '../components/layout';
 import Logo from '../components/logo';
@@ -20,7 +19,7 @@ const Meni = ({handler}) => {
 const Hero = () => {
   return (
     <div className="hero flex justify-end">
-      <AsyncImage src="/kitajchuk_hero.png" />
+      <AsyncImage src="/img/kitajchuk_hero.png" />
     </div>
   );
 };
@@ -51,10 +50,6 @@ const Home = () => {
 
   return (
     <Layout>
-      <Head>
-        <title>kitajchuk</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <Canvas active={triggered} source={active ? 'retro' : 'bw'} />
       <div className="navi p-5 flex justify-between items-center">
         <Logo fill="#000" />
