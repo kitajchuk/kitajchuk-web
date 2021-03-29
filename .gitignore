@@ -30,9 +30,5 @@ yarn-error.log*
 .env.production.local
 
 # kitajchuk
-/data
-/public/data
-/tabi
-/public/tabi
 /.notes
 /utility.js

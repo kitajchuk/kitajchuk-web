@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
+    "nanoid": "^3.1.22",
     "next": "^10.0.0",
     "next-plugin-preact": "^3.0.3",
     "preact": "^10.5.5",
