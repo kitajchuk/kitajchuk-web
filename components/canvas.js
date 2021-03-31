@@ -1,6 +1,6 @@
 import { useRef, useEffect, useCallback } from 'react';
 
-export default function Canvas({active, source}) {
+export default function Canvas({source}) {
   const imagesRef = useRef([]);
   const canvasRef = useRef();
   const blitRef = useRef();
@@ -105,17 +105,15 @@ export default function Canvas({active, source}) {
 
   useEffect(() => {
     import('properjs-blit').then((Blit) => {
-      if (active) {
-        console.log('new blit');
-        blitRef.current = new Blit.default({
-          fps: config.fps,
-          paused: true,
-        });
+      console.log('new blit');
+      blitRef.current = new Blit.default({
+        fps: config.fps,
+        paused: true,
+      });
 
-        blitRef.current.blit(handleBlit);
+      blitRef.current.blit(handleBlit);
 
-        blitRef.current.start().play();
-      }
+      blitRef.current.start().play();
     });
 
     return function cleanup() {
@@ -123,7 +121,7 @@ export default function Canvas({active, source}) {
         blitRef.current.stop();
       }
     };
-  }, [active]);
+  });
 
   return (
     <div class="vid">

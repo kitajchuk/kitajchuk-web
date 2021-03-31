@@ -39,6 +39,7 @@ $font-monospace-bold: "#{$font-monospace}bold";
 html,
 body {
   font-family: $font-monospace;
+  font-size: 14px;
 }
 
 body {
@@ -50,6 +51,7 @@ body {
 }
 
 .navi {
+  padding: 32px 2.2222222222vw 0;
   position: relative;
   z-index: 2;
 
@@ -59,92 +61,18 @@ body {
   }
 }
 
-.meni {
-  position: relative;
-  width: 20px;
-  height: 12px;
-  cursor: pointer;
+.main {
+  padding: 96px 2.2222222222vw 64px;
 
-  div:not(:nth-child(2)) {
-    .is-retro & {
-      display: none;
-    }
-  }
-
-  > div {
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: $black;
-
-    .is-retro & {
-      background-color: $white;
-    }
-  }
-
-  > div:nth-child(2) {
-    top: 5px;
-  }
-
-  > div:nth-child(3) {
-    top: 10px;
+  > div + div {
+    margin-top: 16px;
   }
 }
 
 .hero {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-
   img {
+    max-width: 480px;
     width: 100%;
-    max-width: 384px;
-    height: auto;
-  }
-}
-
-.deets {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  overflow-x: hidden;
-  overflow-y: auto;
-  pointer-events: none;
-  z-index: 1;
-  visibility: hidden;
-  opacity: 0;
-
-  &.is-active {
-    visibility: visible;
-    opacity: 1;
-    pointer-events: auto;
-  }
-}
-
-.mast {
-  position: fixed;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  transform: translateY(-50%);
-  z-index: 1;
-
-  a {
-    transition: color 400ms ease;
-    color: $grey;
-
-    &:hover {
-      color: $white;
-    }
-  }
-
-  span {
-    font-family: $font-monospace-bold;
   }
 }
 
@@ -182,21 +110,6 @@ body {
   .navi {
     svg {
       height: 48px;
-    }
-  }
-
-  .hero {
-    img {
-      max-width: 480px;
-      margin: 0 auto;
-    }
-  }
-}
-
-@media (max-width: 480px) {
-  .hero {
-    img {
-      max-width: 100%;
     }
   }
 }
