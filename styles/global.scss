@@ -50,7 +50,7 @@ body {
   }
 }
 
-.navi {
+.head {
   padding: 32px 2.2222222222vw 0;
   position: relative;
   z-index: 2;
@@ -61,7 +61,7 @@ body {
   }
 }
 
-.main {
+.navi {
   padding: 96px 2.2222222222vw 64px;
 
   > div + div {
@@ -107,7 +107,7 @@ body {
 }
 
 @media (max-width: 640px) {
-  .navi {
+  .head {
     svg {
       height: 48px;
     }
