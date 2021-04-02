@@ -5,6 +5,10 @@ import { nanoid } from 'nanoid';
 
 const navi = [
   {
+    link: '/kickflip',
+    label: 'Kickflip',
+  },
+  {
     link: '/flamingos',
     label: 'FlamingOs',
   },

@@ -4,7 +4,7 @@ import Canvas from '../components/canvas';
 export default function Kickflip() {
   return (
     <Layout>
-      <Canvas source="bw" />
+      <Canvas source="retro" />
     </Layout>
   )
-};
+}

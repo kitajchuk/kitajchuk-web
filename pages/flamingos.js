@@ -2,7 +2,7 @@ import Layout from '../components/layout';
 import { createDecks } from '../lib/flamingos/tools';
 import { useEffect, useState } from 'react';
 
-const FlamingOs = () => {
+export default function FlamingOs() {
   const [decks, setDecks] = useState(null);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const FlamingOs = () => {
   };
 
   return (
-    <Layout title="FlamingOs">
+    <Layout>
       {decks && Object.keys(decks).map((key) => {
         return (
           <>
@@ -37,6 +37,4 @@ const FlamingOs = () => {
       })}
     </Layout>
   )
-};
-
-export default FlamingOs;
+}

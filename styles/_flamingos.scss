@@ -1,0 +1,22 @@
+.deck {
+  display: flex;
+  flex-wrap: wrap;
+
+  > img {
+    width: 10%;
+  }
+}
+
+.ctrls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+
+  button {
+    color: $white;
+    padding: 10px 20px;
+    background-color: $pink;
+    font-size: 12px;
+  }
+}
