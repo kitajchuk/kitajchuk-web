@@ -6,15 +6,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import Logo from '../components/logo';
-import { navi, naviActive, footer } from '../lib/site';
-
-
-
-function Mast() {
-  return (
-    <div className="navi text-center">@kitajchuk</div>
-  );
-}
+import { navi, naviActive, footer, description } from '../lib/site';
 
 
 
@@ -84,7 +76,7 @@ export default function Layout({children, title = "kitajchuk"}) {
         <meta name="theme-color" content="#000000" />
         <meta
           name="description"
-          content="Once a day unlearn something new."
+          content={description}
         />
         <link rel="apple-touch-icon" href="/logo192.png" />
         {/*

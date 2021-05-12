@@ -1,11 +1,13 @@
 {
   "name": "kitajchuk-web",
   "version": "0.1.0",
+  "description": "Once a day unlearn something new.",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next export"
   },
   "dependencies": {
     "classnames": "^2.2.6",
