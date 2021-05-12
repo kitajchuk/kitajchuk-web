@@ -44,6 +44,23 @@ function Navi({data}) {
 
 
 function Footer({data}) {
+  const router = useRouter();
+  const is404 = /404/.test(router.route);
+
+  if (is404) {
+    return (
+      <footer className="footer navi text-black text-center">
+        <ul className="footer__list navi__list">
+          <li className="footer__item navi__item">
+            <Link href="/">
+              <a>404: Lost?</a>
+            </Link>
+          </li>
+        </ul>
+      </footer>
+    );
+  }
+
   return (
     <footer className="footer navi text-black text-center">
       <ul className="footer__list navi__list">
