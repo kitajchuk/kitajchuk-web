@@ -31,4 +31,5 @@ yarn-error.log*
 
 # kitajchuk
 /.notes
+/public/sqs
 /utility.js

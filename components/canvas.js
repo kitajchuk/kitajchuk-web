@@ -84,8 +84,8 @@ export default function Canvas({source}) {
         }
 
         const pro = loadImageSet({
-          bw: `/kickflip/bw/kickflip_${idx}.png`,
-          retro: `/kickflip/retro/kickflip_${idx}.png`
+          bw: `/img/kickflip/bw/kickflip_${idx}.png`,
+          retro: `/img/kickflip/retro/kickflip_${idx}.png`
         });
 
         ((index) => {

@@ -1,6 +1,7 @@
+import { useEffect, useState } from 'react';
+
 import Layout from '../components/layout';
 import { createDecks } from '../lib/flamingos/tools';
-import { useEffect, useState } from 'react';
 
 export default function FlamingOs() {
   const [decks, setDecks] = useState(null);
@@ -19,7 +20,7 @@ export default function FlamingOs() {
   };
 
   return (
-    <Layout>
+    <Layout title="flamingOs">
       {decks && Object.keys(decks).map((key) => {
         return (
           <>

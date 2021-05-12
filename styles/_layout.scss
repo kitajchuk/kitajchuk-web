@@ -26,7 +26,13 @@ body {
 .navi {
   padding: 96px 2.2222222222vw 64px;
 
-  > div + div {
+  &__item {
+    &.active {
+      text-decoration: line-through;
+    }
+  }
+
+  &__item + &__item {
     margin-top: 16px;
   }
 }
@@ -34,6 +40,54 @@ body {
 .hero {
   img {
     max-width: 480px;
+    width: 100%;
+  }
+}
+
+.title {
+  color: $white;
+  text-align: center;
+  padding: 64px 0;
+}
+
+.collections {
+  background-color: $black;
+  padding: 64px 32px 0;
+}
+
+.poster {
+  padding-bottom: 64px;
+}
+
+.diptych {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 64px;
+
+  &__item {
+    display: inline-block;
+    width: 50%;
+
+    &:first-child {
+      padding-right: 32px;
+    }
+
+    &:last-child {
+      padding-left: 32px;
+    }
+  }
+}
+
+.collection {
+  column-count: 2;
+  column-gap: 64px;
+
+  &__item {
+    margin-bottom: 64px;
+    display: inline-block;
+    vertical-align: top;
     width: 100%;
   }
 }

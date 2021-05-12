@@ -1,38 +1,79 @@
+import { nanoid } from 'nanoid';
+import classNames from 'classnames';
+
 import Head from 'next/head';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+
 import Logo from '../components/logo';
-import { nanoid } from 'nanoid';
+import { navi, naviActive, footer } from '../lib/site';
 
-const navi = [
-  {
-    link: '/kickflip',
-    label: 'Kickflip',
-  },
-  {
-    link: '/flamingos',
-    label: 'FlamingOs',
-  },
-];
 
-const footer = [
-  {
-    link: 'mailto:bk@kitajchuk.com',
-    label: 'Email',
-    open: true,
-  },
-  {
-    link: 'https://github.com/kitajchuk',
-    label: 'Github',
-    open: true,
-  },
-  {
-    link: 'https://www.linkedin.com/in/brandonleekitajchuk/',
-    label: 'Linkedin',
-    open: true,
-  },
-];
+
+function Mast() {
+  return (
+    <div className="navi text-center">@kitajchuk</div>
+  );
+}
+
+
+
+function Navi({data}) {
+  function Item({obj}) {
+    const router = useRouter();
+    const regex = new RegExp(`^${obj.link}`);
+    const classes = {
+      navi__item: true,
+      active: regex.test(router.asPath),
+    };
+
+    return (
+      <li className={classNames(classes)}>
+        <Link href={obj.link}>
+          <a target={obj.open ? '_blank' : null}>{obj.label}</a>
+        </Link>
+      </li>
+    );
+  }
+
+  return (
+    <nav className="navi text-black text-center">
+      <ul className="navi__list">
+        {data.map((nav) => {
+          return (
+            <Item obj={nav} key={nanoid()} />
+          );
+        })}
+      </ul>
+    </nav>
+  );
+}
+
+
+
+function Footer({data}) {
+  return (
+    <footer className="footer navi text-black text-center">
+      <ul className="footer__list navi__list">
+        {data.map((nav) => {
+          return (
+            <li className="footer__item navi__item" key={nanoid()}>
+              <Link href={nav.link}>
+                <a target={nav.open ? '_blank' : null}>{nav.label}</a>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </footer>
+  );
+}
+
+
 
 export default function Layout({children, title = "kitajchuk"}) {
+  title = (title !== 'kitajchuk' ? `${title} \\\\ kitajchuk` : title);
+
   return (
     <>
       <Head>
@@ -59,31 +100,11 @@ export default function Layout({children, title = "kitajchuk"}) {
           </a>
         </Link>
       </header>
-      <nav className="navi text-black text-center">
-        {navi.map((nav) => {
-          return (
-            <div key={nanoid()}>
-              <Link href={nav.link}>
-                <a target={nav.open ? '_blank' : null}>{nav.label}</a>
-              </Link>
-            </div>
-          );
-        })}
-      </nav>
+      {naviActive ? <Navi data={navi} /> : <Footer data={footer} />}
       <main className="main">
         {children}
       </main>
-      <footer className="navi text-black text-center">
-        {footer.map((nav) => {
-          return (
-            <div key={nanoid()}>
-              <Link href={nav.link}>
-                <a target={nav.open ? '_blank' : null}>{nav.label}</a>
-              </Link>
-            </div>
-          );
-        })}
-      </footer>
+      {naviActive && <Footer data={footer} />}
     </>
   );
 }
