@@ -35,6 +35,11 @@ body {
   &__item + &__item {
     margin-top: 16px;
   }
+
+  @media (max-width: $width-mobile) {
+    padding-top: 48px;
+    padding-bottom: 32px;
+  }
 }
 
 .hero {
