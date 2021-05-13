@@ -2,7 +2,7 @@ export default function Video() {
   return (
     <div className="vid">
       <video 
-        autoplay 
+        autoPlay 
         loop 
         muted 
         playsinline 
@@ -14,4 +14,4 @@ export default function Video() {
       ></video>
     </div>
   );
-};
+}

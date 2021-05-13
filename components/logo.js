@@ -28,4 +28,4 @@ export default function Logo({fill}) {
 	C547.77,357.44,546.28,356.42,546.28,356.42z"/>
     </svg>
   );
-};
+}

@@ -7,5 +7,5 @@ export default function Home() {
         <img src="/img/kitajchuk_hero.png" />
       </div>
     </Layout>
-  )
+  );
 }

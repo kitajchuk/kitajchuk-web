@@ -1,9 +1,8 @@
 import { nanoid } from 'nanoid';
-// import classNames from 'classnames';
 
-import Layout from '../components/layout';
-import AsyncImage from '../components/asyncimage';
-import { readPublicImageDirectory } from '../lib/utils';
+import Layout from '../../components/layout';
+import AsyncImage from '../../components/asyncimage';
+import { readPublicImageDirectory } from '../../lib/utils';
 
 export default function Drawing({collections}) {
   return (
@@ -44,10 +43,10 @@ export default function Drawing({collections}) {
         </div>
       </div>
     </Layout>
-  )
+  );
 }
 
-export async function getStaticProps({params}) {
+export async function getStaticProps() {
   const collections = [
     readPublicImageDirectory('drawings/lost-kids'),
     readPublicImageDirectory('drawings/fallgirl-2.0'),

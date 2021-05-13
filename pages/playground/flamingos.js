@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import Layout from '../components/layout';
-import { createDecks } from '../lib/flamingos/tools';
+import Layout from '../../components/layout';
+import { createDecks } from '../../lib/flamingos/tools';
 
 export default function FlamingOs() {
   const [decks, setDecks] = useState(null);
@@ -30,12 +30,12 @@ export default function FlamingOs() {
             <div className="deck" key={key}>
               <img src={decks[key].back} key="back" />
               {decks[key].cards.map((card) => {
-                return <img src={card.asset} key={card.id} />
+                return <img src={card.asset} key={card.id} />;
               })}
             </div>
           </>
         );
       })}
     </Layout>
-  )
+  );
 }

@@ -7,5 +7,5 @@ export default function Page404() {
         <img src="/img/kitajchuk_hollow.png" />
       </div>
     </Layout>
-  )
+  );
 }

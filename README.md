@@ -5,15 +5,31 @@ kitajchuk-web
 
 <img src="./public/img/kitajchuk_app_icon.png" width="128" />
 
-# Stack
+## Stack
 
 - [Next.js](https://nextjs.org)
 - [Preact: @developit example](https://github.com/developit/nextjs-preact-demo)
 - [Tailwind CSS](https://tailwindcss.com)
 
-# Jamstack
+## Jamstack
 
 - [kitajchuk.vercel.app](https://kitajchuk.vercel.app/)
 - [kitajchuk.netlify.app](https://kitajchuk.netlify.app/)
   - Build command: `next build && next export`
   - Publish directory: `out`
+
+## Commands
+
+- `yarn install`
+  - Installs node packages
+  - Installs [husky](https://typicode.github.io/husky/) for git `pre-commit` hooks
+  - Husky will run `yarn lint` before a git commit and stop the commit if `ESLint` fails
+- `yarn dev`
+  - Serves local dev at [localhost:3000](http://localhost:3000)
+- `yarn lint`
+  - Runs [ESLint](https://eslint.org/) validations on source JS
+  - Install the [ESLint plugin for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint&ssr=false#overview)
+- `yarn build && yarn start`
+  - Create an optimized Next.js production build and serve it locally
+- `yarn build && yarn export`
+  - Create a static production build for any static deploy target 

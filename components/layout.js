@@ -80,7 +80,7 @@ function Footer({data}) {
 
 
 
-export default function Layout({children, title = "kitajchuk"}) {
+export default function Layout({children, title = 'kitajchuk'}) {
   title = (title !== 'kitajchuk' ? `${title} \\\\ kitajchuk` : title);
 
   return (

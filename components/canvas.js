@@ -124,8 +124,8 @@ export default function Canvas({source}) {
   });
 
   return (
-    <div class="vid">
+    <div className="vid">
       <canvas ref={canvasRef} width="1920" height="1080"></canvas>
     </div>
   );
-};
+}

@@ -4,10 +4,13 @@
   "description": "Once a day unlearn something new.",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "prepare": "husky install",
+    "dev": "next",
     "start": "next start",
-    "export": "next export"
+    "prebuild": "yarn lint",
+    "build": "next build",
+    "export": "next export",
+    "lint": "eslint components pages lib --ext js"
   },
   "dependencies": {
     "classnames": "^2.2.6",
@@ -16,7 +19,7 @@
     "next-plugin-preact": "^3.0.3",
     "preact": "^10.5.5",
     "preact-render-to-string": "^5.1.11",
-    "properjs-blit": "^0.3.1",
+    "properjs-blit": "^0.3.2",
     "properjs-resizecontroller": "^0.3.0",
     "properjs-scrollcontroller": "^0.3.0",
     "react": "npm:@preact/compat@0.0.4",
@@ -26,9 +29,11 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.2.5",
+    "eslint": "^7.26.0",
+    "eslint-plugin-react": "^7.23.2",
+    "husky": "^6.0.0",
     "node-fetch": "^2.6.1",
     "postcss": "^8.2.7",
-    "tailwindcss": "^2.0.3",
-    "yamljs": "^0.3.0"
+    "tailwindcss": "^2.0.3"
   }
 }
