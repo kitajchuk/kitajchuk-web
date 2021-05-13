@@ -20,7 +20,7 @@
     "preact": "^10.5.5",
     "preact-render-to-string": "^5.1.11",
     "properjs-blit": "^0.3.2",
-    "properjs-resizecontroller": "^0.3.0",
+    "properjs-imageloader": "^0.4.0",
     "properjs-scrollcontroller": "^0.3.0",
     "react": "npm:@preact/compat@0.0.4",
     "react-dom": "npm:@preact/compat@0.0.4",

@@ -2259,10 +2259,10 @@ properjs-controller@>=0.3.0:
   resolved "https://registry.yarnpkg.com/properjs-controller/-/properjs-controller-0.3.1.tgz#0f3e18c4b161b2c3030282c93e9ad91aa80baba0"
   integrity sha512-F7EIXP1aXN79NXFsPwWUL13AHQM6fgGpeA5we6GewF0+siZ7yMLIy4zrDia5hTdhrEKabmLQkEwhEIoh28n/eQ==
 
-properjs-resizecontroller@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/properjs-resizecontroller/-/properjs-resizecontroller-0.3.0.tgz#ab3ba9aa407def8300100b90cda6826097ce7319"
-  integrity sha512-PXh1qp02Kd/1fhZ6JhyQ/dqWQz6iOFUtxqLfYPOKfYURh37glvOjPf/4GoowwmmkOj4j0H1OsPurSlr0ryslbw==
+properjs-imageloader@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/properjs-imageloader/-/properjs-imageloader-0.4.0.tgz#949244a37256e3932da00df2fc6be88d317cc0d5"
+  integrity sha512-F7r5X6oHedkwM9UL2kxZ1+Gr+ZaJLk1bIJJbBzz0Z6lKtC4iD2QB6JGVoydMOmNss/Ior5sxlYPVyqDF6zVZKQ==
   dependencies:
     properjs-controller ">=0.3.0"
 

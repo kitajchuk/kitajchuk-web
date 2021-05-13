@@ -1,47 +1,102 @@
-.title {
-  color: $white;
-  text-align: center;
-  padding: 64px 0;
-}
-
 .collections {
   background-color: $black;
   padding: 64px 32px 0;
-}
 
-.poster {
-  padding-bottom: 64px;
-}
+  @media (max-width: $width-mobile) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 
-.diptych {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding-bottom: 64px;
+  img {
+    padding-bottom: 56.25%;
 
-  &__item {
-    display: inline-block;
-    width: 50%;
-
-    &:first-child {
-      padding-right: 32px;
-    }
-
-    &:last-child {
-      padding-left: 32px;
+    &[data-imageloader="true"] {
+      padding-bottom: 0;
     }
   }
-}
 
-.collection {
-  column-count: 2;
-  column-gap: 64px;
+  .title {
+    color: $white;
+    text-align: center;
+    padding: 64px 0 96px;
 
-  &__item {
-    margin-bottom: 64px;
-    display: inline-block;
-    vertical-align: top;
-    width: 100%;
+    @media (max-width: $width-tablet-1) {
+      padding: 32px 0 64px;
+    }
+  }
+  
+  .poster {
+    padding-bottom: 64px;
+
+    @media (max-width: $width-tablet-1) {
+      padding-bottom: 32px;
+    }
+
+    @media (max-width: $width-mobile) {
+      padding-bottom: 16px;
+    }
+  }
+  
+  .diptych {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 64px;
+  
+    &__item {
+      display: inline-block;
+      width: 50%;
+
+      @media (max-width: $width-mobile) {
+        width: 100%;
+      }
+  
+      &:first-child {
+        padding-right: 32px;
+
+        @media (max-width: $width-mobile) {
+          padding-right: 0;
+          margin-bottom: 16px;
+        }
+      }
+  
+      &:last-child {
+        padding-left: 32px;
+
+        @media (max-width: $width-mobile) {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+  
+  .collection {
+    column-count: 2;
+    column-gap: 64px;
+
+    @media (max-width: $width-tablet-1) {
+      column-gap: 32px;
+    }
+
+    @media (max-width: $width-mobile) {
+      column-count: 1;
+      column-gap: 0;
+    }
+  
+    &__item {
+      margin-bottom: 64px;
+      display: inline-block;
+      vertical-align: top;
+      width: 100%;
+
+      @media (max-width: $width-tablet-1) {
+        margin-bottom: 32px;
+      }
+
+      @media (max-width: $width-mobile) {
+        margin-bottom: 16px;
+      }
+    }
   }
 }

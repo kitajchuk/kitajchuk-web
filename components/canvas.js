@@ -105,7 +105,6 @@ export default function Canvas({source}) {
 
   useEffect(() => {
     import('properjs-blit').then((Blit) => {
-      console.log('new blit');
       blitRef.current = new Blit.default({
         fps: config.fps,
         paused: true,

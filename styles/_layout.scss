@@ -1,7 +1,8 @@
 html,
 body {
   font-family: 'panicsans';
-  font-size: 14px;
+  font-size: $font-base;
+  line-height: 2;
 }
 
 body {
@@ -12,8 +13,14 @@ body {
   }
 }
 
+p {
+  a {
+    color: $blue;
+  }
+}
+
 .head {
-  padding: 32px 2.2222222222vw 0;
+  padding: 32px $wrap-padding 0;
   position: relative;
   z-index: 2;
 
@@ -24,7 +31,7 @@ body {
 }
 
 .navi {
-  padding: 96px 2.2222222222vw 64px;
+  padding: 96px $wrap-padding 64px;
 
   &__item {
     &.active {
@@ -44,7 +51,7 @@ body {
 
 .hero {
   img {
-    max-width: 480px;
+    max-width: $width-small;
     width: 100%;
   }
 
@@ -58,7 +65,8 @@ body {
 .anim {
   opacity: 0;
   transform: translate3d(0, 64px, 0);
-  transition: opacity 400ms ease-out, transform 400ms ease-out;
+  transition: opacity $anim-duration $anim-ease,
+              transform $anim-duration $anim-ease;
 
   &.is-animated {
     opacity: 1;

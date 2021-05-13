@@ -6,13 +6,13 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import Logo from '../components/logo';
-import { navi, naviActive, footer, description } from '../lib/site';
-
-
+import { navi, description, instagram } from '../lib/site';
 
 function Navi({data}) {
+  const router = useRouter();
+  const is404 = /404/.test(router.route);
+
   function Item({obj}) {
-    const router = useRouter();
     const regex = new RegExp(`^${obj.link}`);
     const classes = {
       navi__item: true,
@@ -25,6 +25,20 @@ function Navi({data}) {
           <a target={obj.open ? '_blank' : null}>{obj.label}</a>
         </Link>
       </li>
+    );
+  }
+
+  if (is404) {
+    return (
+      <nav className="navi text-black text-center">
+        <p>
+          404 | things have changed, but you can still check out my{' '}
+          <Link href="/playground/drawing/">
+            <a>drawings</a>
+          </Link>
+          .
+        </p>
+      </nav>
     );
   }
 
@@ -41,44 +55,21 @@ function Navi({data}) {
   );
 }
 
-
-
-function Footer({data}) {
-  const router = useRouter();
-  const is404 = /404/.test(router.route);
-
-  if (is404) {
-    return (
-      <footer className="footer navi text-black text-center">
-        <ul className="footer__list navi__list">
-          <li className="footer__item navi__item">
-            <Link href="/">
-              <a>404: Lost?</a>
-            </Link>
-          </li>
-        </ul>
-      </footer>
-    );
-  }
+function Footer() {
+  const date = new Date();
 
   return (
     <footer className="footer navi text-black text-center">
-      <ul className="footer__list navi__list">
-        {data.map((nav) => {
-          return (
-            <li className="footer__item navi__item" key={nanoid()}>
-              <Link href={nav.link}>
-                <a target={nav.open ? '_blank' : null}>{nav.label}</a>
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
+      <p>
+        copyright {date.getFullYear()}{' '}
+        <Link href={instagram}>
+          <a target="_blank">@kitajchuk</a>
+        </Link>
+        .
+      </p>
     </footer>
   );
 }
-
-
 
 export default function Layout({children, title = 'kitajchuk'}) {
   title = (title !== 'kitajchuk' ? `${title} \\\\ kitajchuk` : title);
@@ -109,11 +100,11 @@ export default function Layout({children, title = 'kitajchuk'}) {
           </a>
         </Link>
       </header>
-      {naviActive ? <Navi data={navi} /> : <Footer data={footer} />}
+      <Navi data={navi} />
       <main className="main">
         {children}
       </main>
-      {naviActive && <Footer data={footer} />}
+      <Footer />
     </>
   );
 }
