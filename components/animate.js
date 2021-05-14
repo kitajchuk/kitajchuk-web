@@ -48,3 +48,7 @@ export function withAnimate(WrappedComponent) {
     );
   };
 }
+
+export const Animate = withAnimate((props) => {
+  return props.children;
+});

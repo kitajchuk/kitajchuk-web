@@ -1,6 +1,6 @@
 .collections {
   background-color: $black;
-  padding: 64px 32px 0;
+  padding: 64px 32px;
 
   @media (max-width: $width-mobile) {
     padding-left: 16px;
@@ -18,23 +18,15 @@
   .title {
     color: $white;
     text-align: center;
-    padding: 64px 0 96px;
+    padding: 96px 0;
 
     @media (max-width: $width-tablet-1) {
-      padding: 32px 0 64px;
+      padding: 64px 0;
     }
   }
   
   .poster {
-    padding-bottom: 64px;
-
-    @media (max-width: $width-tablet-1) {
-      padding-bottom: 32px;
-    }
-
-    @media (max-width: $width-mobile) {
-      padding-bottom: 16px;
-    }
+    font-size: 0;
   }
   
   .diptych {
@@ -42,7 +34,16 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding-bottom: 64px;
+    padding: 64px 0;
+    font-size: 0;
+
+    @media (max-width: $width-tablet-1) {
+      padding: 32px 0;
+    }
+
+    @media (max-width: $width-mobile) {
+      padding: 16px 0;
+    }
   
     &__item {
       display: inline-block;
@@ -55,6 +56,10 @@
       &:first-child {
         padding-right: 32px;
 
+        @media (max-width: $width-tablet-1) {
+          padding-right: 16px;
+        }
+
         @media (max-width: $width-mobile) {
           padding-right: 0;
           margin-bottom: 16px;
@@ -64,6 +69,10 @@
       &:last-child {
         padding-left: 32px;
 
+        @media (max-width: $width-tablet-1) {
+          padding-left: 16px;
+        }
+
         @media (max-width: $width-mobile) {
           padding-left: 0;
         }
@@ -72,6 +81,7 @@
   }
   
   .collection {
+    font-size: 0;
     column-count: 2;
     column-gap: 64px;
 
@@ -96,6 +106,12 @@
 
       @media (max-width: $width-mobile) {
         margin-bottom: 16px;
+      }
+
+      &:last-child {
+        @media (max-width: $width-mobile) {
+          margin-bottom: 0;
+        }
       }
     }
   }
