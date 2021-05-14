@@ -23,6 +23,9 @@ p {
   padding: 32px $wrap-padding 0;
   position: relative;
   z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   svg {
     height: 48px;
@@ -32,6 +35,10 @@ p {
 
 .navi {
   padding: 96px $wrap-padding 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 
   &__item {
     &.active {
@@ -39,9 +46,9 @@ p {
     }
   }
 
-  &__item + &__item {
-    margin-top: 16px;
-  }
+  // &__item + &__item {
+  //   margin-top: 16px;
+  // }
 
   @media (max-width: $width-mobile) {
     padding-top: 48px;
@@ -50,6 +57,10 @@ p {
 }
 
 .hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   img {
     max-width: $width-small;
     width: 100%;

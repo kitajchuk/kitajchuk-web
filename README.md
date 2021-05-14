@@ -9,7 +9,6 @@ kitajchuk-web
 
 - [Next.js](https://nextjs.org)
 - [Preact: @developit example](https://github.com/developit/nextjs-preact-demo)
-- [Tailwind CSS](https://tailwindcss.com)
 
 ## Jamstack
 

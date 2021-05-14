@@ -30,7 +30,7 @@ function Navi({data}) {
 
   if (is404) {
     return (
-      <nav className="navi text-black text-center">
+      <nav className="navi">
         <p>
           404 | things have changed, but you can still check out my{' '}
           <Link href="/playground/drawing/">
@@ -43,7 +43,7 @@ function Navi({data}) {
   }
 
   return (
-    <nav className="navi text-black text-center">
+    <nav className="navi">
       <ul className="navi__list">
         {data.map((nav) => {
           return (
@@ -59,7 +59,7 @@ function Footer() {
   const date = new Date();
 
   return (
-    <footer className="footer navi text-black text-center">
+    <footer className="footer navi">
       <p>
         copyright {date.getFullYear()}{' '}
         <Link href={instagram}>
@@ -93,7 +93,7 @@ export default function Layout({children, title = 'kitajchuk'}) {
         */}
         <link rel="manifest" href="/manifest.json" />
       </Head>
-      <header className="head flex justify-center items-center">
+      <header className="head">
         <Link href="/">
           <a>
             <Logo fill="#000" />
