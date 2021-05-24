@@ -37,11 +37,7 @@ jobs:
         steps:
             - attach_workspace:
                 at: ~/kitajchuk
-            - aws-cli/setup:
-                profile-name: circleci
-                aws-access-key-id: AWS_ACCESS_KEY_ID
-                aws-region: AWS_DEFAULT_REGION
-                aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+            - aws-cli/setup
             - run: aws s3 ls
 
 workflows:
