@@ -1,31 +1,11 @@
-import Image from 'next/image';
-
 import Layout from '../components/layout';
-import { getDesiredSize } from '../lib/utils';
 
-export default function Page404({size}) {
+export default function Page404() {
   return (
     <Layout>
       <div className="hero">
-        <Image
-          src="/img/kitajchuk_hollow.png"
-          width={size.width}
-          height={size.height}
-          layout="intrinsic"
-          priority={true}
-          loading="eager"
-        />
+        <img src="/img/kitajchuk_hollow.png" />
       </div>
     </Layout>
   );
-}
-
-export async function getStaticProps() {
-  const size = getDesiredSize(1303, 1920, 480);
-
-  return {
-    props: {
-      size,
-    },
-  };
 }
