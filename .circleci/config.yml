@@ -36,8 +36,7 @@ jobs:
         steps:
             - attach_workspace:
                 at: ~/kitajchuk
-            - aws-cli/setup:
-                profile-name: default
+            - aws-cli/setup
             - run: aws s3 ls
 
 workflows:
@@ -46,7 +45,7 @@ workflows:
         jobs:
             - build
             - deploy:
-                # context: aws
+                context: aws
                 requires:
                     - build
                 filters:
