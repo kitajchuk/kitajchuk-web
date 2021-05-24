@@ -38,9 +38,6 @@ jobs:
                 at: ~/kitajchuk
             - aws-cli/setup:
                 profile-name: aws-kitajchuk
-                aws-access-key-id: AWS_ACCESS_KEY
-                aws-region: AWS_DEFAULT_REGION
-                aws-secret-access-key: AWS_SECRET_ACCESS_KEY
             - run: aws s3 ls
 
 workflows:
