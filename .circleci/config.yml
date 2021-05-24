@@ -33,6 +33,7 @@ jobs:
         working_directory: ~/kitajchuk
         docker:
           - image: cimg/node:14.16.0
+        executor: aws-cli/default
         steps:
             - attach_workspace:
                 at: ~/kitajchuk
