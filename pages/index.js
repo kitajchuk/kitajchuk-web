@@ -1,10 +1,11 @@
 import Layout from '../components/layout';
+import AsyncImage from '../components/asyncimage';
 
 export default function Home() {
   return (
     <Layout>
       <div className="hero">
-        <img src="/img/kitajchuk_hero.png" />
+        <AsyncImage src="/img/kitajchuk_hero.png" />
       </div>
     </Layout>
   );
