@@ -28,6 +28,12 @@
   .poster {
     font-size: 0;
   }
+
+  .collection-wrap + .poster {
+    @media (max-width: $width-mobile) {
+      margin-top: 16px;
+    }
+  }
   
   .diptych {
     display: flex;

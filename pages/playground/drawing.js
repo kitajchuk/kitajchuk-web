@@ -16,9 +16,9 @@ export default withImageLoader(({collections}) => {
         </div>
         {collections.map((collection) => {
           return (
-            <>
+            <div className="collection-wrap" key={collection.title}>
               <p className="title">{collection.title}</p>
-              <ul key={collection.title} className="collection">
+              <ul className="collection">
                 {collection.images.map((img) => {
                   // img { src, dims { width, height, type } }
                   return (
@@ -30,7 +30,7 @@ export default withImageLoader(({collections}) => {
                   );
                 })}
               </ul>
-            </>
+            </div>
           );
         })}
         <div className="poster">
