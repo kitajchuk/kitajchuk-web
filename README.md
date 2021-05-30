@@ -8,7 +8,6 @@ kitajchuk-web
 ## Stack
 
 - [Next.js](https://nextjs.org)
-- [Preact: @developit example](https://github.com/developit/nextjs-preact-demo)
 
 ## Jamstack
 
