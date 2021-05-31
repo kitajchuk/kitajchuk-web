@@ -23,17 +23,17 @@ export default function FlamingOs() {
     <Layout title="flamingOs">
       {decks && Object.keys(decks).map((key) => {
         return (
-          <>
+          <div key={key}>
             <div className="ctrls">
               <button onClick={onClickShuffle}>Shuffle Decks</button>
             </div>
-            <div className="deck" key={key}>
+            <div className="deck">
               <img src={decks[key].back} key="back" />
               {decks[key].cards.map((card) => {
                 return <img src={card.asset} key={card.id} />;
               })}
             </div>
-          </>
+          </div>
         );
       })}
     </Layout>
