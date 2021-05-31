@@ -37,10 +37,6 @@ export function withImageLoader(WrappedComponent) {
             return (bounds.top < (window.innerHeight * 2) && bounds.bottom > 0);
           },
         });
-
-        loaderRef.current.on('done', () => {
-          console.log('all done');
-        });
       });
   
       return function cleanup() {
