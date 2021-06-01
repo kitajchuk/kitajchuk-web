@@ -46,9 +46,7 @@ function Navi({data}) {
     <nav className="navi">
       <ul className="navi__list">
         {data.map((nav) => {
-          return (
-            <Item obj={nav} key={nanoid()} />
-          );
+          return <Item obj={nav} key={nanoid()} />;
         })}
       </ul>
     </nav>

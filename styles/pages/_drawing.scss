@@ -1,4 +1,4 @@
-.collections {
+.drawings {
   background-color: $black;
   padding: 64px 32px;
 
@@ -15,13 +15,21 @@
     }
   }
 
+  .link {
+    color: $white;
+    text-align: center;
+    display: block;
+    line-height: 4;
+    text-decoration: underline;
+  }
+
   .title {
     color: $white;
     text-align: center;
-    padding: 96px 0;
+    padding: 32px 0 96px;
 
     @media (max-width: $width-tablet-1) {
-      padding: 64px 0;
+      padding: 0 0 64px;
     }
   }
   
@@ -29,7 +37,13 @@
     font-size: 0;
   }
 
-  .collection-wrap + .poster {
+  .poster + .poster {
+    margin-top: 64px;
+
+    @media (max-width: $width-tablet-1) {
+      margin-top: 32px;
+    }
+
     @media (max-width: $width-mobile) {
       margin-top: 16px;
     }
@@ -88,17 +102,6 @@
   
   .collection {
     font-size: 0;
-    column-count: 2;
-    column-gap: 64px;
-
-    @media (max-width: $width-tablet-1) {
-      column-gap: 32px;
-    }
-
-    @media (max-width: $width-mobile) {
-      column-count: 1;
-      column-gap: 0;
-    }
   
     &__item {
       margin-bottom: 64px;
