@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import Layout from '../../components/layout';
 import { withImageLoader } from '../../components/asyncimage';
-import { getDrawingStaticPaths } from '../../lib/utils';
+import { getPublicStaticPaths } from '../../lib/utils';
 
 export default withImageLoader(({paths}) => {
   return (
@@ -10,8 +10,8 @@ export default withImageLoader(({paths}) => {
       <div className="drawings">
         {paths.map((obj) => {
           return (
-            <Link key={obj.params.slug} href={`/drawing/${obj.params.slug}`}>
-              <a className="link">
+            <Link key={obj.params.slug} href={`/drawings/${obj.params.slug}`}>
+              <a className="drawings__link">
                 {obj.params.slug}
               </a>
             </Link>
@@ -23,7 +23,7 @@ export default withImageLoader(({paths}) => {
 });
 
 export async function getStaticProps() {
-  const paths = getDrawingStaticPaths();
+  const paths = getPublicStaticPaths('drawings');
 
   return {
     props: {

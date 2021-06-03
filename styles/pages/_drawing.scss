@@ -7,10 +7,14 @@
     padding-right: 16px;
   }
 
-  .drawings__wrap {
+  &__wrap {
     margin: 0 auto;
     width: 100%;
     max-width: $width-tablet-1;
+
+    &--comics {
+      max-width: $width-max;
+    }
   }
 
   img {
@@ -19,9 +23,13 @@
     &[data-imageloader="true"] {
       padding-bottom: 0;
     }
+
+    &.portrait {
+      max-width: $width-tablet-1;
+    }
   }
 
-  .link {
+  &__link {
     color: $white;
     text-align: center;
     display: block;
@@ -29,7 +37,7 @@
     text-decoration: underline;
   }
 
-  .title {
+  &__title {
     color: $white;
     text-align: center;
     padding: 32px 0 96px;
@@ -39,80 +47,13 @@
     }
   }
   
-  .poster {
-    font-size: 0;
-  }
-
-  .poster + .poster {
-    margin-top: 64px;
-
-    @media (max-width: $width-tablet-1) {
-      margin-top: 32px;
-    }
-
-    @media (max-width: $width-mobile) {
-      margin-top: 16px;
-    }
-  }
-  
-  .diptych {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 64px 0;
-    font-size: 0;
-
-    @media (max-width: $width-tablet-1) {
-      padding: 32px 0;
-    }
-
-    @media (max-width: $width-mobile) {
-      padding: 16px 0;
-    }
-  
-    &__item {
-      display: inline-block;
-      width: 50%;
-
-      @media (max-width: $width-mobile) {
-        width: 100%;
-      }
-  
-      &:first-child {
-        padding-right: 32px;
-
-        @media (max-width: $width-tablet-1) {
-          padding-right: 16px;
-        }
-
-        @media (max-width: $width-mobile) {
-          padding-right: 0;
-          margin-bottom: 16px;
-        }
-      }
-  
-      &:last-child {
-        padding-left: 32px;
-
-        @media (max-width: $width-tablet-1) {
-          padding-left: 16px;
-        }
-
-        @media (max-width: $width-mobile) {
-          padding-left: 0;
-        }
-      }
-    }
-  }
-  
-  .collection {
+  &__collection {
     font-size: 0;
   
     &__item {
       margin-bottom: 64px;
-      display: inline-block;
-      vertical-align: top;
+      display: flex;
+      justify-content: center;
       width: 100%;
 
       @media (max-width: $width-tablet-1) {
