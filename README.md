@@ -12,9 +12,15 @@ kitajchuk-web
 ## Jamstack
 
 - [kitajchuk.vercel.app](https://kitajchuk.vercel.app/)
+  - Build command: `yarn download-s3 && next build`
 - [kitajchuk.netlify.app](https://kitajchuk.netlify.app/)
-  - Build command: `next build && next export`
+  - Build command: `yarn download-s3 && next build && next export`
   - Publish directory: `out`
+- Required env vars for the project:
+  - `KITA_S3_REPOSITORY`
+  - `KITA_AWS_ACCESS_KEY_ID`
+  - `KITA_AWS_SECRET_ACCESS_KEY`
+  - `KITA_AWS_REGION`
 
 ## Commands
 
