@@ -3,8 +3,6 @@ kitajchuk-web
 
 > Once a day unlearn something new.
 
-<img src="./public/img/kitajchuk_app_icon.png" width="128" />
-
 ## Stack
 
 - [Next.js](https://nextjs.org)
