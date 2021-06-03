@@ -7,21 +7,23 @@ import { readPublicImageDirectory, getDrawingStaticPaths } from '../../lib/utils
 
 export default withImageLoader(({collection}) => {
   return (
-    <Layout title="drawings">
+    <Layout title={collection.title}>
       <div className="drawings">
-        <p className="title">{collection.title}</p>
-        <ul className="collection">
-          {collection.images.map((img) => {
-            // img { src, dims { width, height, type } }
-            return (
-              <li key={nanoid()} className="collection__item">
-                <Animate>
-                  <img data-src={img.src} />
-                </Animate>
-              </li>
-            );
-          })}
-        </ul>
+        <div className="drawings__wrap">
+          <p className="title">{collection.title}</p>
+          <ul className="collection">
+            {collection.images.map((img) => {
+              // img { src, dims { width, height, type } }
+              return (
+                <li key={nanoid()} className="collection__item">
+                  <Animate>
+                    <img data-src={img.src} />
+                  </Animate>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     </Layout>
   );
