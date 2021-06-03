@@ -24,7 +24,7 @@ jobs:
                     - ~/.cache/yarn
             - run:
                 name: Build Static Site
-                command: yarn build && yarn export
+                command: yarn download-s3 && yarn build && yarn export
             - persist_to_workspace:
                 root: ~/kitajchuk
                 paths:
