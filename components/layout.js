@@ -33,7 +33,7 @@ function Navi({data}) {
       <nav className="navi">
         <p>
           404 | things have changed, but you can still check out my{' '}
-          <Link href="/drawing/">
+          <Link href="/drawings/">
             <a>drawings</a>
           </Link>
           .
