@@ -1,17 +1,21 @@
 import Link from 'next/link';
 
 import Layout from '../../components/layout';
-import { withImageLoader } from '../../components/asyncimage';
+import Canvas from '../../components/canvas';
 import { getPublicStaticPaths } from '../../lib/utils';
 
-export default withImageLoader(({paths}) => {
+export default function Kickflip({paths}) {
   return (
-    <Layout title="comics">
+    <Layout title="kickflip">
       <section className="drawings">
+        <h1 className="drawings__title">kickflip</h1>
+        <div className="drawings__collection drawings__collection--wide">
+          <Canvas source="retro" />
+        </div>
         <nav className="drawings__navi">
           {paths.map((obj) => {
             return (
-              <Link key={obj.params.slug} href={`/comics/${obj.params.slug}`}>
+              <Link key={obj.params.slug} href={`/drawings/${obj.params.slug}`}>
                 <a className="drawings__link">
                   {obj.params.slug}
                 </a>
@@ -22,10 +26,10 @@ export default withImageLoader(({paths}) => {
       </section>
     </Layout>
   );
-});
+}
 
 export async function getStaticProps() {
-  const paths = getPublicStaticPaths('comics');
+  const paths = getPublicStaticPaths('drawings');
 
   return {
     props: {

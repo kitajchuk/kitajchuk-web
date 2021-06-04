@@ -1,20 +1,9 @@
 .drawings {
-  background-color: $black;
-  padding: 64px 32px;
+  background-color: $grey-black;
+  padding: 0 32px;
 
   @media (max-width: $width-mobile) {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  &__wrap {
-    margin: 0 auto;
-    width: 100%;
-    max-width: $width-tablet-1;
-
-    &--comics {
-      max-width: $width-max;
-    }
+    padding: 0 16px;
   }
 
   img {
@@ -41,15 +30,30 @@
   &__title {
     color: $white;
     text-align: center;
-    padding: 32px 0 96px;
+  }
+
+  &__navi,
+  &__title {
+    padding: 96px 0;
 
     @media (max-width: $width-tablet-1) {
-      padding: 0 0 64px;
+      padding: 64px 0;
+    }
+
+    @media (max-width: $width-mobile) {
+      padding: 32px 0;
     }
   }
   
   &__collection {
     font-size: 0;
+    margin: 0 auto;
+    width: 100%;
+    max-width: $width-tablet-1;
+
+    &--wide {
+      max-width: $width-max;
+    }
   
     &__item {
       margin-bottom: 64px;
@@ -57,18 +61,16 @@
       justify-content: center;
       width: 100%;
 
+      &:last-child {
+        margin-bottom: 0;
+      }
+
       @media (max-width: $width-tablet-1) {
         margin-bottom: 32px;
       }
 
       @media (max-width: $width-mobile) {
         margin-bottom: 16px;
-      }
-
-      &:last-child {
-        @media (max-width: $width-mobile) {
-          margin-bottom: 0;
-        }
       }
     }
   }
