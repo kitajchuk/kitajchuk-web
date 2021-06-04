@@ -42,12 +42,6 @@ export default withImageLoader(({collection, paths}) => {
 export async function getStaticPaths() {
   const paths = getPublicStaticPaths('drawings');
 
-  paths.push({
-    params: {
-      slug: 'kickflip',
-    },
-  });
-
   return {
     paths,
     fallback: false,
