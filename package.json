@@ -18,14 +18,17 @@
     "download-s3": "node ./lib/aws.js"
   },
   "dependencies": {
+    "add": "^2.0.6",
     "classnames": "^2.2.6",
     "nanoid": "^3.1.22",
     "next": "^10.2.3",
+    "preact": "^10.5.13",
     "properjs-blit": "^0.3.2",
     "properjs-imageloader": "^0.4.0",
     "properjs-scrollcontroller": "^0.3.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "yarn": "^1.22.10"
   },
   "devDependencies": {
     "aws-sdk": "^2.919.0",
