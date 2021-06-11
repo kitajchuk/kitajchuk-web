@@ -28,7 +28,7 @@ jobs:
             - persist_to_workspace:
                 root: ~/kitajchuk
                 paths:
-                    - .
+                    - out
     deploy:
         working_directory: ~/kitajchuk
         docker:
