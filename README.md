@@ -5,7 +5,8 @@ kitajchuk-web
 
 ## Stack
 
-This is a [Next.js](https://nextjs.org) application using [Preact](https://preactjs.com/) for Production builds which reduces JavaScript payload sizes by more than half for deployments! Formerly I was using the demo by [@developit](https://github.com/developit/nextjs-preact-demo) but I've switched to a model that only uses Preact when generating the Production builds from this article [here](https://darrenwhite.dev/blog/nextjs-replace-react-with-preact).
+- [Next.js](https://nextjs.org)
+- [Preact](https://preactjs.com/)
 
 ## Jamstack
 
@@ -25,7 +26,7 @@ This is a [Next.js](https://nextjs.org) application using [Preact](https://preac
 - `yarn install`
   - Installs node packages
   - Installs [husky](https://typicode.github.io/husky/) for git `pre-commit` hooks
-  - Husky will run `yarn lint` before a git commit and stop the commit if `ESLint` fails
+  - Husky will run `yarn build` before a git commit and stop the commit if `lint` or `build` fails
 - `yarn dev`
   - Serves local dev at [localhost:3000](http://localhost:3000)
 - `yarn lint`
@@ -34,4 +35,22 @@ This is a [Next.js](https://nextjs.org) application using [Preact](https://preac
 - `yarn build && yarn start`
   - Create an optimized Next.js production build and serve it locally
 - `yarn build && yarn export`
-  - Create a static production build for any static deploy target 
+  - Create a static production build for any static deploy target
+
+## Preact vs React
+
+Preact production build:
+
+<img src="./public/Build_Preact.png" width="640px" />
+
+React production build:
+
+<img src="./public/Build_React.png" width="640px" />
+
+Preact development in browser:
+
+<img src="./public/Dev_Preact.png" width="640px" />
+
+React development in browser:
+
+<img src="./public/Dev_React.png" width="640px" />
