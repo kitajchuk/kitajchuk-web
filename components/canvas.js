@@ -1,14 +1,16 @@
-import { useRef, useEffect, useCallback } from 'react';
+import { useRef, useEffect, useCallback, useMemo } from 'react';
 
 export default function Canvas({source}) {
   const imagesRef = useRef([]);
   const canvasRef = useRef();
   const blitRef = useRef();
   const sourceRef = useRef();
-  const config = {
-    fps: 24,
-    len: 43,
-  };
+  const config = useMemo(() => {
+    return {
+      fps: 24,
+      len: 43,
+    };
+  }, []);
 
   // Latest and greatest `source` for canvas render...
   sourceRef.current = source;
@@ -44,7 +46,7 @@ export default function Canvas({source}) {
       clear(ctx);
       draw(ctx, imagesRef.current[idx][sourceRef.current]);
     }
-  }, [canvasRef, sourceRef, imagesRef]);
+  }, [canvasRef, sourceRef, imagesRef, config]);
 
   const loadImageSet = (obj) => {
     return new Promise((resolve) => {

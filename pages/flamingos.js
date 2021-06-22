@@ -13,7 +13,7 @@ export default function FlamingOs() {
     } else {
       console.log(decks);
     }
-  });
+  }, [decks]);
 
   const onClickShuffle = () => {
     setDecks(createDecks());
