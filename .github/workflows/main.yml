@@ -35,6 +35,8 @@ jobs:
           path: |
             ${{ github.workspace }}/out/
             ${{ github.workspace }}/.env.production.local
+      - name: Cleanup
+        run: .env.production.local
   deploy:
     # Loosely speaking, this is a "Production" check for this runner
     if: ${{ github.ref == 'refs/heads/main' }}
@@ -50,3 +52,4 @@ jobs:
       - name: Deploy dist
         run: |
           ls -laR out
+          rm -rf .env.production.local
