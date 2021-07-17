@@ -32,5 +32,4 @@ yarn-error.log*
 /data/
 /public/media/
 /public/img/
-/build/
-/dist/
+/*.gz

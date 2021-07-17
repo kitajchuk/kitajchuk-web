@@ -27,13 +27,13 @@ jobs:
           yarn download-s3
           yarn build
           yarn export
+          tar -czf out.gz out
       # https://github.com/actions/upload-artifact
       - name: Upload job artifact
         uses: actions/upload-artifact@v2
         with:
           name: job-artifact
-          path: |
-            ${{ github.workspace }}/build/
+          path: out.gz
   deploy:
     # Loosely speaking, this is a "Production" check for this runner
     if: ${{ github.ref == 'refs/heads/main' }}
@@ -48,4 +48,5 @@ jobs:
           name: job-artifact
       - name: Deploy build dist
         run: |
-          ls -laR build
+          tar -xzf out.gz
+          ls -laR out
