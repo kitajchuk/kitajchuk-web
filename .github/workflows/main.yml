@@ -29,7 +29,7 @@ jobs:
         run: |
           yarn build
           yarn export
-      - name: Deploy
+      - name: Deploy Production
         if: ${{ github.ref == 'refs/heads/main' }}
         run: |
           ls -laR out
