@@ -32,12 +32,11 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: dist
-          path: out
+          path: ${{ github.workspace }}/out/
   deploy:
     # Loosely speaking, this is a "Production" check for this runner
     if: ${{ github.ref == 'refs/heads/main' }}
     environment: Production
-    name: Deploy Steps
     runs-on: ubuntu-latest
     needs: build
     steps:
@@ -52,5 +51,5 @@ jobs:
           export KITA_S3_REPOSITORY="${{ secrets.KITA_S3_REPOSITORY }}"
           export KITA_AWS_ACCESS_KEY_ID="${{ secrets.KITA_AWS_ACCESS_KEY_ID }}"
           export KITA_AWS_SECRET_ACCESS_KEY="${{ secrets.KITA_AWS_SECRET_ACCESS_KEY }}"
-          ls -laR out
+          ls -laR ${{ github.workspace }}/out/
           aws s3 ls
