@@ -17,22 +17,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Export ENV Vars for Node
+      - name: Install, test and build dist
         run: |
-          export KITA_AWS_REGION=${{ secrets.KITA_AWS_REGION }}
-          export KITA_S3_REPOSITORY=${{ secrets.KITA_S3_REPOSITORY }}
-          export KITA_AWS_ACCESS_KEY_ID=${{ secrets.KITA_AWS_ACCESS_KEY_ID }}
-          export KITA_AWS_SECRET_ACCESS_KEY=${{ secrets.KITA_AWS_SECRET_ACCESS_KEY }}
-      - name: Install Dependencies
-        run: yarn install --immutable
-      - name: Sync Down S3 Objects
-        run: yarn download-s3
-      - name: Build Static Site
-        run: |
+          export KITA_AWS_REGION="${{ secrets.KITA_AWS_REGION }}"
+          export KITA_S3_REPOSITORY="${{ secrets.KITA_S3_REPOSITORY }}"
+          export KITA_AWS_ACCESS_KEY_ID="${{ secrets.KITA_AWS_ACCESS_KEY_ID }}"
+          export KITA_AWS_SECRET_ACCESS_KEY="${{ secrets.KITA_AWS_SECRET_ACCESS_KEY }}"
+          yarn install --immutable
+          yarn download-s3
           yarn build
           yarn export
       # https://github.com/actions/upload-artifact
-      - name: Upload Dist Artifact
+      - name: Upload dist artifact
         uses: actions/upload-artifact@v2
         with:
           name: dist
@@ -45,18 +41,16 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Export ENV Vars for Node
-        run: |
-          export KITA_AWS_REGION=${{ secrets.KITA_AWS_REGION }}
-          export KITA_S3_REPOSITORY=${{ secrets.KITA_S3_REPOSITORY }}
-          export KITA_AWS_ACCESS_KEY_ID=${{ secrets.KITA_AWS_ACCESS_KEY_ID }}
-          export KITA_AWS_SECRET_ACCESS_KEY=${{ secrets.KITA_AWS_SECRET_ACCESS_KEY }}
       # https://github.com/actions/download-artifact
-      - name: Download Dist Artifact
+      - name: Download dist artifact
         uses: actions/download-artifact@v2
         with:
           name: dist
-      - name: List Dist
-        run: ls -laR out
-      - name: AWS S3 Object List
-        run: aws s3 ls
+      - name: Deploy dist
+        run: |
+          export KITA_AWS_REGION="${{ secrets.KITA_AWS_REGION }}"
+          export KITA_S3_REPOSITORY="${{ secrets.KITA_S3_REPOSITORY }}"
+          export KITA_AWS_ACCESS_KEY_ID="${{ secrets.KITA_AWS_ACCESS_KEY_ID }}"
+          export KITA_AWS_SECRET_ACCESS_KEY="${{ secrets.KITA_AWS_SECRET_ACCESS_KEY }}"
+          ls -laR out
+          aws s3 ls
