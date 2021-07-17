@@ -19,20 +19,22 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install, test and build dist
         run: |
-          export KITA_AWS_REGION="${{ secrets.KITA_AWS_REGION }}"
-          export KITA_S3_REPOSITORY="${{ secrets.KITA_S3_REPOSITORY }}"
-          export KITA_AWS_ACCESS_KEY_ID="${{ secrets.KITA_AWS_ACCESS_KEY_ID }}"
-          export KITA_AWS_SECRET_ACCESS_KEY="${{ secrets.KITA_AWS_SECRET_ACCESS_KEY }}"
+          echo KITA_AWS_REGION="${{ secrets.KITA_AWS_REGION }}" >> .env.production.local
+          echo KITA_S3_REPOSITORY="${{ secrets.KITA_S3_REPOSITORY }}">> .env.production.local
+          echo KITA_AWS_ACCESS_KEY_ID="${{ secrets.KITA_AWS_ACCESS_KEY_ID }}">> .env.production.local
+          echo KITA_AWS_SECRET_ACCESS_KEY="${{ secrets.KITA_AWS_SECRET_ACCESS_KEY }}">> .env.production.local
           yarn install --immutable
-          yarn download-s3
+          yarn download
           yarn build
           yarn export
       # https://github.com/actions/upload-artifact
-      - name: Upload dist artifact
+      - name: Upload job artifact
         uses: actions/upload-artifact@v2
         with:
-          name: dist
-          path: ${{ github.workspace }}/out/
+          name: job-artifact
+          path: |
+            ${{ github.workspace }}/out/
+            ${{ github.workspace }}/.env.production.local
   deploy:
     # Loosely speaking, this is a "Production" check for this runner
     if: ${{ github.ref == 'refs/heads/main' }}
@@ -41,15 +43,11 @@ jobs:
     needs: build
     steps:
       # https://github.com/actions/download-artifact
-      - name: Download dist artifact
+      - name: Download job artifact
         uses: actions/download-artifact@v2
         with:
-          name: dist
+          name: job-artifact
       - name: Deploy dist
         run: |
-          export KITA_AWS_REGION="${{ secrets.KITA_AWS_REGION }}"
-          export KITA_S3_REPOSITORY="${{ secrets.KITA_S3_REPOSITORY }}"
-          export KITA_AWS_ACCESS_KEY_ID="${{ secrets.KITA_AWS_ACCESS_KEY_ID }}"
-          export KITA_AWS_SECRET_ACCESS_KEY="${{ secrets.KITA_AWS_SECRET_ACCESS_KEY }}"
-          ls -laR ${{ github.workspace }}/out/
-          aws s3 ls
+          cat .env.production.local
+          ls -laR out
