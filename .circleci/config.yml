@@ -32,7 +32,7 @@ jobs:
             - persist_to_workspace:
                 root: .
                 paths:
-                    - out
+                    - build
     deploy:
         machine:
             image: ubuntu-2004:202010-01
@@ -40,7 +40,9 @@ jobs:
             - attach_workspace:
                 at: .
             - aws-cli/setup
-            - run: aws s3 ls
+            - run: |
+                aws s3 ls
+                ls -laR build
 
 workflows:
     version: 2

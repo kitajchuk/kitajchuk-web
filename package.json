@@ -10,7 +10,7 @@
     "start": "next start",
     "prebuild": "yarn lint",
     "build": "next build",
-    "export": "next export",
+    "export": "next export -o build/dist",
     "upload": "env-cmd -f .env.production.local yarn upload-s3",
     "upload-s3": "aws s3 sync ./public/img s3://${KITA_S3_REPOSITORY}/public/img --exclude '*.DS_Store' --delete",
     "postupload-s3": "aws s3 sync ./public/media s3://${KITA_S3_REPOSITORY}/public/media --exclude '*.DS_Store' --delete",

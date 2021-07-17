@@ -17,14 +17,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install, test and build dist
+      - name: Install, test and build
         run: |
-          echo KITA_AWS_REGION="${{ secrets.KITA_AWS_REGION }}" >> .env.production.local
-          echo KITA_S3_REPOSITORY="${{ secrets.KITA_S3_REPOSITORY }}">> .env.production.local
-          echo KITA_AWS_ACCESS_KEY_ID="${{ secrets.KITA_AWS_ACCESS_KEY_ID }}">> .env.production.local
-          echo KITA_AWS_SECRET_ACCESS_KEY="${{ secrets.KITA_AWS_SECRET_ACCESS_KEY }}">> .env.production.local
+          export KITA_AWS_REGION="${{ secrets.KITA_AWS_REGION }}"
+          export KITA_S3_REPOSITORY="${{ secrets.KITA_S3_REPOSITORY }}"
+          export KITA_AWS_ACCESS_KEY_ID="${{ secrets.KITA_AWS_ACCESS_KEY_ID }}"
+          export KITA_AWS_SECRET_ACCESS_KEY="${{ secrets.KITA_AWS_SECRET_ACCESS_KEY }}"
           yarn install --immutable
-          yarn download
+          yarn download-s3
           yarn build
           yarn export
       # https://github.com/actions/upload-artifact
@@ -33,10 +33,7 @@ jobs:
         with:
           name: job-artifact
           path: |
-            ${{ github.workspace }}/out/
-            ${{ github.workspace }}/.env.production.local
-      - name: Cleanup
-        run: .env.production.local
+            ${{ github.workspace }}/build/
   deploy:
     # Loosely speaking, this is a "Production" check for this runner
     if: ${{ github.ref == 'refs/heads/main' }}
@@ -49,7 +46,6 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: job-artifact
-      - name: Deploy dist
+      - name: Deploy build dist
         run: |
-          ls -laR out
-          rm -rf .env.production.local
+          ls -laR build
