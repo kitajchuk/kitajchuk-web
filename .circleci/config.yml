@@ -5,9 +5,8 @@ orbs:
 
 jobs:
     build:
-        working_directory: ~/kitajchuk
-        docker:
-          - image: cimg/node:14.16.0
+        machine:
+            image: ubuntu-2004:202010-01
         steps:
             - checkout
             - restore_cache:
@@ -17,25 +16,29 @@ jobs:
             - run:
                 name: Install Dependencies
                 command: yarn install --immutable
+            - run:
+                name: Sync Down S3 Objects
+                command: yarn download-s3
+            - run:
+                name: Build Static Site
+                command: |
+                  yarn build
+                  yarn export
             - save_cache:
                 name: Save Yarn Package Cache
                 key: yarn-packages-{{ checksum "yarn.lock" }}
                 paths:
                     - ~/.cache/yarn
-            - run:
-                name: Build Static Site
-                command: yarn download-s3 && yarn build && yarn export
             - persist_to_workspace:
-                root: ~/kitajchuk
+                root: .
                 paths:
                     - out
     deploy:
-        working_directory: ~/kitajchuk
-        docker:
-          - image: cimg/node:14.16.0
+        machine:
+            image: ubuntu-2004:202010-01
         steps:
             - attach_workspace:
-                at: ~/kitajchuk
+                at: .
             - aws-cli/setup
             - run: aws s3 ls
 
