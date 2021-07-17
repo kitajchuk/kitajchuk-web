@@ -34,7 +34,6 @@ jobs:
           name: job-artifact
           path: |
             ${{ github.workspace }}/out/
-            ${{ github.workspace }}/.env.production.local
   deploy:
     # Loosely speaking, this is a "Production" check for this runner
     if: ${{ github.ref == 'refs/heads/main' }}
@@ -49,5 +48,4 @@ jobs:
           name: job-artifact
       - name: Deploy dist
         run: |
-          cat .env.production.local
           ls -laR out
