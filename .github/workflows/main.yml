@@ -17,6 +17,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Export ENV Vars for Node
+        run: |
+          export KITA_AWS_REGION=${{ env.KITA_AWS_REGION }}
+          export KITA_S3_REPOSITORY=${{ env.KITA_S3_REPOSITORY }}
+          export KITA_AWS_ACCESS_KEY_ID=${{ env.KITA_AWS_ACCESS_KEY_ID }}
+          export KITA_AWS_SECRET_ACCESS_KEY=${{ env.KITA_AWS_SECRET_ACCESS_KEY }}
       - name: Install Dependencies
         run: yarn install --immutable
       - name: Sync Down S3 Objects
@@ -39,6 +45,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Export ENV Vars for Node
+        run: |
+          export KITA_AWS_REGION=${{ env.KITA_AWS_REGION }}
+          export KITA_S3_REPOSITORY=${{ env.KITA_S3_REPOSITORY }}
+          export KITA_AWS_ACCESS_KEY_ID=${{ env.KITA_AWS_ACCESS_KEY_ID }}
+          export KITA_AWS_SECRET_ACCESS_KEY=${{ env.KITA_AWS_SECRET_ACCESS_KEY }}
       # https://github.com/actions/download-artifact
       - name: Download Dist Artifact
         uses: actions/download-artifact@v2
