@@ -56,6 +56,24 @@ p {
   }
 }
 
+.books, 
+.footer {
+  flex-direction: column;
+}
+
+.books {
+  max-width: $width-small;
+  margin: 0 auto;
+
+  .book + .book {
+    margin-top: 64px;
+  }
+
+  .book__title {
+    font-size: $font-title;
+  }
+}
+
 .hero {
   display: flex;
   align-items: center;

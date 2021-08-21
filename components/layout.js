@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import Logo from '../components/logo';
-import { navi, description, instagram } from '../lib/site';
+import { navi, footer, description, instagram } from '../lib/site';
 
 function Navi({data}) {
   const router = useRouter();
@@ -57,14 +57,19 @@ function Footer() {
   const date = new Date();
 
   return (
-    <footer className="footer navi">
-      <p>
-        copyright {date.getFullYear()}{' '}
-        <Link href={instagram}>
-          <a target="_blank">@kitajchuk</a>
-        </Link>
-        .
-      </p>
+    <footer className="navi footer">
+      <div className="footer__copy">
+        <p>
+          copyright {date.getFullYear()}{' '}
+          <Link href={instagram}>
+            <a target="_blank">@kitajchuk</a>
+          </Link>
+          .
+        </p>
+      </div>
+      <div className="footer__navi">
+        <Navi data={footer} />
+      </div>
     </footer>
   );
 }
