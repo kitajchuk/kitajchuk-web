@@ -10,12 +10,14 @@ jobs:
         steps:
             - checkout
             - restore_cache:
-                name: Restore Yarn Package Cache
+                name: Restore Yarn/Node Cache
                 keys:
-                    - yarn-packages-{{ checksum "yarn.lock" }}
+                    - yarn-packages-{{ .Branch }}-{{ checksum "yarn.lock" }}
+                    - yarn-packages-v1-{{ .Branch }}-
+                    - yarn-packages-v1-
             - run:
                 name: Install Dependencies
-                command: yarn install --immutable
+                command: yarn install --frozen-lockfile --cache-folder ~/.cache/yarn
             - run:
                 name: Sync Down S3 Objects
                 command: yarn download-s3
@@ -25,10 +27,11 @@ jobs:
                   yarn build
                   yarn export
             - save_cache:
-                name: Save Yarn Package Cache
-                key: yarn-packages-{{ checksum "yarn.lock" }}
+                name: Save Yarn/Node Cache
+                key: yarn-packages-{{ .Branch }}-{{ checksum "yarn.lock" }}
                 paths:
                     - ~/.cache/yarn
+                    - node_modules
             - persist_to_workspace:
                 root: .
                 paths:

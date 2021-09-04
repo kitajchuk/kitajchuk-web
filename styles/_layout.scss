@@ -53,6 +53,8 @@ p {
   @media (max-width: $width-mobile) {
     padding-top: 48px;
     padding-bottom: 32px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 
@@ -69,8 +71,8 @@ p {
     margin-top: 64px;
   }
 
-  .book__title {
-    font-size: $font-title;
+  .book__creds {
+    font-size: $font-small;
   }
 }
 
