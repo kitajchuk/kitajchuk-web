@@ -6,27 +6,28 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import Logo from '../components/logo';
-import { navi, footer, description, instagram } from '../lib/site';
+import { navi, footer, apps, description, instagram } from '../lib/site';
+
+function Item({obj}) {
+  const router = useRouter();
+  const regex = new RegExp(`^${obj.link}`);
+  const classes = {
+    navi__item: true,
+    active: regex.test(router.asPath),
+  };
+
+  return (
+    <li className={classNames(classes)}>
+      <Link href={obj.link}>
+        <a target={obj.open ? '_blank' : null}>{obj.label}</a>
+      </Link>
+    </li>
+  );
+}
 
 function Navi({data}) {
   const router = useRouter();
   const is404 = /404/.test(router.route);
-
-  function Item({obj}) {
-    const regex = new RegExp(`^${obj.link}`);
-    const classes = {
-      navi__item: true,
-      active: regex.test(router.asPath),
-    };
-
-    return (
-      <li className={classNames(classes)}>
-        <Link href={obj.link}>
-          <a target={obj.open ? '_blank' : null}>{obj.label}</a>
-        </Link>
-      </li>
-    );
-  }
 
   if (is404) {
     return (
@@ -69,6 +70,9 @@ function Footer() {
       </div>
       <div className="footer__navi">
         <Navi data={footer} />
+      </div>
+      <div className="footer__apps">
+        <Navi data={apps} />
       </div>
     </footer>
   );
