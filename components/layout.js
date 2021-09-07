@@ -26,23 +26,6 @@ function Item({obj}) {
 }
 
 function Navi({data}) {
-  const router = useRouter();
-  const is404 = /404/.test(router.route);
-
-  if (is404) {
-    return (
-      <nav className="navi">
-        <p>
-          404 | things have changed, but you can still check out my{' '}
-          <Link href="/drawings/">
-            <a>drawings</a>
-          </Link>
-          .
-        </p>
-      </nav>
-    );
-  }
-
   return (
     <nav className="navi">
       <ul className="navi__list">
@@ -78,13 +61,29 @@ function Footer() {
   );
 }
 
+function NotFound() {
+  return (
+    <nav className="navi">
+      <p>
+        404 | things have changed, but you can still check out my{' '}
+        <Link href="/drawings/">
+          <a>drawings</a>
+        </Link>
+        .
+      </p>
+    </nav>
+  );
+}
+
 export default function Layout({children, title = 'kitajchuk'}) {
-  title = (title !== 'kitajchuk' ? `${title} \\\\ kitajchuk` : title);
+  const router = useRouter();
+  const is404 = /404/.test(router.route);
+  const pageTitle = (title !== 'kitajchuk' ? `${title} \\\\ kitajchuk` : title);
 
   return (
     <>
       <Head>
-        <title>{title}</title>
+        <title>{pageTitle}</title>
         <link rel="icon" href="/favicon.ico" />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -107,7 +106,7 @@ export default function Layout({children, title = 'kitajchuk'}) {
           </a>
         </Link>
       </header>
-      <Navi data={navi} />
+      {is404 ? <NotFound /> : <Navi data={navi} />}
       <main className="main">
         {children}
       </main>
