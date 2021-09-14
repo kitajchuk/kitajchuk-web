@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Layout from '../components/layout';
 import books from '../lib/books';
 
-export default function Home() {
+export default function Reads() {
   return (
     <Layout>
       <div className="navi books">
