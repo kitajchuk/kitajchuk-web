@@ -67,6 +67,11 @@ p {
   max-width: $width-small;
   margin: 0 auto;
 
+  .books__label {
+    font-size: $font-title;
+    margin-bottom: 32px;
+  }
+
   .book + .book {
     margin-top: 64px;
   }
