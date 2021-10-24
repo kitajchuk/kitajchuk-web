@@ -1,9 +1,8 @@
 {
-  "name": "kitajchuk-web",
-  "version": "0.1.0",
-  "description": "Once a day unlearn something new.",
-  "private": true,
   "scripts": {
+    "layer0:dev": "layer0 dev",
+    "layer0:build": "layer0 build",
+    "layer0:deploy": "layer0 deploy",
     "prepare": "husky install",
     "lint": "eslint components pages lib --ext js",
     "dev": "next",
@@ -17,6 +16,10 @@
     "download": "env-cmd -f .env.local yarn download-s3",
     "download-s3": "node ./lib/aws.js"
   },
+  "name": "kitajchuk-web",
+  "version": "0.1.0",
+  "description": "Once a day unlearn something new.",
+  "private": true,
   "dependencies": {
     "classnames": "^2.2.6",
     "nanoid": "^3.1.22",
@@ -29,6 +32,12 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@layer0/cli": "^3.16.11",
+    "@layer0/core": "^3.16.11",
+    "@layer0/devtools": "^3.16.11",
+    "@layer0/next": "^3.16.11",
+    "@layer0/prefetch": "^3.16.11",
+    "@layer0/react": "^3.16.11",
     "aws-sdk": "^2.919.0",
     "babel-eslint": "^10.1.0",
     "env-cmd": "^10.1.0",

@@ -33,3 +33,6 @@ yarn-error.log*
 /public/media/
 /public/img/
 /*.gz
+
+# Layer0 generated build directory
+.layer0
