@@ -90,6 +90,12 @@ p {
     max-width: $width-small;
     width: 100%;
   }
+
+  &--home {
+    img {
+      max-width: $width-mobile;
+    }
+  }
 }
 
 .anim {
