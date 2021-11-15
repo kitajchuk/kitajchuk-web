@@ -3,12 +3,13 @@ import AsyncImage from '../components/asyncimage';
 import { getPublicStaticPaths, readPublicImageDirectory } from '../lib/utils';
 
 export default function Home({images}) {
-  const shuffled = images.sort(() => 0.5 - Math.random());
-  const image = shuffled[Math.floor(Math.random() * images.length)];
+  // const shuffled = images.sort(() => 0.5 - Math.random());
+  // const image = shuffled[Math.floor(Math.random() * images.length)];
+  const image = { src: '/img/kitajchuk_falling.png' };
 
   return (
     <Layout>
-      <div className="hero hero--home">
+      <div className="hero">
         <AsyncImage src={image.src} />
       </div>
     </Layout>
