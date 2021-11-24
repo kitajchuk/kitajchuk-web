@@ -14,8 +14,12 @@
       padding-bottom: 0;
     }
 
+    &.landscape {
+      max-width: $width-max;
+    }
+
     &.portrait {
-      max-width: $width-tablet-1;
+      max-width: $width-tablet-2;
     }
   }
 
@@ -49,11 +53,6 @@
     font-size: 0;
     margin: 0 auto;
     width: 100%;
-    max-width: $width-tablet-1;
-
-    &--wide {
-      max-width: $width-max;
-    }
   
     &__item {
       margin-bottom: 64px;

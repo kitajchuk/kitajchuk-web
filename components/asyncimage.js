@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-const AsyncImage = ({src}) => {
+const AsyncImage = ({src, ...props}) => {
   const imageRef = useRef();
 
   useEffect(() => {
@@ -14,7 +14,7 @@ const AsyncImage = ({src}) => {
 
   }, [src]);
 
-  return <img ref={imageRef} />;
+  return <img ref={imageRef} {...props} />;
 };
 
 export default AsyncImage;

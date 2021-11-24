@@ -6,6 +6,7 @@
   "scripts": {
     "prepare": "husky install",
     "lint": "eslint components pages lib --ext js",
+    "predev": "yarn ipfs",
     "dev": "next",
     "start": "next start",
     "prebuild": "yarn lint",
@@ -15,7 +16,8 @@
     "upload-s3": "aws s3 sync ./public/img s3://${KITA_S3_REPOSITORY}/public/img --exclude '*.DS_Store' --delete",
     "postupload-s3": "aws s3 sync ./public/media s3://${KITA_S3_REPOSITORY}/public/media --exclude '*.DS_Store' --delete",
     "download": "env-cmd -f .env.local yarn download-s3",
-    "download-s3": "node ./lib/aws.js"
+    "download-s3": "node ./lib/aws.js",
+    "ipfs": "node ./lib/ipfs.js"
   },
   "dependencies": {
     "classnames": "^2.2.6",
@@ -41,6 +43,8 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^6.0.0",
     "image-size": "^1.0.0",
+    "ipfs": "^0.60.0",
+    "ipfs-core": "^0.12.1",
     "mkdirp": "^1.0.4",
     "sass": "^1.32.8"
   }

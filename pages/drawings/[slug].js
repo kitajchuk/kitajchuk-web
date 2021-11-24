@@ -17,7 +17,7 @@ export default withImageLoader(({collection, paths}) => {
             return (
               <li key={nanoid()} className="drawings__collection__item">
                 <Animate>
-                  <img data-src={img.src} />
+                  <img className={img.orientation} data-src={img.src} />
                 </Animate>
               </li>
             );

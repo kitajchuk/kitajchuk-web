@@ -1,5 +1,5 @@
-kitajchuk-web
-=============
+kitajchuk-web3
+==============
 
 > Once a day unlearn something new.
 
@@ -18,11 +18,6 @@ kitajchuk-web
 - [kitajchuk.netlify.app](https://kitajchuk.netlify.app/)
   - Build command: `yarn download-s3 && next build && next export`
   - Publish directory: `out`
-- Required env vars for the project:
-  - `KITA_S3_REPOSITORY`
-  - `KITA_AWS_ACCESS_KEY_ID`
-  - `KITA_AWS_SECRET_ACCESS_KEY`
-  - `KITA_AWS_REGION`
 
 ## Commands
 
@@ -39,21 +34,3 @@ kitajchuk-web
   - Create an optimized Next.js production build and serve it locally
 - `yarn build && yarn export`
   - Create a static production build for any static deploy target
-
-## Preact vs React
-
-Preact production build:
-
-<img src="./public/Build_Preact.png" width="640px" />
-
-React production build:
-
-<img src="./public/Build_React.png" width="640px" />
-
-Preact development in browser:
-
-<img src="./public/Dev_Preact.png" width="640px" />
-
-React development in browser:
-
-<img src="./public/Dev_React.png" width="640px" />

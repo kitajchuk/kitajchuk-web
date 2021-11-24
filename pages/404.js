@@ -5,7 +5,7 @@ export default function Page404() {
   return (
     <Layout>
       <div className="hero">
-        <AsyncImage src="/img/kitajchuk_hollow.png" />
+        <AsyncImage className="img" src="/img/kitajchuk_hollow.png" />
       </div>
     </Layout>
   );

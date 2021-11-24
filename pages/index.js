@@ -1,37 +1,14 @@
 import Layout from '../components/layout';
-import AsyncImage from '../components/asyncimage';
-import { getPublicStaticPaths, readPublicImageDirectory } from '../lib/utils';
+import Canvas from '../components/canvas';
 
-export default function Home({images}) {
-  // const shuffled = images.sort(() => 0.5 - Math.random());
-  // const image = shuffled[Math.floor(Math.random() * images.length)];
-  const image = { src: '/img/kitajchuk_falling.png' };
-
+export default function Home() {
   return (
     <Layout>
       <div className="hero">
-        <AsyncImage src={image.src} />
+        <div className="cvs">
+          <Canvas source="bw" />
+        </div>
       </div>
     </Layout>
   );
-}
-
-export async function getStaticProps() {
-  const paths = getPublicStaticPaths('drawings').filter((obj) => {
-    return /fallgirl|lost-kids/.test(obj.params.slug);
-  });
-  let images = [];
-
-  paths.forEach((obj) => {
-    const collection = readPublicImageDirectory(`drawings/${obj.params.slug}`);
-
-    images = images.concat(collection.images);
-  });
-
-  return {
-    props: {
-      paths,
-      images,
-    },
-  };
 }
