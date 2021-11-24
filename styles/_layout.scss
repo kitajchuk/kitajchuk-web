@@ -134,6 +134,19 @@ p {
     width: 100%;
   }
 
+  .img[src*=".svg"] {
+    width: 420px;
+
+    @media (max-width: 420px) {
+      width: 100vw;
+    }
+  }
+
+  .cta {
+    display: block;
+    font-size: 0;
+  }
+
   .cvs {
     max-width: $width-tablet-1;
     width: 100%;
