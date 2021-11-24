@@ -1,11 +1,11 @@
 [
   {
-    "name": "Rainbow_PP.png",
+    "name": "Rainbow_PP.svg",
     "data": {
-      "height": 1600,
-      "width": 1600,
-      "type": "png"
+      "height": 420,
+      "width": 420,
+      "type": "svg"
     },
-    "ipfs": "QmZGJHANW4ax5VanoAm7ZEfdBs6iFTCAAHfi4juLeSUqR9"
+    "ipfs": "QmedMWEUdMz8s4WFEUqfvRJ4ZQR1MMEXPQbVjL3pFSE5F5"
   }
 ]
