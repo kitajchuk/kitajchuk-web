@@ -12,7 +12,7 @@ export default withImageLoader(({nft}) => {
       <section className="nfts">
         <div className="nft">
           <Animate>
-            <img data-src={`/img/nfts/${nft.file}`} />
+            <img data-src={`https://gw3.easy-ipfs.com/ipfs/${nft.ipfs}`} />
             <div className="nft__metadata">
               <div>{nft.name} token</div>
               <div>{`${nft.data.width}x${nft.data.height}px, ${nft.data.type}`}</div>

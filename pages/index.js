@@ -7,9 +7,9 @@ export default function Home() {
   return (
     <Layout>
       <div className="hero">
-        <Link href="/nfts/QmedMWEUdMz8s4WFEUqfvRJ4ZQR1MMEXPQbVjL3pFSE5F5/">
+        <Link href="/nfts/QmQxaE9xwyysr82NyLwxNWF2D1HUTndzFnkH38UPBkSZEa/">
           <a className="cta" title="rainbow pp token">
-            <AsyncImage className="img" src="/img/nfts/Rainbow_PP.svg" />
+            <AsyncImage className="img svg" src="https://gw3.easy-ipfs.com/ipfs/QmQxaE9xwyysr82NyLwxNWF2D1HUTndzFnkH38UPBkSZEa" />
           </a>
         </Link>
       </div>
