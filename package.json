@@ -17,8 +17,7 @@
     "postupload-s3": "aws s3 sync ./public/media s3://${KITA_S3_REPOSITORY}/public/media --exclude '*.DS_Store' --delete",
     "download": "env-cmd -f .env.local yarn download-s3",
     "download-s3": "node ./lib/aws.js",
-    "ipfs": "node ./lib/ipfs.js",
-    "nfts": "env-cmd -f .env.local node ./lib/nfts.js"
+    "ipfs": "node ./lib/ipfs.js"
   },
   "dependencies": {
     "classnames": "^2.2.6",

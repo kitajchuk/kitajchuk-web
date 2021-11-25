@@ -7,6 +7,7 @@ import { Animate } from '../../components/animate';
 import { useNFTs } from '../../components/hooks';
 import { withImageLoader } from '../../components/asyncimage';
 import { getNFTMetadata } from '../../lib/utils';
+import { pinService } from '../../lib/site';
 
 export default withImageLoader(({nfts}) => {
   useNFTs();
@@ -19,7 +20,7 @@ export default withImageLoader(({nfts}) => {
             <Link key={nanoid()} href={`/nfts/${nft.ipfs}`}>
               <a className="nft" title={nft.name}>
                 <Animate>
-                  <img data-src={`https://gw3.easy-ipfs.com/ipfs/${nft.ipfs}`} />
+                  <img data-src={`${pinService}${nft.ipfs}`} />
                 </Animate>
               </a>
             </Link>

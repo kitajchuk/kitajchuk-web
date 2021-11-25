@@ -1,13 +1,12 @@
 [
   {
-    "name": "rainbow pp",
+    "name": "rainbow_pp",
     "file": "Rainbow_PP.svg",
     "data": {
       "height": 420,
       "width": 420,
       "type": "svg"
     },
-    "ipfs": "QmQxaE9xwyysr82NyLwxNWF2D1HUTndzFnkH38UPBkSZEa",
-    "uuid": 2635083
+    "ipfs": "QmQxaE9xwyysr82NyLwxNWF2D1HUTndzFnkH38UPBkSZEa"
   }
 ]

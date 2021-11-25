@@ -3,6 +3,7 @@ import { Animate } from '../../components/animate';
 import { useNFTs } from '../../components/hooks';
 import { withImageLoader } from '../../components/asyncimage';
 import { getNFTMetadata, getNFTStaticPaths } from '../../lib/utils';
+import { pinService } from '../../lib/site';
 
 export default withImageLoader(({nft}) => {
   useNFTs();
@@ -12,7 +13,7 @@ export default withImageLoader(({nft}) => {
       <section className="nfts">
         <div className="nft">
           <Animate>
-            <img data-src={`https://gw3.easy-ipfs.com/ipfs/${nft.ipfs}`} />
+            <img data-src={`${pinService}${nft.ipfs}`} />
             <div className="nft__metadata">
               <div>{nft.name} token</div>
               <div>{`${nft.data.width}x${nft.data.height}px, ${nft.data.type}`}</div>
