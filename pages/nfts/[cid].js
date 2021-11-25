@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 import Layout from '../../components/layout';
 import { Animate } from '../../components/animate';
 import { useNFTs } from '../../components/hooks';
@@ -14,14 +12,10 @@ export default withImageLoader(({nft}) => {
       <section className="nfts">
         <div className="nft">
           <Animate>
-            <Link href={nft.opensea}>
-              <a target="_blank">
-                <img data-src={`/img/nfts/${nft.name}`} />
-              </a>
-            </Link>
+            <img data-src={`/img/nfts/${nft.file}`} />
             <div className="nft__metadata">
-              <div>{nft.name}</div>
-              <div>{`${nft.data.width}px X ${nft.data.height}px, ${nft.data.type}`}</div>
+              <div>{nft.name} token</div>
+              <div>{`${nft.data.width}x${nft.data.height}px, ${nft.data.type}`}</div>
             </div>
           </Animate>
         </div>

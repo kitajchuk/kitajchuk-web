@@ -19,7 +19,7 @@ export default withImageLoader(({nfts}) => {
             <Link key={nanoid()} href={`/nfts/${nft.ipfs}`}>
               <a className="nft" title={nft.name}>
                 <Animate>
-                  <img data-src={`/img/nfts/${nft.name}`} />
+                  <img data-src={`/img/nfts/${nft.file}`} />
                 </Animate>
               </a>
             </Link>
