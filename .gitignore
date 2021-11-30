@@ -33,4 +33,3 @@ yarn-error.log*
 /public/media/
 /public/img/
 /*.gz
-/cardano/

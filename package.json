@@ -12,10 +12,10 @@
     "prebuild": "yarn lint",
     "build": "next build",
     "export": "next export",
-    "upload": "env-cmd -f .env.local yarn upload-s3",
+    "upload": "env-cmd --file .env.local yarn upload-s3",
     "upload-s3": "aws s3 sync ./public/img s3://${KITA_S3_REPOSITORY}/public/img --exclude '*.DS_Store' --delete",
     "postupload-s3": "aws s3 sync ./public/media s3://${KITA_S3_REPOSITORY}/public/media --exclude '*.DS_Store' --delete",
-    "download": "env-cmd -f .env.local yarn download-s3",
+    "download": "env-cmd --file .env.local yarn download-s3",
     "download-s3": "node ./lib/aws.js",
     "ipfs": "node ./lib/ipfs.js"
   },
@@ -47,6 +47,7 @@
     "ipfs": "^0.60.0",
     "ipfs-core": "^0.12.1",
     "mkdirp": "^1.0.4",
-    "sass": "^1.32.8"
+    "sass": "^1.32.8",
+    "shelljs": "^0.8.4"
   }
 }
