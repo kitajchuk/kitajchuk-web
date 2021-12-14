@@ -44,10 +44,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^6.0.0",
     "image-size": "^1.0.0",
-    "ipfs": "^0.60.0",
-    "ipfs-core": "^0.12.1",
     "mkdirp": "^1.0.4",
-    "sass": "^1.32.8",
-    "shelljs": "^0.8.4"
+    "sass": "^1.32.8"
   }
 }
