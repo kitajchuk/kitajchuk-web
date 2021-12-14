@@ -9,14 +9,15 @@ export default withImageLoader(({nft}) => {
   useNFTs();
 
   return (
-    <Layout title={nft.name}>
+    <Layout title={nft.tokenName}>
       <section className="nfts">
         <div className="nft">
           <Animate>
-            <img data-src={`${pinService}${nft.ipfs}`} />
+            <img data-src={`${pinService}${nft.ipfsCid}`} />
             <div className="nft__metadata">
-              <div>{nft.name} token</div>
-              <div>{`${nft.data.width}x${nft.data.height}px, ${nft.data.type}`}</div>
+              <div>{nft.tokenName} NFT</div>
+              <div>{nft.name}</div>
+              <div>{nft.type}</div>
             </div>
           </Animate>
         </div>
@@ -36,7 +37,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({params}) {
   const nfts = getNFTMetadata();
-  const nft = nfts.find((obj) => obj.ipfs === params.cid);
+  const nft = nfts.find((obj) => obj.ipfsCid === params.cid);
 
   return {
     props: {

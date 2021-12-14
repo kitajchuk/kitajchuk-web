@@ -1,7 +1,5 @@
 import Link from 'next/link';
 
-import { nanoid } from 'nanoid';
-
 import Layout from '../../components/layout';
 import { Animate } from '../../components/animate';
 import { useNFTs } from '../../components/hooks';
@@ -17,10 +15,10 @@ export default withImageLoader(({nfts}) => {
       <section className="nfts">
         {nfts.map((nft) => {
           return (
-            <Link key={nanoid()} href={`/nfts/${nft.ipfs}`}>
+            <Link key={nft.tokenName} href={`/nfts/${nft.ipfsCid}`}>
               <a className="nft" title={nft.name}>
                 <Animate>
-                  <img data-src={`${pinService}${nft.ipfs}`} />
+                  <img data-src={`${pinService}${nft.ipfsCid}`} />
                 </Animate>
               </a>
             </Link>
