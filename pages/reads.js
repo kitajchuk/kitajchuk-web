@@ -9,6 +9,9 @@ export default function Reads() {
   return (
     <Layout>
       <div className="navi books">
+        <div className="books__type">
+          <div className="books__label">Things worth reading</div>
+        </div>
         {Object.keys(books).map((key) => {
           return (
             <div className="books__type" key={key}>
