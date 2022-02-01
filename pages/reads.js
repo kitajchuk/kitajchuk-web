@@ -10,7 +10,7 @@ export default function Reads() {
     <Layout>
       <div className="navi books">
         <div className="books__type">
-          <div className="books__label">Things worth reading</div>
+          <div className="books__label">good reads</div>
         </div>
         {Object.keys(books).map((key) => {
           return (
