@@ -1,0 +1,14 @@
+.comics {
+  &__books {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 64px;
+    text-align: center;
+
+    a {
+      font-size: 12px;
+    }
+  }
+}
