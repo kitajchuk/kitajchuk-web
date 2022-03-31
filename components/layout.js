@@ -89,7 +89,7 @@ export default function Layout({children, title = 'kitajchuk'}) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
         <meta name="description" content={description} />
-        <meta property="og:image" content={ogImage} />
+        <meta name="image" property="og:image" content={ogImage} />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={description} />
         <link rel="apple-touch-icon" href="/logo192.png" />
