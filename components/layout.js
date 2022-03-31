@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import Logo from '../components/logo';
-import { navi, footer, apps, description, instagram } from '../lib/site';
+import { navi, footer, apps, description, instagram, ogImage } from '../lib/site';
 
 function Item({obj}) {
   const router = useRouter();
@@ -88,15 +88,11 @@ export default function Layout({children, title = 'kitajchuk'}) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
-        <meta
-          name="description"
-          content={description}
-        />
+        <meta name="description" content={description} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={description} />
         <link rel="apple-touch-icon" href="/logo192.png" />
-        {/*
-          manifest.json provides metadata used when your web app is installed on a
-          user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-        */}
         <link rel="manifest" href="/manifest.json" />
       </Head>
       <header className="head">
