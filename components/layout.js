@@ -90,8 +90,6 @@ export default function Layout({children, title = 'kitajchuk'}) {
         <meta name="theme-color" content="#000000" />
         <meta name="description" content={description} />
         <meta name="image" property="og:image" content={ogImage} />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={description} />
         <link rel="apple-touch-icon" href="/logo192.png" />
         <link rel="manifest" href="/manifest.json" />
       </Head>
