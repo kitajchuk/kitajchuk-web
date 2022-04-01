@@ -7,12 +7,7 @@
   }
 
   img {
-    padding-bottom: 56.25%;
     width: 100%;
-
-    &[data-imageloader="true"] {
-      padding-bottom: 0;
-    }
 
     &.landscape {
       max-width: $width-max;

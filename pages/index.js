@@ -1,7 +1,8 @@
 import Link from 'next/link';
 
 import Layout from '../components/layout';
-import AsyncImage from '../components/asyncimage';
+import LazyImage from '../components/lazyimage';
+
 import { getNFTMetadata } from '../lib/utils';
 import { pinService } from '../lib/site';
 
@@ -11,7 +12,7 @@ export default function Home({nft}) {
       <div className="hero">
         <Link href={`/nfts/${nft.ipfsCid}/`}>
           <a className="cta" title={nft.name}>
-            <AsyncImage className="img svg" src={`${pinService}${nft.ipfsCid}`} />
+            <LazyImage className="img svg" src={`${pinService}${nft.ipfsCid}`} />
           </a>
         </Link>
       </div>

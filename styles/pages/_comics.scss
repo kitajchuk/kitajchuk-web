@@ -9,7 +9,7 @@
     box-sizing: content-box;
 
     a {
-      font-size: 12px;
+      font-size: $font-small;
     }
   }
 
@@ -19,10 +19,6 @@
     padding: 0 32px 64px;
     text-align: center;
     box-sizing: content-box;
-    font-size: 12px;
-
-    a {
-      text-decoration: underline;
-    }
+    font-size: $font-small;
   }
 }

@@ -1,11 +1,11 @@
 import Layout from '../../components/layout';
 import { Animate } from '../../components/animate';
 import { useNFTs } from '../../components/hooks';
-import { withImageLoader } from '../../components/asyncimage';
+import LazyImage from '../../components/lazyimage';
 import { getNFTMetadata, getNFTStaticPaths } from '../../lib/utils';
 import { pinService } from '../../lib/site';
 
-export default withImageLoader(({nft}) => {
+export default function NFTs({nft}) {
   useNFTs();
 
   return (
@@ -13,7 +13,7 @@ export default withImageLoader(({nft}) => {
       <section className="nfts">
         <div className="nft">
           <Animate>
-            <img data-src={`${pinService}${nft.ipfsCid}`} />
+            <LazyImage src={`${pinService}${nft.ipfsCid}`} />
             <div className="nft__metadata">
               <div>{nft.tokenName} NFT</div>
               <div>{nft.name}</div>
@@ -24,7 +24,7 @@ export default withImageLoader(({nft}) => {
       </section>
     </Layout>
   );
-});
+}
 
 export async function getStaticPaths() {
   const paths = getNFTStaticPaths();

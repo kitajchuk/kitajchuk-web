@@ -3,11 +3,11 @@ import Link from 'next/link';
 import { nanoid } from 'nanoid';
 
 import Layout from '../../components/layout';
-import { withImageLoader } from '../../components/asyncimage';
+import LazyImage from '../../components/lazyimage';
 import { Animate } from '../../components/animate';
 import { readPublicImageDirectory, getPublicStaticPaths } from '../../lib/utils';
 
-export default withImageLoader(({collection, paths}) => {
+export default function Comics({collection, paths}) {
   return (
     <Layout title={collection.title}>
       <section className="drawings">
@@ -17,7 +17,7 @@ export default withImageLoader(({collection, paths}) => {
             return (
               <li key={nanoid()} className="drawings__collection__item">
                 <Animate>
-                  <img className={img.orientation} data-src={img.src} />
+                  <LazyImage className={img.orientation} src={img.src} />
                 </Animate>
               </li>
             );
@@ -37,7 +37,7 @@ export default withImageLoader(({collection, paths}) => {
       </section>
     </Layout>
   );
-});
+}
 
 export async function getStaticPaths() {
   const paths = getPublicStaticPaths('comics');

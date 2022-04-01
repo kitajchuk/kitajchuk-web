@@ -15,6 +15,10 @@ body {
   &.is-nfts {
     background-color: $black;
     color: $white;
+
+    *:not(a) {
+      color: $white;
+    }
   }
 }
 
@@ -106,11 +110,6 @@ p {
   max-width: $width-small;
   margin: 0 auto;
 
-  &__label {
-    font-size: $font-title;
-    margin-bottom: 32px;
-  }
-
   &__type + &__type {
     margin-top: 64px;
   }
@@ -158,9 +157,11 @@ p {
   transform: translate3d(0, 32px, 0);
   transition: opacity $anim-duration $anim-ease,
               transform $anim-duration $anim-ease;
+  padding-bottom: 56.25%;
 
   &.is-animated {
     opacity: 1;
     transform: translate3d(0, 0, 0);
+    padding-bottom: 0;
   }
 }

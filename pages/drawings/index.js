@@ -1,10 +1,9 @@
 import Link from 'next/link';
 
 import Layout from '../../components/layout';
-import { withImageLoader } from '../../components/asyncimage';
 import { getPublicStaticPaths } from '../../lib/utils';
 
-export default withImageLoader(({paths}) => {
+export default function Drawings({paths}) {
   return (
     <Layout title="drawings">
       <section className="drawings">
@@ -22,7 +21,7 @@ export default withImageLoader(({paths}) => {
       </section>
     </Layout>
   );
-});
+}
 
 export async function getStaticProps() {
   const paths = getPublicStaticPaths('drawings');
