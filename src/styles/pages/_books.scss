@@ -1,0 +1,11 @@
+.books {
+  flex-direction: column;
+
+  .book + .book {
+    margin-top: 64px;
+  }
+
+  .book__creds {
+    display: block;
+  }
+}

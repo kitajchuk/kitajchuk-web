@@ -24,41 +24,17 @@ p {
   }
 }
 
-.nfts {
-  max-width: $width-mobile;
-  margin: 0 auto;
-
-  .nft {
-    display: block;
-    text-align: center;
-    margin-bottom: 64px;
-
-    &__metadata {
-      margin-top: 32px;
-      font-size: $font-small;
-    }
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    @media (max-width: $width-tablet-1) {
-      margin-bottom: 32px;
-    }
-
-    @media (max-width: $width-mobile) {
-      margin-bottom: 16px;
-    }
-  }
-}
-
-.head {
+.header {
   padding: 32px $wrap-padding 0;
   position: relative;
   z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  a {
+    font-size: 0;
+  }
 
   svg {
     height: 48px;
@@ -97,27 +73,8 @@ p {
   }
 }
 
-.books, 
 .footer {
   flex-direction: column;
-}
-
-.books {
-  max-width: $width-small;
-  margin: 0 auto;
-
-  &__type + &__type {
-    margin-top: 64px;
-  }
-
-  .book + .book {
-    margin-top: 64px;
-  }
-
-  .book__creds {
-    font-size: $font-small;
-    display: block;
-  }
 }
 
 .hero {
@@ -141,12 +98,22 @@ p {
   .cta {
     display: block;
     font-size: 0;
+    width: 100%;
   }
 
   .cvs {
     max-width: $width-tablet-1;
     width: 100%;
   }
+}
+
+.sec {
+  text-align: center;
+  padding: 32px;
+}
+
+.uwrap {
+  padding: 0 32px 64px;
 }
 
 .anim {

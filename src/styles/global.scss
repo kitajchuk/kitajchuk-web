@@ -19,9 +19,16 @@
 @import 'layout.scss';
 
 /******************************************************************************
+ * Typography
+*******************************************************************************/
+@import 'type.scss';
+
+/******************************************************************************
  * Pages
 *******************************************************************************/
+@import 'pages/nfts.scss';
+@import 'pages/books.scss';
 @import 'pages/comics.scss';
-@import 'pages/drawing.scss';
+@import 'pages/drawings.scss';
 @import 'pages/kickflip.scss';
 @import 'pages/flamingos.scss';

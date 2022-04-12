@@ -1,0 +1,42 @@
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+p {
+  font-size: 14px;
+}
+
+.m {
+  font-size: 12px;
+}
+
+.pp {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: content-box;
+
+  &.m {
+    max-width: 420px;
+  }
+}

@@ -1,18 +1,17 @@
 import Link from 'next/link';
 
 import Layout from '../src/components/layout';
-import LazyImage from '../src/components/lazyimage';
+import Canvas from '../src/components/canvas';
 
 import { getNFTMetadata } from '../src/lib/utils';
-import { pinService } from '../src/lib/site';
 
 export default function Home({nft}) {
   return (
     <Layout>
       <div className="hero">
-        <Link href={`/nfts/${nft.ipfsCid}/`}>
-          <a className="cta" title={nft.name}>
-            <LazyImage className="img svg" src={`${pinService}${nft.ipfsCid}`} />
+        <Link href="/kickflip/">
+          <a className="cta" title="kickflip">
+            <Canvas source="bw" />
           </a>
         </Link>
       </div>

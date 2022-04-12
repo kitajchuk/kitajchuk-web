@@ -26,12 +26,6 @@ export default function Drawings({paths}) {
 export async function getStaticProps() {
   const paths = getPublicStaticPaths('drawings');
 
-  paths.push({
-    params: {
-      slug: 'kickflip',
-    },
-  });
-
   return {
     props: {
       paths,

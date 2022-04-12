@@ -11,7 +11,7 @@ export default function Drawings({collection, paths}) {
   return (
     <Layout title={collection.title}>
       <section className="drawings">
-        <h1 className="drawings__title">{collection.title}</h1>
+        <p className="drawings__title">{collection.title}</p>
         <ul className="drawings__collection">
           {collection.images.map((img) => {
             return (
@@ -51,12 +51,6 @@ export async function getStaticPaths() {
 export async function getStaticProps({params}) {
   const collection = readPublicImageDirectory(`drawings/${params.slug}`);
   const paths = getPublicStaticPaths('drawings').filter((obj) => obj.params.slug !== params.slug);
-
-  paths.push({
-    params: {
-      slug: 'kickflip',
-    },
-  });
 
   return {
     props: {

@@ -34,8 +34,8 @@ export const footer = [
     label: 'comics',
   },
   {
-    link: '/reads/',
-    label: 'reads',
+    link: '/books/',
+    label: 'books',
   },
 ];
 
@@ -61,3 +61,26 @@ export const apps = [
     open: true,
   },
 ];
+
+export const portfolio = {
+  drawings: [
+    'fallgirl',
+    'lost-kids',
+    'fallgirl-2.0',
+    'digital-dance',
+    'little-busters',
+    'miscellaneous-digital',
+    'miscellaneous-traditional',
+    'art-school',
+    'x-mas',
+  ],
+  comics: [
+    'tabi-covers',
+    'tabi-prequel',
+    'tabi-chapter-0',
+    'tabi-chapter-1-parents',
+    'tabi-chapter-1-childrens',
+    'tabi-inktober',
+    'tabi-cards',
+  ],
+};

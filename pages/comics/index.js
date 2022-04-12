@@ -6,7 +6,7 @@ import { getPublicStaticPaths } from '../../src/lib/utils';
 export default function Comics({paths}) {
   return (
     <Layout title="comics">
-      <section className="comics__books">
+      <section className="comics__books uwrap">
         <p>Tabi No Hana comics (PDF):</p>
         <p>
           <a href="/media/Tabi_No_Hana_Book_01.pdf" target="_blank">A Flower for Every Time, Book 1</a>
@@ -15,8 +15,8 @@ export default function Comics({paths}) {
           <a href="/media/Tabi_No_Hana_Prequel_01.pdf" target="_blank">A Day in Her Life, Prequel 1</a>
         </p>
       </section>
-      <section className="comics__text">
-        <p>
+      <section className="comics__text uwrap">
+        <p className="pp m">
           The prequel comic is complete, however the inside cover has placeholder text because we had to pause work on Tabi for now. 
           The original Tabi comic and the first graphic novel were funded on Kickstarter <a href="https://www.kickstarter.com/projects/1086577669/tabi-no-hana-issue-1-in-all-its-forms" target="_blank" rel="noreferrer">here</a> and <a href="https://www.kickstarter.com/projects/1086577669/tabi-no-hana-the-next-adventures" target="_blank" rel="noreferrer">here</a>. 
           The links on this page represent the original ink drawings for the Tabi comics without letters or colors. 

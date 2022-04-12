@@ -4,21 +4,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 0 32px 64px;
     text-align: center;
     box-sizing: content-box;
-
-    a {
-      font-size: $font-small;
-    }
-  }
-
-  &__text {
-    max-width: 420px;
-    margin: 0 auto;
-    padding: 0 32px 64px;
-    text-align: center;
-    box-sizing: content-box;
-    font-size: $font-small;
   }
 }

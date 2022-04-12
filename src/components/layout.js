@@ -93,7 +93,7 @@ export default function Layout({children, title = 'kitajchuk'}) {
         <link rel="apple-touch-icon" href="/logo192.png" />
         <link rel="manifest" href="/manifest.json" />
       </Head>
-      <header className="head">
+      <header className="header">
         <Link href="/">
           <a>
             <Logo fill="#000" />

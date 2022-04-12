@@ -1,12 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const imageSize = require('image-size');
-const skipFolders = [
-  'posters',
-  'tabi-cards',
-  'tabi-concept',
-  'tabi-sketchbook',
-];
+const { portfolio } = require('./site');
 
 function readDirectory(dir) {
   return fs.readdirSync(dir).filter((file) => {
@@ -36,8 +31,7 @@ function readPublicImageDirectory(key) {
 }
 
 function getPublicStaticPaths(scope) {
-  return readDirectory(path.join(process.cwd(), `public/img/${scope}`))
-    .filter((slug) => skipFolders.indexOf(slug) === -1)
+  return portfolio[scope]
     .map((slug) => {
       return {
         params: {
