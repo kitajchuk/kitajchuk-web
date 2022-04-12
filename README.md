@@ -1,5 +1,5 @@
-kitajchuk-web3
-==============
+kitajchuk-web
+=============
 
 > Once a day unlearn something new.
 
@@ -9,7 +9,6 @@ kitajchuk-web3
 ## Stack
 
 - [Next.js](https://nextjs.org)
-- [Preact](https://preactjs.com/)
 
 ## Jamstack
 

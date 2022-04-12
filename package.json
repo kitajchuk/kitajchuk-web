@@ -22,7 +22,6 @@
     "classnames": "^2.2.6",
     "nanoid": "^3.1.22",
     "next": "^12.1.4",
-    "preact": "^10.7.1",
     "properjs-blit": "^0.3.2",
     "properjs-scrollcontroller": "^0.3.0",
     "react": "^18.0.0",
