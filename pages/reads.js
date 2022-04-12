@@ -2,8 +2,8 @@ import { nanoid } from 'nanoid';
 
 import Link from 'next/link';
 
-import Layout from '../components/layout';
-import books from '../lib/books';
+import Layout from '../src/components/layout';
+import books from '../src/lib/books';
 
 export default function Reads() {
   return (
@@ -15,7 +15,7 @@ export default function Reads() {
               <Link href={`https://google.com/search?q=${book.title}&tbm=bks`}>
                 <a className="book__title" target="_blank">{book.title}</a>
               </Link>
-              <div className="book__creds">{book.creds}</div>
+              <span className="book__creds">{book.creds}</span>
             </p>
           );
         })}

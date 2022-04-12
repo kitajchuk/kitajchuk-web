@@ -2,10 +2,10 @@ import Link from 'next/link';
 
 import { nanoid } from 'nanoid';
 
-import Layout from '../../components/layout';
-import LazyImage from '../../components/lazyimage';
-import { Animate } from '../../components/animate';
-import { readPublicImageDirectory, getPublicStaticPaths } from '../../lib/utils';
+import Layout from '../../src/components/layout';
+import LazyImage from '../../src/components/lazyimage';
+import { Animate } from '../../src/components/animate';
+import { readPublicImageDirectory, getPublicStaticPaths } from '../../src/lib/utils';
 
 export default function Comics({collection, paths}) {
   return (

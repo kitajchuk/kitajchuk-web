@@ -6,7 +6,7 @@
   "scripts": {
     "prepare": "husky install",
     "preinstall": "curl https://raw.githubusercontent.com/kitajchuk/popsiclepropaganda/main/nfts.json -o nfts.json",
-    "lint": "eslint components pages lib --ext js",
+    "lint": "eslint src/components src/lib pages --ext js",
     "dev": "next",
     "start": "next start",
     "prebuild": "yarn lint",
@@ -21,12 +21,12 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "nanoid": "^3.1.22",
-    "next": "^10.2.3",
-    "preact": "^10.5.13",
+    "next": "^12.1.4",
+    "preact": "^10.7.1",
     "properjs-blit": "^0.3.2",
     "properjs-scrollcontroller": "^0.3.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
     "aws-sdk": "^2.919.0",
@@ -44,5 +44,56 @@
     "image-size": "^1.0.0",
     "mkdirp": "^1.0.4",
     "sass": "^1.32.8"
+  },
+  "eslintConfig": {
+    "settings": {
+      "react": {
+      "version": "detect"
+      }
+    },
+    "env": {
+      "browser": true,
+      "es2021": true,
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "react-app"
+    ],
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 12,
+      "sourceType": "module"
+    },
+    "plugins": [
+      "react"
+    ],
+    "rules": {
+      "react/prop-types": "off",
+      "react/react-in-jsx-scope": "off",
+      "jsx-a11y/anchor-is-valid": "off",
+      "jsx-a11y/alt-text": "off",
+      "indent": [
+        "error",
+        2
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "semi": [
+        "error",
+        "always"
+      ]
+    },
+    "ignorePatterns": [
+      "**/node_modules/*",
+      "**/out/*",
+      "**/.next/*",
+      "next.config.js"
+    ]
   }
 }

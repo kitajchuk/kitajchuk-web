@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-import Layout from '../../components/layout';
-import { getPublicStaticPaths } from '../../lib/utils';
+import Layout from '../../src/components/layout';
+import { getPublicStaticPaths } from '../../src/lib/utils';
 
 export default function Drawings({paths}) {
   return (

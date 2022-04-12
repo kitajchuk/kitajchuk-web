@@ -1,12 +1,12 @@
-import Layout from '../../components/layout';
-import { Animate } from '../../components/animate';
-import { useNFTs } from '../../components/hooks';
-import LazyImage from '../../components/lazyimage';
-import { getNFTMetadata, getNFTStaticPaths } from '../../lib/utils';
-import { pinService } from '../../lib/site';
+import Layout from '../../src/components/layout';
+import { Animate } from '../../src/components/animate';
+import { useDarkMode } from '../../src/components/hooks';
+import LazyImage from '../../src/components/lazyimage';
+import { getNFTMetadata, getNFTStaticPaths } from '../../src/lib/utils';
+import { pinService } from '../../src/lib/site';
 
 export default function NFTs({nft}) {
-  useNFTs();
+  useDarkMode();
 
   return (
     <Layout title={nft.tokenName}>

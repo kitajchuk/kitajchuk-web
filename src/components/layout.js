@@ -5,7 +5,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import Logo from '../components/logo';
+import Logo from './logo';
 import { navi, footer, apps, description, instagram, ogImage } from '../lib/site';
 
 function Item({obj}) {

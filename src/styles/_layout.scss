@@ -8,11 +8,7 @@ body {
 body {
   background-color: $white;
 
-  &.is-retro {
-    background-color: $black;
-  }
-
-  &.is-nfts {
+  &.is-dark-mode {
     background-color: $black;
     color: $white;
 
@@ -69,7 +65,7 @@ p {
     width: auto;
 
     path {
-      .is-nfts & {
+      .is-dark-mode & {
         fill: $white;
       }
     }
@@ -120,6 +116,7 @@ p {
 
   .book__creds {
     font-size: $font-small;
+    display: block;
   }
 }
 

@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
-import Layout from '../../components/layout';
-import Canvas from '../../components/canvas';
-import { getPublicStaticPaths } from '../../lib/utils';
+import Layout from '../../src/components/layout';
+import Canvas from '../../src/components/canvas';
+import { getPublicStaticPaths } from '../../src/lib/utils';
 
 export default function Kickflip({paths}) {
   return (

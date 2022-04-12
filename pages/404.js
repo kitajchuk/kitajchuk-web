@@ -1,5 +1,5 @@
-import Layout from '../components/layout';
-import LazyImage from '../components/lazyimage';
+import Layout from '../src/components/layout';
+import LazyImage from '../src/components/lazyimage';
 
 export default function Page404() {
   return (

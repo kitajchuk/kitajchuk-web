@@ -1,10 +1,10 @@
 import Link from 'next/link';
 
-import Layout from '../components/layout';
-import LazyImage from '../components/lazyimage';
+import Layout from '../src/components/layout';
+import LazyImage from '../src/components/lazyimage';
 
-import { getNFTMetadata } from '../lib/utils';
-import { pinService } from '../lib/site';
+import { getNFTMetadata } from '../src/lib/utils';
+import { pinService } from '../src/lib/site';
 
 export default function Home({nft}) {
   return (
