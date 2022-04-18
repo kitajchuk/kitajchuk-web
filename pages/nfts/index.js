@@ -11,14 +11,14 @@ export default function NFTs({nfts}) {
   useDarkMode();
 
   return (
-    <Layout title="nfts">
+    <Layout title="nfts" preload={`${pinService}${nfts[0].ipfsCid}`}>
       <section className="nfts">
-        {nfts.map((nft) => {
+        {nfts.map((nft, i) => {
           return (
             <Link key={nft.tokenName} href={`/nfts/${nft.ipfsCid}`}>
               <a className="nft" title={nft.name}>
                 <Animate>
-                  <LazyImage src={`${pinService}${nft.ipfsCid}`} width="640" height="640" alt={nft.name} />
+                  <LazyImage src={`${pinService}${nft.ipfsCid}`} width="640" height="640" alt={nft.name} priority={i === 0} />
                 </Animate>
               </a>
             </Link>

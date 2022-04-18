@@ -18,7 +18,7 @@ export default function Comics({paths}) {
       <section className="comics__text uwrap">
         <p className="pp m">
           The prequel comic is complete, however the inside cover has placeholder text because we had to pause work on Tabi for now. 
-          The original Tabi comic and the first graphic novel were funded on Kickstarter <a href="https://www.kickstarter.com/projects/1086577669/tabi-no-hana-issue-1-in-all-its-forms" target="_blank" rel="noreferrer">here</a> and <a href="https://www.kickstarter.com/projects/1086577669/tabi-no-hana-the-next-adventures" target="_blank" rel="noreferrer">here</a>. 
+          The <a href="https://www.kickstarter.com/projects/1086577669/tabi-no-hana-issue-1-in-all-its-forms" target="_blank" rel="noreferrer">original Tabi comic</a> and the <a href="https://www.kickstarter.com/projects/1086577669/tabi-no-hana-the-next-adventures" target="_blank" rel="noreferrer">first graphic novel</a> were funded on Kickstarter. 
           The links on this page represent the original ink drawings for the Tabi comics without letters or colors. 
           I hope one day to return to Tabi and to work on some other comic projects. 
           In the meantime I typically manage to post illustrations periodically to my <Link href="/drawings/"><a>drawings</a></Link>.

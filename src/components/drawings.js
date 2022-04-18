@@ -10,11 +10,11 @@ export default function Drawings({ collection, paths, scope }) {
     <section className="drawings">
       <p className="drawings__title">{collection.title}</p>
       <ul className="drawings__collection">
-        {collection.images.map((img) => {
+        {collection.images.map((img, i) => {
           return (
             <li key={nanoid()} className="drawings__collection__item">
               <Animate>
-                <LazyImage className={img.orientation} src={img.src} width={img.dims.width} height={img.dims.height} alt={img.alt} />
+                <LazyImage className={img.orientation} src={img.src} width={img.dims.width} height={img.dims.height} alt={img.alt} priority={i === 0} />
               </Animate>
             </li>
           );

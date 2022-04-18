@@ -42,12 +42,13 @@
     "husky": "^6.0.0",
     "image-size": "^1.0.0",
     "mkdirp": "^1.0.4",
-    "sass": "^1.32.8"
+    "sass": "^1.32.8",
+    "sharp": "^0.30.4"
   },
   "eslintConfig": {
     "settings": {
       "react": {
-      "version": "detect"
+        "version": "detect"
       }
     },
     "env": {

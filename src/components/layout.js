@@ -75,7 +75,7 @@ function NotFound() {
   );
 }
 
-export default function Layout({children, title = 'kitajchuk'}) {
+export default function Layout({title = 'kitajchuk', preload = null, ...rest}) {
   const router = useRouter();
   const is404 = /404/.test(router.route);
   const pageTitle = (title !== 'kitajchuk' ? `${title} \\\\ kitajchuk` : title);
@@ -93,6 +93,9 @@ export default function Layout({children, title = 'kitajchuk'}) {
         <link rel="apple-touch-icon" href="/logo192.png" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="preload" href="/fonts/panicsans.woff" as="font" type="font/woff" />
+        {preload && (
+          <link rel="preload" as="image" href={preload} />
+        )}
       </Head>
       <header className="header">
         <Link href="/">
@@ -103,7 +106,7 @@ export default function Layout({children, title = 'kitajchuk'}) {
       </header>
       {is404 ? <NotFound /> : <Navi data={navi} />}
       <main className="main">
-        {children}
+        {rest.children}
       </main>
       <Footer />
     </>

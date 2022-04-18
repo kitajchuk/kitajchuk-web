@@ -9,11 +9,11 @@ export default function NFTs({nft}) {
   useDarkMode();
 
   return (
-    <Layout title={nft.tokenName}>
+    <Layout title={nft.tokenName} preload={`${pinService}${nft.ipfsCid}`}>
       <section className="nfts">
         <div className="nft">
           <Animate>
-            <LazyImage src={`${pinService}${nft.ipfsCid}`} width="640" height="640" alt={nft.name} />
+            <LazyImage src={`${pinService}${nft.ipfsCid}`} width="640" height="640" alt={nft.name} priority />
             <div className="nft__metadata m">
               <div>{nft.tokenName} NFT</div>
               <div>{nft.name}</div>

@@ -1,9 +1,9 @@
-const LazyImage = ({ src = '', alt = '', ...rest }) => {
+const LazyImage = ({ src = '', alt = '', priority = false, ...rest }) => {
   return (
     <img
       src={src}
       alt={alt}
-      loading="lazy"
+      loading={priority ? 'eager' : 'lazy'}
       {...rest}
     />
   );
