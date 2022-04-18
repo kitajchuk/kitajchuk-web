@@ -5,7 +5,7 @@ export default function Page404() {
   return (
     <Layout>
       <div className="hero">
-        <LazyImage className="img" src="/img/kitajchuk_hollow.png" />
+        <LazyImage className="img" src="/img/kitajchuk_hollow.png" width="480" height="707" alt="Hollow Illustration" />
       </div>
     </Layout>
   );

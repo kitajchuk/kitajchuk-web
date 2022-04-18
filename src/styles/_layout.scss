@@ -1,6 +1,6 @@
 html,
 body {
-  font-family: 'panicsans';
+  font-family: 'panicsans', monospace;
   font-size: $font-base;
   line-height: 2;
 }
@@ -15,12 +15,18 @@ body {
     *:not(a) {
       color: $white;
     }
+
+    p {
+      a {
+        border-bottom: 1px solid $white;
+      }
+    }
   }
 }
 
 p {
   a {
-    color: $blue;
+    border-bottom: 1px solid $black;
   }
 }
 
@@ -85,6 +91,7 @@ p {
   .img {
     max-width: $width-small;
     width: 100%;
+    height: auto;
   }
 
   .img.svg {

@@ -1,40 +1,11 @@
-import Link from 'next/link';
-
-import { nanoid } from 'nanoid';
-
 import Layout from '../../src/components/layout';
-import LazyImage from '../../src/components/lazyimage';
-import { Animate } from '../../src/components/animate';
+import Drawings from '../../src/components/drawings';
 import { readPublicImageDirectory, getPublicStaticPaths } from '../../src/lib/utils';
 
-export default function Drawings({collection, paths}) {
+export default function DrawingsPage({collection, paths}) {
   return (
     <Layout title={collection.title}>
-      <section className="drawings">
-        <p className="drawings__title">{collection.title}</p>
-        <ul className="drawings__collection">
-          {collection.images.map((img) => {
-            return (
-              <li key={nanoid()} className="drawings__collection__item">
-                <Animate>
-                  <LazyImage className={img.orientation} src={img.src} />
-                </Animate>
-              </li>
-            );
-          })}
-        </ul>
-        <nav className="drawings__navi">
-          {paths.map((obj) => {
-            return (
-              <Link key={obj.params.slug} href={`/drawings/${obj.params.slug}`}>
-                <a className="drawings__link">
-                  {obj.params.slug}
-                </a>
-              </Link>
-            );
-          })}
-        </nav>
-      </section>
+      <Drawings collection={collection} paths={paths} scope="drawings" />
     </Layout>
   );
 }
