@@ -11,7 +11,7 @@ export default function NFTs({nfts}) {
   useDarkMode();
 
   return (
-    <Layout title="nfts" preload={`${pinService}${nfts[0].ipfsCid}`}>
+    <Layout title="nfts" preload={[`${pinService}${nfts[0].ipfsCid}`]}>
       <section className="nfts">
         {nfts.map((nft, i) => {
           return (

@@ -4,7 +4,7 @@ import { readPublicImageDirectory, getPublicStaticPaths } from '../../src/lib/ut
 
 export default function DrawingsPage({collection, paths}) {
   return (
-    <Layout title={collection.title} preload={collection.images[0].src}>
+    <Layout title={collection.title} preload={[collection.images[0].src]}>
       <Drawings collection={collection} paths={paths} scope="drawings" />
     </Layout>
   );

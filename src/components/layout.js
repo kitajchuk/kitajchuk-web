@@ -75,7 +75,7 @@ function NotFound() {
   );
 }
 
-export default function Layout({title = 'kitajchuk', preload = null, ...rest}) {
+export default function Layout({title = 'kitajchuk', preload = [], ...rest}) {
   const router = useRouter();
   const is404 = /404/.test(router.route);
   const pageTitle = (title !== 'kitajchuk' ? `${title} \\\\ kitajchuk` : title);
@@ -93,9 +93,9 @@ export default function Layout({title = 'kitajchuk', preload = null, ...rest}) {
         <link rel="apple-touch-icon" href="/logo192.png" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="preload" href="/fonts/panicsans.woff" as="font" type="font/woff" />
-        {preload && (
-          <link rel="preload" as="image" href={preload} />
-        )}
+        {preload.length > 0 && preload.map((source) => {
+          return <link rel="preload" as="image" href={source} key={source} />;
+        })}
       </Head>
       <header className="header">
         <Link href="/">

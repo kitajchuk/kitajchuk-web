@@ -3,11 +3,11 @@ import Link from 'next/link';
 import Layout from '../src/components/layout';
 import Canvas from '../src/components/canvas';
 
-import { getNFTMetadata } from '../src/lib/utils';
+import { readPublicImageDirectory } from '../src/lib/utils';
 
-export default function Home({nft}) {
+export default function Home({collection}) {
   return (
-    <Layout>
+    <Layout preload={collection.images.map(img => img.src)}>
       <div className="hero">
         <Link href="/kickflip/">
           <a className="cta" title="kickflip">
@@ -20,11 +20,11 @@ export default function Home({nft}) {
 }
 
 export async function getStaticProps() {
-  const nfts = getNFTMetadata();
+  const collection = readPublicImageDirectory('kickflip/bw');
 
   return {
     props: {
-      nft: nfts[0],
+      collection,
     },
   };
 }

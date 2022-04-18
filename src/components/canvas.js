@@ -58,7 +58,7 @@ export default function Canvas({source}) {
       };
 
       img.onload = () => {
-        obj.bw = img;
+        obj[sourceRef.current] = img;
         done();
       };
 
@@ -79,7 +79,7 @@ export default function Canvas({source}) {
         }
 
         const pro = loadImageSet({
-          [sourceRef.current]: `/img/kickflip/bw/kickflip_${idx}.png`,
+          [sourceRef.current]: `/img/kickflip/${sourceRef.current}/kickflip_${idx}.png`,
         });
 
         ((index) => {

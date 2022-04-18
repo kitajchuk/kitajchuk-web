@@ -9,7 +9,7 @@ export default function NFTs({nft}) {
   useDarkMode();
 
   return (
-    <Layout title={nft.tokenName} preload={`${pinService}${nft.ipfsCid}`}>
+    <Layout title={nft.tokenName} preload={[`${pinService}${nft.ipfsCid}`]}>
       <section className="nfts">
         <div className="nft">
           <Animate>
