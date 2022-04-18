@@ -25,6 +25,7 @@ function readPublicImageDirectory(key) {
         orientation: imgOrientation,
         dims: imgDims,
         src: imgSrc,
+        alt: img,
       };
     })
   };

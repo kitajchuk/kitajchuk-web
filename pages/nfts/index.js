@@ -18,7 +18,7 @@ export default function NFTs({nfts}) {
             <Link key={nft.tokenName} href={`/nfts/${nft.ipfsCid}`}>
               <a className="nft" title={nft.name}>
                 <Animate>
-                  <LazyImage src={`${pinService}${nft.ipfsCid}`} />
+                  <LazyImage src={`${pinService}${nft.ipfsCid}`} width="640" height="640" alt={nft.name} />
                 </Animate>
               </a>
             </Link>

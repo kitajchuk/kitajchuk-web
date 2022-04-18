@@ -13,7 +13,7 @@ export default function NFTs({nft}) {
       <section className="nfts">
         <div className="nft">
           <Animate>
-            <LazyImage src={`${pinService}${nft.ipfsCid}`} />
+            <LazyImage src={`${pinService}${nft.ipfsCid}`} width="640" height="640" alt={nft.name} />
             <div className="nft__metadata m">
               <div>{nft.tokenName} NFT</div>
               <div>{nft.name}</div>
