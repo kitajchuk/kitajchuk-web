@@ -50,26 +50,19 @@ export default function Canvas({source}) {
 
   const loadImageSet = (obj) => {
     return new Promise((resolve) => {
-      const img1 = new Image();
-      const img2 = new Image();
+      const img = new Image();
       const done = () => {
-        if (obj.bw === img1 && obj.retro === img2) {
+        if (obj[sourceRef.current] === img) {
           resolve(obj);
         }
       };
 
-      img1.onload = () => {
-        obj.bw = img1;
+      img.onload = () => {
+        obj.bw = img;
         done();
       };
 
-      img2.onload = () => {
-        obj.retro = img2;
-        done();
-      };
-
-      img1.src = obj.bw;
-      img2.src = obj.retro;
+      img.src = obj[sourceRef.current];
     });
   };
 
@@ -86,8 +79,7 @@ export default function Canvas({source}) {
         }
 
         const pro = loadImageSet({
-          bw: `/img/kickflip/bw/kickflip_${idx}.png`,
-          retro: `/img/kickflip/retro/kickflip_${idx}.png`
+          [sourceRef.current]: `/img/kickflip/bw/kickflip_${idx}.png`,
         });
 
         ((index) => {
