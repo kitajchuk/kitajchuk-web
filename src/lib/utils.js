@@ -15,10 +15,13 @@ async function getPublicImage(img) {
   const imgWebp = imgPath.replace(/\.(png|jpg|jpeg)$/, '.webp');
   const imgSrc = `/img/${img}`;
 
+  
   // webp version of source
-  await sharp(imgPath)
-    .resize(1440)
-    .toFile(imgWebp);
+  if (!fs.existsSync(imgWebp)) {
+    await sharp(imgPath)
+      .resize(1440)
+      .toFile(imgWebp);
+  }
   
   return imgSrc.replace(/\.(png|jpg|jpeg)$/, '.webp');
 }
@@ -34,9 +37,11 @@ async function readPublicImageDirectory(key) {
       const imgWebp = imgPath.replace(/\.(png|jpg|jpeg)$/, '.webp');
 
       // webp version of source
-      await sharp(imgPath)
-        .resize(1440)
-        .toFile(imgWebp);
+      if (!fs.existsSync(imgWebp)) {
+        await sharp(imgPath)
+          .resize(1440)
+          .toFile(imgWebp);
+      }
       
       const imgDims = imageSize(imgWebp);
       const imgOrientation = imgDims.height > imgDims.width ? 'portrait' : 'landscape';
