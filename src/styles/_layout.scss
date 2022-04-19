@@ -87,31 +87,6 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  .img {
-    max-width: $width-small;
-    width: 100%;
-    height: auto;
-  }
-
-  .img.svg {
-    width: 420px;
-
-    @media (max-width: 420px) {
-      width: 100vw;
-    }
-  }
-
-  .cta {
-    display: block;
-    font-size: 0;
-    width: 100%;
-  }
-
-  .cvs {
-    max-width: $width-tablet-1;
-    width: 100%;
-  }
 }
 
 .sec {
@@ -123,16 +98,45 @@ p {
   padding: 0 32px 64px;
 }
 
+.image {
+  position: relative;
+  width: 100%;
+
+  &--landscape {
+    max-width: $width-max;
+  }
+
+  &--portrait {
+    max-width: $width-tablet-2;
+  }
+
+  &--hero {
+    max-width: $width-small;
+  }
+
+  &__fit {
+    position: relative;
+    width: 100%;
+  }
+
+  &__img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
 .anim {
   opacity: 0;
   transform: translate3d(0, 32px, 0);
   transition: opacity $anim-duration $anim-ease,
               transform $anim-duration $anim-ease;
-  padding-bottom: 56.25%;
 
   &.is-animated {
     opacity: 1;
     transform: translate3d(0, 0, 0);
-    padding-bottom: 0;
   }
 }

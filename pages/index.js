@@ -12,8 +12,9 @@ export default function Home({image}) {
           alt="Falling Illustration"
           width="480"
           height="771"
+          aspect={771 / 480 * 100}
           priority
-          className="img"
+          orientation="hero"
         />
       </div>
     </Layout>

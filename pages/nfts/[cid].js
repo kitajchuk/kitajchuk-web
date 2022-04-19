@@ -1,6 +1,5 @@
 import Image from '../../src/components/image';
 import Layout from '../../src/components/layout';
-import { Animate } from '../../src/components/animate';
 import { useDarkMode } from '../../src/components/hooks';
 import { getNFTMetadata, getNFTStaticPaths } from '../../src/lib/utils';
 import { pinService } from '../../src/lib/site';
@@ -12,20 +11,19 @@ export default function NFTs({nft}) {
     <Layout title={nft.tokenName} preload={[`${pinService}${nft.ipfsCid}`]}>
       <section className="nfts">
         <div className="nft">
-          <Animate>
-            <Image
-              src={`${pinService}${nft.ipfsCid}`}
-              alt={nft.name}
-              width="640"
-              height="640"
-              priority
-            />
-            <div className="nft__metadata m">
-              <div>{nft.tokenName} NFT</div>
-              <div>{nft.name}</div>
-              <div>{nft.type}</div>
-            </div>
-          </Animate>
+          <Image
+            src={`${pinService}${nft.ipfsCid}`}
+            alt={nft.name}
+            width="640"
+            height="640"
+            aspect={100}
+            priority
+          />
+          <div className="nft__metadata m">
+            <div>{nft.tokenName} NFT</div>
+            <div>{nft.name}</div>
+            <div>{nft.type}</div>
+          </div>
         </div>
       </section>
     </Layout>

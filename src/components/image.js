@@ -1,11 +1,23 @@
-const Image = ({ src = '', alt = '', priority = false, ...rest }) => {
+const Image = ({
+  src = '',
+  alt = '',
+  aspect = 75,
+  priority = false,
+  orientation = 'landscape',
+  ...rest
+}) => {
   return (
-    <img
-      src={src}
-      alt={alt}
-      loading={priority ? 'eager' : 'lazy'}
-      {...rest}
-    />
+    <div className={`image image--${orientation}`}>
+      <div className="image__fit" style={{paddingBottom: `${aspect}%`}}>
+        <img
+          src={src}
+          alt={alt}
+          loading={priority ? 'eager' : 'lazy'}
+          className="image__img"
+          {...rest}
+        />
+      </div>
+    </div>
   );
 };
 

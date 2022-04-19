@@ -12,8 +12,9 @@ export default function Page404({image}) {
           alt="Hollow Illustration"
           width="480"
           height="707"
+          aspect={707 / 480 * 100}
           priority
-          className="img"
+          orientation="hero"
         />
       </div>
     </Layout>

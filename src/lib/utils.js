@@ -44,6 +44,7 @@ async function readPublicImageDirectory(key) {
       // { src, dims { width, height, type } }
       return {
         orientation: imgOrientation,
+        aspect: imgDims.height / imgDims.width * 100,
         dims: imgDims,
         src: imgSrc.replace(/\.(png|jpg|jpeg)$/, '.webp'),
         alt: img,

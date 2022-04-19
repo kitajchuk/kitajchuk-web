@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { nanoid } from 'nanoid';
 
 import Image from '../../src/components/image';
-import { Animate } from '../../src/components/animate';
 
 export default function Drawings({ collection, paths, scope }) {
   return (
@@ -13,16 +12,15 @@ export default function Drawings({ collection, paths, scope }) {
         {collection.images.map((img, i) => {
           return (
             <li key={nanoid()} className="drawings__collection__item">
-              <Animate>
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  width={img.dims.width}
-                  height={img.dims.height}
-                  priority={i === 0}
-                  className={img.orientation}
-                />
-              </Animate>
+              <Image
+                src={img.src}
+                alt={img.alt}
+                width={img.dims.width}
+                height={img.dims.height}
+                aspect={img.aspect}
+                priority={i === 0}
+                orientation={img.orientation}
+              />
             </li>
           );
         })}
