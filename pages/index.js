@@ -1,30 +1,31 @@
-import Link from 'next/link';
-
 import Layout from '../src/components/layout';
-import Canvas from '../src/components/canvas';
+import Image from '../src/components/image';
 
-import { readPublicImageDirectory } from '../src/lib/utils';
+import { getPublicImage } from '../src/lib/utils';
 
-export default function Home({collection}) {
+export default function Home({image}) {
   return (
-    <Layout preload={collection.images.map(img => img.src)}>
+    <Layout preload={[image]}>
       <div className="hero">
-        <Link href="/kickflip/">
-          <a className="cta" title="kickflip">
-            <Canvas source="bw" />
-          </a>
-        </Link>
+        <Image
+          src={image}
+          alt="Falling Illustration"
+          width="480"
+          height="771"
+          priority
+          className="img"
+        />
       </div>
     </Layout>
   );
 }
 
 export async function getStaticProps() {
-  const collection = readPublicImageDirectory('kickflip/bw');
+  const image = await getPublicImage('/kitajchuk_falling.png');
 
   return {
     props: {
-      collection,
+      image,
     },
   };
 }

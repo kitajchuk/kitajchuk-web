@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import { nanoid } from 'nanoid';
 
-import LazyImage from '../../src/components/lazyimage';
+import Image from '../../src/components/image';
 import { Animate } from '../../src/components/animate';
 
 export default function Drawings({ collection, paths, scope }) {
@@ -14,7 +14,14 @@ export default function Drawings({ collection, paths, scope }) {
           return (
             <li key={nanoid()} className="drawings__collection__item">
               <Animate>
-                <LazyImage className={img.orientation} src={img.src} width={img.dims.width} height={img.dims.height} alt={img.alt} priority={i === 0} />
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  width={img.dims.width}
+                  height={img.dims.height}
+                  priority={i === 0}
+                  className={img.orientation}
+                />
               </Animate>
             </li>
           );

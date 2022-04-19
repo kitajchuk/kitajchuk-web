@@ -1,13 +1,31 @@
 import Layout from '../src/components/layout';
-import LazyImage from '../src/components/lazyimage';
+import Image from '../src/components/image';
 
-export default function Page404() {
-  const image = '/img/kitajchuk_hollow.png';
+import { getPublicImage } from '../src/lib/utils';
+
+export default function Page404({image}) {
   return (
     <Layout preload={[image]}>
       <div className="hero">
-        <LazyImage className="img" src={image} width="480" height="707" alt="Hollow Illustration" priority />
+        <Image
+          src={image}
+          alt="Hollow Illustration"
+          width="480"
+          height="707"
+          priority
+          className="img"
+        />
       </div>
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const image = await getPublicImage('/kitajchuk_hollow.png');
+
+  return {
+    props: {
+      image,
+    },
+  };
 }

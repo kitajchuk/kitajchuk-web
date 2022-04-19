@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Layout from '../../src/components/layout';
 import { Animate } from '../../src/components/animate';
 import { useDarkMode } from '../../src/components/hooks';
-import LazyImage from '../../src/components/lazyimage';
+import Image from '../../src/components/image';
 import { getNFTMetadata } from '../../src/lib/utils';
 import { pinService } from '../../src/lib/site';
 
@@ -18,7 +18,13 @@ export default function NFTs({nfts}) {
             <Link key={nft.tokenName} href={`/nfts/${nft.ipfsCid}`}>
               <a className="nft" title={nft.name}>
                 <Animate>
-                  <LazyImage src={`${pinService}${nft.ipfsCid}`} width="640" height="640" alt={nft.name} priority={i === 0} />
+                  <Image
+                    src={`${pinService}${nft.ipfsCid}`}
+                    alt={nft.name}
+                    width="640"
+                    height="640"
+                    priority={i === 0}
+                  />
                 </Animate>
               </a>
             </Link>

@@ -83,4 +83,9 @@ export const portfolio = {
     'tabi-inktober',
     'tabi-cards',
   ],
+  singles: [
+    'kitajchuk_hero.png',
+    'kitajchuk_hollow.png',
+    'kitajchuk_falling.png',
+  ],
 };

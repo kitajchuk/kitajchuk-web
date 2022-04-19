@@ -1,4 +1,4 @@
-const LazyImage = ({ src = '', alt = '', priority = false, ...rest }) => {
+const Image = ({ src = '', alt = '', priority = false, ...rest }) => {
   return (
     <img
       src={src}
@@ -9,4 +9,4 @@ const LazyImage = ({ src = '', alt = '', priority = false, ...rest }) => {
   );
 };
 
-export default LazyImage;
+export default Image;

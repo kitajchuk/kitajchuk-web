@@ -20,7 +20,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({params}) {
-  const collection = readPublicImageDirectory(`comics/${params.slug}`);
+  const collection = await readPublicImageDirectory(`comics/${params.slug}`);
   const paths = getPublicStaticPaths('comics').filter((obj) => obj.params.slug !== params.slug);
 
   return {

@@ -14,7 +14,7 @@ export default function Kickflip({collection}) {
 }
 
 export async function getStaticProps() {
-  const collection = readPublicImageDirectory('kickflip/retro');
+  const collection = await readPublicImageDirectory('kickflip/retro');
 
   return {
     props: {
