@@ -1,0 +1,12 @@
+[build]
+  command = "yarn download-s3 && next build"
+  publish = ".next"
+
+[context.production]
+  environment = { NODE_VERSION = "16.14.2" }
+
+[context.deploy-preview]
+  environment = { NODE_VERSION = "16.14.2" }
+
+[context.branch-deploy]
+  environment = { NODE_VERSION = "16.14.2" }
