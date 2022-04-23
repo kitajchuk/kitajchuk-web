@@ -9,7 +9,7 @@ export default function Books() {
   return (
     <Layout>
       <div className="navi books">
-        {books.map((book) => {
+        {books.sort(() => Math.random() > 0.5).map((book) => {
           return (
             <p className="book pp" key={nanoid()}>
               <Link href={`https://google.com/search?q=${book.title}&tbm=bks`}>
