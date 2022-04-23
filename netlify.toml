@@ -1,6 +1,6 @@
 [build]
-  command = "yarn download-s3 && yarn build"
-  publish = ".next"
+  command = "yarn download-s3 && yarn build && yarn export"
+  publish = "out"
 
 [context.production]
   environment = { NODE_VERSION = "16.14.2" }
