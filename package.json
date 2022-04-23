@@ -5,7 +5,6 @@
   "private": true,
   "scripts": {
     "prepare": "husky install",
-    "preinstall": "curl https://raw.githubusercontent.com/kitajchuk/popsiclepropaganda/main/nfts.json -o nfts.json",
     "lint": "eslint src/components src/lib pages --ext js",
     "dev": "next",
     "start": "next start",
