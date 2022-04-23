@@ -35,7 +35,6 @@ jobs:
           yarn download-s3
       - name: Lint, Test and Build
         run: |
-          yarn preinstall
           yarn build
           yarn export
       - name: Deploy Production
