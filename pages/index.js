@@ -9,10 +9,10 @@ export default function Home({image}) {
       <div className="hero">
         <Image
           src={image}
-          alt="Falling Illustration"
+          alt="Hero Illustration"
           width="480"
-          height="771"
-          aspect={771 / 480 * 100}
+          height="707"
+          aspect={707 / 480 * 100}
           priority
           orientation="hero"
         />
@@ -22,7 +22,7 @@ export default function Home({image}) {
 }
 
 export async function getStaticProps() {
-  const image = await getPublicImage('/kitajchuk_falling.png');
+  const image = await getPublicImage('/kitajchuk_hero.png');
 
   return {
     props: {
