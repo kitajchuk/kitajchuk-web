@@ -1,5 +1,5 @@
 [build]
-  command = "yarn download-s3 && next build"
+  command = "yarn download-s3 && yarn build"
   publish = ".next"
 
 [context.production]
