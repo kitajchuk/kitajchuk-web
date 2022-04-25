@@ -33,10 +33,10 @@ export const footer = [
     link: '/comics/',
     label: 'comics',
   },
-  {
-    link: '/books/',
-    label: 'books',
-  },
+  //{
+  //  link: '/books/',
+  //  label: 'books',
+  //},
 ];
 
 export const apps = [
