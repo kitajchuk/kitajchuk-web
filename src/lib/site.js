@@ -56,7 +56,7 @@ export const apps = [
     open: true,
   },
   {
-    link: 'https://2dk.kitajchuk.com/games/la/',
+    link: 'https://2dk.kitajchuk.com',
     label: '2dk',
     open: true,
   },
