@@ -43,7 +43,7 @@ export default function Dev() {
             <a href="https://www.deemjournal.com" target="_blank" rel="noreferrer">deemjournal.com</a> | <a href="https://github.com/deemjournal/deemjournal-sqs" target="_blank" rel="noreferrer">github</a>
           </p>
         </section>
-        <section className="dev__legacy colf">
+        <section className="dev__legacy uwrap colf">
           <p className="pp m">These are a couple of older <a href="https://middlemanapp.com/" target="_blank" rel="noreferrer">middleman apps</a> I built while at <a href="https://www.instrument.com/" target="_blank" rel="noreferrer">Instrument</a>. For posterity I have maintained the static builds on Netlify. I think Rivals was a unique project and the original MAEKAN prototype was so much fun to jam on back in the day! Check out the original <a href="https://legacy-maekan-prototype.netlify.app/kit-of-parts/">Kit of Parts</a> for MAEKAN to see how we would visualize the design elements in action.</p>
           <p className="pp m">
             <a href="https://legacy-familiar-rivals.netlify.app" target="_blank" rel="noreferrer">familiar rivals</a> | <a href="https://github.com/kitajchuk/legacy-familiar-rivals" target="_blank" rel="noreferrer">github</a>
