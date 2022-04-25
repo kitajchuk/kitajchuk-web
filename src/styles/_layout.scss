@@ -98,6 +98,18 @@ p {
   padding: 0 32px 64px;
 }
 
+.colf {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+
+  p + p {
+    margin-top: 16px;
+  }
+}
+
 .image {
   position: relative;
   width: 100%;
