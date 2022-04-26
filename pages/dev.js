@@ -47,7 +47,7 @@ export default function Dev() {
           </p>
         </section>
         <section className="dev__twitch uwrap colf">
-          <p className="pp m">I developed some bespoke Twitch apps to gameify the stream for my <a href="https://www.twitch.tv/kitajchuk" target="_blank" rel="noreferrer">old affiliate channel</a> and for <a href="https://www.twitch.tv/brucecooper" target="_blank" rel="noreferrer">@BruceCooper</a>. The former is a zelda inspired game HUD and the latter was zelda/pokemon themed maze generated with cellular automata.</p>
+          <p className="pp m">I developed some bespoke Twitch apps to gameify the stream for my <a href="https://www.twitch.tv/kitajchuk" target="_blank" rel="noreferrer">old affiliate channel</a> and for <a href="https://www.twitch.tv/brucecooper" target="_blank" rel="noreferrer">@BruceCooper</a>. The former is a zelda inspired game HUD and the latter were zelda/pokemon themed mazes generated with cellular automata.</p>
           <p className="pp m">
             <a href="https://github.com/kitajchuk/twitch-hud" target="_blank" rel="noreferrer">twitch-hud</a>
           </p>
