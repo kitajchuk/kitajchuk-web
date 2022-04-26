@@ -29,7 +29,7 @@ export default function Dev() {
           </p>
         </section>
         <section className="dev__sqs uwrap colf">
-          <p className="pp m">While working at <a href="https://www.instrument.com/" target="_blank" rel="noreferrer">Instrument</a> I developed the first <a href="https://github.com/kitajchuk/node-squarespace-server" target="_blank" rel="noreferrer">open-source dev tools for Squarespace</a>. I made a lot of sqs sites, however I no longer do so because I prefer the JAMstack now.</p>
+          <p className="pp m">At <a href="https://www.instrument.com/" target="_blank" rel="noreferrer">Instrument</a> I developed the first <a href="https://github.com/kitajchuk/node-squarespace-server" target="_blank" rel="noreferrer">open-source dev tools for Squarespace</a>. I made a lot of sqs sites, however I no longer do so because I prefer the JAMstack these days.</p>
           <p className="pp m">
             <a href="https://www.struck.com" target="_blank" rel="noreferrer">struck.com</a> | <a href="https://github.com/kitajchuk/struck-sqs" target="_blank" rel="noreferrer">github</a>
           </p>
@@ -47,7 +47,7 @@ export default function Dev() {
           </p>
         </section>
         <section className="dev__twitch uwrap colf">
-          <p className="pp m">I developed some bespoke, custom Twitch apps to gameify the stream for my <a href="https://www.twitch.tv/kitajchuk" target="_blank" rel="noreferrer">old affiliate channel</a> and for <a href="https://www.twitch.tv/brucecooper" target="_blank" rel="noreferrer">@BruceCooper</a>. The former is a zelda inspired game HUD and the latter was zelda/pokemon themed maze generated with cellular automata.</p>
+          <p className="pp m">I developed some bespoke Twitch apps to gameify the stream for my <a href="https://www.twitch.tv/kitajchuk" target="_blank" rel="noreferrer">old affiliate channel</a> and for <a href="https://www.twitch.tv/brucecooper" target="_blank" rel="noreferrer">@BruceCooper</a>. The former is a zelda inspired game HUD and the latter was zelda/pokemon themed maze generated with cellular automata.</p>
           <p className="pp m">
             <a href="https://github.com/kitajchuk/twitch-hud" target="_blank" rel="noreferrer">twitch-hud</a>
           </p>
@@ -68,12 +68,12 @@ export default function Dev() {
           </p>
         </section>
         <section className="dev__legacy uwrap colf">
-          <p className="pp m">These are some older <a href="https://middlemanapp.com/" target="_blank" rel="noreferrer">middleman app</a> projects I built while at <a href="https://www.instrument.com/" target="_blank" rel="noreferrer">Instrument</a>. For posterity I have kept the static builds on Netlify. Rivals is especially cool on desktop. Check out the original <a href="https://legacy-maekan-prototype.netlify.app/kit-of-parts/">Kit of Parts</a> for MAEKAN to see how we would visualize the design elements in action.</p>
+          <p className="pp m">These are some older <a href="https://middlemanapp.com/" target="_blank" rel="noreferrer">middleman app</a> projects I built while at <a href="https://www.instrument.com/" target="_blank" rel="noreferrer">Instrument</a>. For posterity I have kept the static builds on Netlify.</p>
           <p className="pp m">
             <a href="https://legacy-familiar-rivals.netlify.app" target="_blank" rel="noreferrer">familiar rivals</a> | <a href="https://github.com/kitajchuk/legacy-familiar-rivals" target="_blank" rel="noreferrer">github</a>
           </p>
           <p className="pp m">
-            <a href="https://legacy-maekan-prototype.netlify.app" target="_blank" rel="noreferrer">maekan prototype</a> | <a href="https://github.com/kitajchuk/legacy-maekan-prototype" target="_blank" rel="noreferrer">github</a>
+            <a href="https://legacy-maekan-prototype.netlify.app/kit-of-parts/" target="_blank" rel="noreferrer">maekan prototype</a> | <a href="https://github.com/kitajchuk/legacy-maekan-prototype" target="_blank" rel="noreferrer">github</a>
           </p>
         </section>
         <section className="dev__nodesqs uwrap colf">
