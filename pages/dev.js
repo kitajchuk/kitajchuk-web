@@ -4,8 +4,8 @@ export default function Dev() {
   return (
     <Layout>
       <div className="dev">
-        <section className="dev__head uwrap colf">
-          <h1 className="h4">dev story</h1>
+        <section className="dev__head navi">
+          <p>dev story</p>
         </section>
         <section className="dev__sites uwrap colf">
           <p className="pp m">
