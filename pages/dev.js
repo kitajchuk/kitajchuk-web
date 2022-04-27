@@ -6,8 +6,8 @@ export default function Dev() {
       <div className="dev">
         <section className="dev__sites uwrap colf">
           <p className="pp m">
-            Some sites I&apos;ve done more recently and even continue to work on. 
-            Most are personal to me, involving family or friends, or just hobby projects. <a href="https://2dk.kitajchuk.com" target="_blank" rel="noreferrer">2dk</a> is the jam, tho ;)
+            Current projects I actively tinker on. 
+            Most are personal to me, involving family or friends, or just hobby projects.
           </p>
           <p className="pp m">
             <a href="https://jambonz.org" target="_blank" rel="noreferrer">jambonz.org</a> | <a href="https://github.com/jambonz/next-static-site" target="_blank" rel="noreferrer">github</a>
@@ -47,7 +47,7 @@ export default function Dev() {
           </p>
         </section>
         <section className="dev__twitch uwrap colf">
-          <p className="pp m">I developed some bespoke Twitch apps to gameify the stream for my <a href="https://www.twitch.tv/kitajchuk" target="_blank" rel="noreferrer">old affiliate channel</a> and for <a href="https://www.twitch.tv/brucecooper" target="_blank" rel="noreferrer">@BruceCooper</a>. The former is a zelda inspired game HUD and the latter were zelda/pokemon themed mazes generated with cellular automata.</p>
+          <p className="pp m">I developed some Twitch apps to gameify the stream for my <a href="https://www.twitch.tv/kitajchuk" target="_blank" rel="noreferrer">old affiliate channel</a> and for <a href="https://www.twitch.tv/brucecooper" target="_blank" rel="noreferrer">@BruceCooper</a>. The former is a zelda inspired game HUD and the latter were zelda/pokemon themed mazes generated with cellular automata.</p>
           <p className="pp m">
             <a href="https://github.com/kitajchuk/twitch-hud" target="_blank" rel="noreferrer">twitch-hud</a>
           </p>
@@ -68,7 +68,7 @@ export default function Dev() {
           </p>
         </section>
         <section className="dev__legacy uwrap colf">
-          <p className="pp m">These are some older <a href="https://middlemanapp.com/" target="_blank" rel="noreferrer">middleman app</a> projects I built while at <a href="https://www.instrument.com/" target="_blank" rel="noreferrer">Instrument</a>. For posterity I have kept the static builds on Netlify.</p>
+          <p className="pp m">These are some older <a href="https://middlemanapp.com/" target="_blank" rel="noreferrer">middleman</a> projects I built while at <a href="https://www.instrument.com/" target="_blank" rel="noreferrer">Instrument</a>. For posterity I have kept the static builds available on Netlify.</p>
           <p className="pp m">
             <a href="https://legacy-familiar-rivals.netlify.app" target="_blank" rel="noreferrer">familiar rivals</a> | <a href="https://github.com/kitajchuk/legacy-familiar-rivals" target="_blank" rel="noreferrer">github</a>
           </p>
