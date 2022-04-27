@@ -34,7 +34,7 @@ export default function Dev() {
         <section className="dev__sqs uwrap colf">
           <p className="pp m">
             At <a href="https://www.instrument.com/" target="_blank" rel="noreferrer">Instrument</a> I developed the first <a href="https://github.com/kitajchuk/node-squarespace-server" target="_blank" rel="noreferrer">open-source dev tools for Squarespace</a>. 
-            I made a lot of sqs sites, however I no longer do so because I prefer the JAMstack these days.
+            I made a lot of sqs sites, however I no longer do so because I prefer the <a href="https://jamstack.org/" target="_blank" rel="noreferrer">JAMstack</a> these days.
           </p>
           <p className="pp m">
             <a href="https://www.struck.com" target="_blank" rel="noreferrer">struck.com</a> | <a href="https://github.com/kitajchuk/struck-sqs" target="_blank" rel="noreferrer">github</a>
@@ -54,8 +54,8 @@ export default function Dev() {
         </section>
         <section className="dev__twitch uwrap colf">
           <p className="pp m">
-            I developed some custom Twitch apps to gameify the streams for my <a href="https://www.twitch.tv/kitajchuk" target="_blank" rel="noreferrer">old affiliate channel</a> and for <a href="https://www.twitch.tv/brucecooper" target="_blank" rel="noreferrer">@BruceCooper</a>. 
-            The former was a zelda inspired game HUD and the latter were zelda/pokemon themed mazes generated with cellular automata.
+            I developed some custom <a href="https://twitch.tv/" target="_blank" rel="noreferrer">Twitch</a> apps to gameify the streams for my <a href="https://www.twitch.tv/kitajchuk" target="_blank" rel="noreferrer">old affiliate channel</a> and for <a href="https://www.twitch.tv/brucecooper" target="_blank" rel="noreferrer">@BruceCooper</a>. 
+            The former was a zelda inspired game HUD and the latter were zelda/pokemon themed mazes generated with <a href="https://sanojian.github.io/cellauto/" target="_blank" rel="noreferrer">cellular automata</a>.
           </p>
           <p className="pp m">
             <a href="https://github.com/kitajchuk/twitch-hud" target="_blank" rel="noreferrer">twitch-hud</a>
@@ -82,7 +82,7 @@ export default function Dev() {
         <section className="dev__legacy uwrap colf">
           <p className="pp m">
             These are some older <a href="https://middlemanapp.com/" target="_blank" rel="noreferrer">middleman</a> projects I built while at <a href="https://www.instrument.com/" target="_blank" rel="noreferrer">Instrument</a>. 
-            For posterity I have kept the static builds available on Netlify.
+            For posterity I have kept the static builds available on <a href="https://netlify.com/" target="_blank" rel="noreferrer">Netlify</a> because they are lovely.
           </p>
           <p className="pp m">
             <a href="https://legacy-familiar-rivals.netlify.app" target="_blank" rel="noreferrer">familiar rivals</a> | <a href="https://github.com/kitajchuk/legacy-familiar-rivals" target="_blank" rel="noreferrer">github</a>
