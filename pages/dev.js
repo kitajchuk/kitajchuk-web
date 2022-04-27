@@ -4,6 +4,9 @@ export default function Dev() {
   return (
     <Layout>
       <div className="dev">
+        <section className="dev__head uwrap">
+          <h1 className="h3">dev story</h1>
+        </section>
         <section className="dev__sites uwrap colf">
           <p className="pp m">
             Current projects I actively tinker on. 
@@ -29,7 +32,10 @@ export default function Dev() {
           </p>
         </section>
         <section className="dev__sqs uwrap colf">
-          <p className="pp m">At <a href="https://www.instrument.com/" target="_blank" rel="noreferrer">Instrument</a> I developed the first <a href="https://github.com/kitajchuk/node-squarespace-server" target="_blank" rel="noreferrer">open-source dev tools for Squarespace</a>. I made a lot of sqs sites, however I no longer do so because I prefer the JAMstack these days.</p>
+          <p className="pp m">
+            At <a href="https://www.instrument.com/" target="_blank" rel="noreferrer">Instrument</a> I developed the first <a href="https://github.com/kitajchuk/node-squarespace-server" target="_blank" rel="noreferrer">open-source dev tools for Squarespace</a>. 
+            I made a lot of sqs sites, however I no longer do so because I prefer the JAMstack these days.
+          </p>
           <p className="pp m">
             <a href="https://www.struck.com" target="_blank" rel="noreferrer">struck.com</a> | <a href="https://github.com/kitajchuk/struck-sqs" target="_blank" rel="noreferrer">github</a>
           </p>
@@ -47,7 +53,10 @@ export default function Dev() {
           </p>
         </section>
         <section className="dev__twitch uwrap colf">
-          <p className="pp m">I developed some custom Twitch apps to gameify the streams for my <a href="https://www.twitch.tv/kitajchuk" target="_blank" rel="noreferrer">old affiliate channel</a> and for <a href="https://www.twitch.tv/brucecooper" target="_blank" rel="noreferrer">@BruceCooper</a>. The former was a zelda inspired game HUD and the latter were zelda/pokemon themed mazes generated with cellular automata.</p>
+          <p className="pp m">
+            I developed some custom Twitch apps to gameify the streams for my <a href="https://www.twitch.tv/kitajchuk" target="_blank" rel="noreferrer">old affiliate channel</a> and for <a href="https://www.twitch.tv/brucecooper" target="_blank" rel="noreferrer">@BruceCooper</a>. 
+            The former was a zelda inspired game HUD and the latter were zelda/pokemon themed mazes generated with cellular automata.
+          </p>
           <p className="pp m">
             <a href="https://github.com/kitajchuk/twitch-hud" target="_blank" rel="noreferrer">twitch-hud</a>
           </p>
@@ -56,7 +65,10 @@ export default function Dev() {
           </p>
         </section>
         <section className="dev__tools uwrap colf">
-          <p className="pp m">I&apos;ve always been interested in &quot;rolling your own&quot; as they say. Over the years I&apos;ve built, maintained and deprecated a number of custom projects, libraries and frameworks.</p>
+          <p className="pp m">
+            I&apos;ve always been interested in &quot;rolling your own&quot; as they say. 
+            Over the years I&apos;ve built, maintained and deprecated a number of custom projects, libraries and frameworks.
+          </p>
           <p className="pp m">
             <a href="https://github.com/kitajchuk/hobo" target="_blank" rel="noreferrer">hobo</a>
           </p>
@@ -68,7 +80,10 @@ export default function Dev() {
           </p>
         </section>
         <section className="dev__legacy uwrap colf">
-          <p className="pp m">These are some older <a href="https://middlemanapp.com/" target="_blank" rel="noreferrer">middleman</a> projects I built while at <a href="https://www.instrument.com/" target="_blank" rel="noreferrer">Instrument</a>. For posterity I have kept the static builds available on Netlify.</p>
+          <p className="pp m">
+            These are some older <a href="https://middlemanapp.com/" target="_blank" rel="noreferrer">middleman</a> projects I built while at <a href="https://www.instrument.com/" target="_blank" rel="noreferrer">Instrument</a>. 
+            For posterity I have kept the static builds available on Netlify.
+          </p>
           <p className="pp m">
             <a href="https://legacy-familiar-rivals.netlify.app" target="_blank" rel="noreferrer">familiar rivals</a> | <a href="https://github.com/kitajchuk/legacy-familiar-rivals" target="_blank" rel="noreferrer">github</a>
           </p>
@@ -77,7 +92,10 @@ export default function Dev() {
           </p>
         </section>
         <section className="dev__nodesqs uwrap colf">
-          <p className="pp m">I built the first open-source Squarespace dev tools with nodejs. A sqs engineer flew from New York to Portland to interview me about it and ultimately they developed <a href="https://developers.squarespace.com/tools" target="_blank" rel="noreferrer">official sqs dev tools</a> which I did some consulting on.</p>
+          <p className="pp m">
+            I built the first open-source Squarespace dev tools with nodejs. 
+            A sqs engineer flew from New York to Portland to interview me about it and ultimately they developed <a href="https://developers.squarespace.com/tools" target="_blank" rel="noreferrer">official sqs dev tools</a> which I did some consulting on.
+          </p>
           <p className="pp m">
             <a href="https://github.com/kitajchuk/node-squarespace-server" target="_blank" rel="noreferrer">node-squarespace-server</a>
           </p>
