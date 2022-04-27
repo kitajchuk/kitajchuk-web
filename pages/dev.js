@@ -93,7 +93,7 @@ export default function Dev() {
         </section>
         <section className="dev__nodesqs uwrap colf">
           <p className="pp m">
-            I built the first open-source Squarespace dev tools with nodejs. 
+            I built the first <a href="https://github.com/kitajchuk/node-squarespace-server" target="_blank" rel="noreferrer">open-source Squarespace dev tools</a> with nodejs. 
             A sqs engineer flew from New York to Portland to interview me about it and ultimately they developed <a href="https://developers.squarespace.com/tools" target="_blank" rel="noreferrer">official sqs dev tools</a> which I did some consulting on.
           </p>
           <p className="pp m">
