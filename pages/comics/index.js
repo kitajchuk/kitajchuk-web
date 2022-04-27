@@ -7,7 +7,7 @@ export default function Comics({paths}) {
   return (
     <Layout title="comics">
       <div className="comics">
-        <section className="comics__books navi">
+        <section className="comics__books navi colf">
           <p>Tabi No Hana comics (PDF):</p>
           <p>
             <a href="/media/Tabi_No_Hana_Book_01.pdf" target="_blank">A Flower for Every Time, Book 1</a>
@@ -18,7 +18,7 @@ export default function Comics({paths}) {
         </section>
         <section className="comics__text uwrap">
           <p className="pp m">
-            The prequel is complete, however the inside cover has placeholder text because we had to pause work on Tabi for now. 
+            The prequel is complete, however the inside cover has placeholder text because we had to pause work on Tabi. 
             The <a href="https://www.kickstarter.com/projects/1086577669/tabi-no-hana-issue-1-in-all-its-forms" target="_blank" rel="noreferrer">original comic</a> and the <a href="https://www.kickstarter.com/projects/1086577669/tabi-no-hana-the-next-adventures" target="_blank" rel="noreferrer">first graphic novel</a> were funded on Kickstarter.  
             I hope one day to return to Tabi and to work on some other comic projects. 
             In the meantime I typically manage to post illustrations periodically to my <Link href="/drawings/"><a>drawings</a></Link>.
