@@ -3,31 +3,45 @@ const mkdirp = require('mkdirp');
 const sharp = require('sharp');
 const shell = require('shelljs');
 
+// Source images in local `data` directory -- ignored
+const shellCmd = 'find ./data -type f';
+const shellOpts = { silent: true };
+
+// The width for the `webp` versions
+const imgSize = 1440;
+
+// Viable local source image formats
 const rImage = /\.(png|jpg|jpeg)$/;
 
+// Shell out to `find` for quick recurse
 const files = shell
-  .exec('find ./data -type f', { silent: true }).stdout
-    .split('\n')
-    .filter(f => rImage.test(f));
+  .exec(shellCmd, shellOpts)
+    .stdout
+      .split('\n')
+      .filter(f => rImage.test(f));
 
+// Process each file for Next's public directory
 files.forEach(async (file) => {
-  let outFile = file.replace('./data', 'public');
-  outFile = outFile.replace(rImage, '.webp');
+  // Trim filename to build directories
+  const fileDir = file.split('/')
+    .filter(s => !rImage.test(s))
+    .join('/');
+  const pubDir = fileDir.replace('./data', 'public');
+  const isDir = fs.statSync(fileDir).isDirectory();
 
-  let fileDir = file.split('/');
-  fileDir.pop();
-  fileDir = fileDir.join('/');
-  const isDirectory = fs.statSync(fileDir).isDirectory();
-
-  if (isDirectory) {
-    await mkdirp(fileDir.replace('./data', 'public'));
-    console.log(`Making directory for ${fileDir.replace('./data', 'public')}`);
+  if (isDir) {
+    await mkdirp(pubDir);
+    console.log(`Making directory: ${pubDir}`);
   }
 
+  // This is the file we will write as `webp` version
+  conts pubFile = file.replace('./data', 'public');
+  const outFile = pubFile.replace(rImage, '.webp');
+
   if (!fs.existsSync(outFile)) {
-    console.log(`Making file for ${outFile}`);
     await sharp(file)
-      .resize(1440)
+      .resize(imgSize)
       .toFile(outFile);
+    console.log(`Making file: ${outFile}`);
   }
 });
