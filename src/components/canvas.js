@@ -79,7 +79,7 @@ export default function Canvas({source}) {
         }
 
         const pro = loadImageSet({
-          [sourceRef.current]: `/img/kickflip/${sourceRef.current}/kickflip_${idx}.png`,
+          [sourceRef.current]: `/img/kickflip/${sourceRef.current}/kickflip_${idx}.webp`,
         });
 
         ((index) => {
@@ -118,7 +118,7 @@ export default function Canvas({source}) {
 
   return (
     <div className="vid">
-      <canvas ref={canvasRef} width="1920" height="1080"></canvas>
+      <canvas ref={canvasRef} width="1440" height="810"></canvas>
     </div>
   );
 }

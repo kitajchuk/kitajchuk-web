@@ -1,29 +1,28 @@
 const fs = require('fs');
 const path = require('path');
-const sharp = require('sharp');
 const imageSize = require('image-size');
 const { portfolio } = require('./site');
 
 function readDirectory(dir) {
   return fs.readdirSync(dir).filter((file) => {
-    return !/^\.|\.webp$/.test(file);
+    return !/^\./.test(file);
   });
 }
 
-async function getPublicImage(img) {
-  const imgPath = path.join(process.cwd(), `public/img/${img}`);
-  const imgWebp = imgPath.replace(/\.(png|jpg|jpeg)$/, '.webp');
-  const imgSrc = `/img/${img}`;
+async function getPublicImage(key) {
+  const imgPath = path.join(process.cwd(), `public/img/${key}`);
+  const imgSrc = `/img/${key}`;
+  const imgDims = imageSize(imgPath);
+  const imgOrientation = imgDims.height > imgDims.width ? 'portrait' : 'landscape';
 
-  
-  // webp version of source
-  if (!fs.existsSync(imgWebp)) {
-    await sharp(imgPath)
-      .resize(1440)
-      .toFile(imgWebp);
-  }
-  
-  return imgSrc.replace(/\.(png|jpg|jpeg)$/, '.webp');
+  // { src, dims { width, height, type } }
+  return {
+    orientation: imgOrientation,
+    aspect: imgDims.height / imgDims.width * 100,
+    dims: imgDims,
+    src: imgSrc,
+    alt: key,
+  };
 }
 
 async function readPublicImageDirectory(key) {
@@ -34,16 +33,7 @@ async function readPublicImageDirectory(key) {
     images: await Promise.all(readDirectory(fullPath).map(async (img) => {
       const imgPath = path.join(fullPath, img);
       const imgSrc = `/img/${key}/${img}`;
-      const imgWebp = imgPath.replace(/\.(png|jpg|jpeg)$/, '.webp');
-
-      // webp version of source
-      if (!fs.existsSync(imgWebp)) {
-        await sharp(imgPath)
-          .resize(1440)
-          .toFile(imgWebp);
-      }
-      
-      const imgDims = imageSize(imgWebp);
+      const imgDims = imageSize(imgPath);
       const imgOrientation = imgDims.height > imgDims.width ? 'portrait' : 'landscape';
 
       // { src, dims { width, height, type } }
@@ -51,7 +41,7 @@ async function readPublicImageDirectory(key) {
         orientation: imgOrientation,
         aspect: imgDims.height / imgDims.width * 100,
         dims: imgDims,
-        src: imgSrc.replace(/\.(png|jpg|jpeg)$/, '.webp'),
+        src: imgSrc,
         alt: img,
       };
     }))
@@ -69,35 +59,9 @@ function getPublicStaticPaths(scope) {
     });
 }
 
-function getNFTMetadata() {
-  const nfts = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'nfts.json')))[0];
-
-  return Object.keys(nfts).map((tokenName) => {
-    return {
-      ...nfts[tokenName],
-      tokenName,
-      ipfsCid: nfts[tokenName].image.split('/').pop(),
-    };
-  });
-}
-
-function getNFTStaticPaths() {
-  const nfts = getNFTMetadata();
-  
-  return nfts.map((nft) => {
-    return {
-      params: {
-        cid: nft.ipfsCid,
-      },
-    };
-  });
-}
-
 module.exports = {
   readDirectory,
   getPublicImage,
-  getNFTMetadata,
-  getNFTStaticPaths,
   getPublicStaticPaths,
   readPublicImageDirectory,
 };

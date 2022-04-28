@@ -5,14 +5,14 @@ import { getPublicImage } from '../src/lib/utils';
 
 export default function Page404({image}) {
   return (
-    <Layout preload={[image]}>
+    <Layout preload={[image.src]}>
       <div className="hero">
         <Image
-          src={image}
-          alt="Hollow Illustration"
-          width="480"
-          height="707"
-          aspect={707 / 480 * 100}
+          src={image.src}
+          alt={image.alt}
+          width={image.dims.width}
+          height={image.dims.height}
+          aspect={image.aspect}
           priority
           orientation="hero"
         />
@@ -22,7 +22,7 @@ export default function Page404({image}) {
 }
 
 export async function getStaticProps() {
-  const image = await getPublicImage('/kitajchuk_hollow.png');
+  const image = await getPublicImage('kitajchuk_hollow.webp');
 
   return {
     props: {

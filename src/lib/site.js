@@ -2,9 +2,9 @@ export const description = 'Once a day unlearn something new.';
 
 export const instagram = 'https://www.instagram.com/kitajchuk/';
 
-export const pinService = 'https://gateway.pinata.cloud/ipfs/';
+export const twitter = 'https://www.twitter.com/kitajchuk/';
 
-export const ogImage = 'https://kitajchuk.com/img/kitajchuk_share_01.jpg';
+export const ogImage = 'https://kitajchuk.com/img/kitajchuk_share_01.webp';
 
 export const navi = [
   {
@@ -82,10 +82,5 @@ export const portfolio = {
     'tabi-chapter-1-childrens',
     'tabi-inktober',
     'tabi-cards',
-  ],
-  singles: [
-    'kitajchuk_hero.png',
-    'kitajchuk_hollow.png',
-    'kitajchuk_falling.png',
   ],
 };

@@ -92,7 +92,7 @@ export default function Layout({title = 'kitajchuk', preload = [], ...rest}) {
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/logo192.png" />
         <link rel="manifest" href="/manifest.json" />
-        <link rel="preload" href="/fonts/panicsans.woff" as="font" type="font/woff" />
+        <link rel="preload" href="/fonts/panicsans.woff" crossOrigin="anonymous" as="font" type="font/woff" />
         {preload.length > 0 && preload.map((source) => {
           return <link rel="preload" as="image" href={source} key={source} />;
         })}
