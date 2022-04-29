@@ -15,10 +15,9 @@ const rImage = /\.(png|jpg|jpeg)$/;
 
 // Shell out to `find` for quick recurse
 const files = shell
-  .exec(shellCmd, shellOpts)
-    .stdout
-      .split('\n')
-      .filter(f => rImage.test(f));
+  .exec(shellCmd, shellOpts).stdout
+  .split('\n')
+  .filter(f => rImage.test(f));
 
 // Process each file for Next's public directory
 files.forEach(async (file) => {
@@ -35,7 +34,7 @@ files.forEach(async (file) => {
   }
 
   // This is the file we will write as `webp` version
-  conts pubFile = file.replace('./data', 'public');
+  const pubFile = file.replace('./data', 'public');
   const outFile = pubFile.replace(rImage, '.webp');
 
   if (!fs.existsSync(outFile)) {
