@@ -4,7 +4,7 @@ export const instagram = 'https://www.instagram.com/kitajchuk/';
 
 export const twitter = 'https://www.twitter.com/kitajchuk/';
 
-export const ogImage = 'https://www.kitajchuk.com/kitajchuk_hero.png';
+export const ogImage = 'https://www.kitajchuk.com/fallgirl.PNG';
 
 export const navi = [
   {
