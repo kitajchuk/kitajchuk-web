@@ -8,7 +8,6 @@
     "lint": "eslint src/components src/lib pages scripts --ext js",
     "dev": "next",
     "start": "next start",
-    "prebuild": "yarn lint",
     "build": "next build",
     "export": "next export",
     "upload": "env-cmd --file .env.local yarn upload-s3",
@@ -41,10 +40,14 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^6.0.0",
     "image-size": "^1.0.0",
+    "lint-staged": "^12.4.1",
     "mkdirp": "^1.0.4",
     "sass": "^1.32.8",
     "sharp": "^0.30.4",
     "shelljs": "^0.8.5"
+  },
+  "lint-staged": {
+    "*.js": "yarn lint"
   },
   "eslintConfig": {
     "settings": {
