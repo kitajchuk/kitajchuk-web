@@ -1,11 +1,7 @@
-html,
 body {
   font-family: 'panicsans', monospace;
   font-size: $font-base;
   line-height: 2;
-}
-
-body {
   background-color: $white;
 
   &.is-dark-mode {
@@ -39,7 +35,7 @@ p {
   justify-content: center;
 
   a {
-    font-size: 0;
+    line-height: 1;
   }
 
   svg {
