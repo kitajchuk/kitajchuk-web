@@ -31,5 +31,3 @@ yarn-error.log*
 /data/
 /public/media/
 /public/img/
-/*.gz
-/*.json

@@ -10,10 +10,10 @@
     "start": "next start",
     "build": "next build",
     "export": "next export",
-    "upload": "env-cmd --file .env.local yarn upload-s3",
+    "upload": "env-cmd --file .env yarn upload-s3",
     "upload-s3": "aws s3 sync ./public/img s3://${KITA_S3_REPOSITORY}/public/img --exclude '*.DS_Store' --delete",
     "postupload-s3": "aws s3 sync ./public/media s3://${KITA_S3_REPOSITORY}/public/media --exclude '*.DS_Store' --delete",
-    "download": "env-cmd --file .env.local yarn download-s3",
+    "download": "env-cmd --file .env yarn download-s3",
     "download-s3": "node ./scripts/aws.js",
     "makewebp": "node ./scripts/webp.js"
   },
