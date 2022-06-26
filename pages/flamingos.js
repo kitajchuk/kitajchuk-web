@@ -28,9 +28,9 @@ export default function FlamingOs() {
               <button onClick={onClickShuffle}>Shuffle Decks</button>
             </div>
             <div className="deck">
-              <img src={decks[key].back} key="back" />
+              <img src={decks[key].back} key="back" alt={key} />
               {decks[key].cards.map((card) => {
-                return <img src={card.asset} key={card.id} />;
+                return <img src={card.asset} key={card.id} alt={card.name} />;
               })}
             </div>
           </div>

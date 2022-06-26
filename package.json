@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "prepare": "husky install",
-    "lint": "eslint src/components src/lib pages scripts --ext js",
+    "lint": "next lint",
     "dev": "next",
     "start": "next start",
     "build": "next build",
@@ -24,23 +24,18 @@
     "next-plugin-preact": "^3.0.6",
     "preact": "^10.7.2",
     "preact-render-to-string": "^5.2.0",
-    "react-ssr-prepass": "npm:preact-ssr-prepass",
     "properjs-blit": "^0.3.2",
     "react": "npm:@preact/compat",
-    "react-dom": "npm:@preact/compat"
+    "react-dom": "npm:@preact/compat",
+    "react-ssr-prepass": "npm:preact-ssr-prepass"
   },
   "devDependencies": {
     "aws-sdk": "^2.919.0",
     "axios": "^0.24.0",
     "babel-eslint": "^10.1.0",
     "env-cmd": "^10.1.0",
-    "eslint": "^7.26.0",
-    "eslint-config-react-app": "^6.0.0",
-    "eslint-plugin-flowtype": "^5.7.2",
-    "eslint-plugin-import": "^2.23.4",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.24.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint": "^8.18.0",
+    "eslint-config-next": "12.1.6",
     "husky": "^6.0.0",
     "image-size": "^1.0.0",
     "lint-staged": "^12.4.1",
@@ -51,56 +46,5 @@
   },
   "lint-staged": {
     "*.js": "yarn lint"
-  },
-  "eslintConfig": {
-    "settings": {
-      "react": {
-        "version": "detect"
-      }
-    },
-    "env": {
-      "browser": true,
-      "es2021": true,
-      "node": true
-    },
-    "extends": [
-      "eslint:recommended",
-      "plugin:react/recommended",
-      "react-app"
-    ],
-    "parserOptions": {
-      "ecmaFeatures": {
-        "jsx": true
-      },
-      "ecmaVersion": 12,
-      "sourceType": "module"
-    },
-    "plugins": [
-      "react"
-    ],
-    "rules": {
-      "react/prop-types": "off",
-      "react/react-in-jsx-scope": "off",
-      "jsx-a11y/anchor-is-valid": "off",
-      "jsx-a11y/alt-text": "off",
-      "indent": [
-        "error",
-        2
-      ],
-      "quotes": [
-        "error",
-        "single"
-      ],
-      "semi": [
-        "error",
-        "always"
-      ]
-    },
-    "ignorePatterns": [
-      "**/node_modules/*",
-      "**/out/*",
-      "**/.next/*",
-      "next.config.js"
-    ]
   }
 }
