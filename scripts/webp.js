@@ -28,7 +28,7 @@ files.forEach(async (file) => {
   const pubDir = fileDir.replace('./data', 'public');
   const isDir = fs.statSync(fileDir).isDirectory();
 
-  if (isDir) {
+  if (isDir && !fs.existsSync(pubDir)) {
     await mkdirp(pubDir);
     console.log(`Making directory: ${pubDir}`);
   }
