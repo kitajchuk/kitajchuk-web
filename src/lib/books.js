@@ -16,7 +16,7 @@ const books = [
     'creds': 'Vinayak K. Prasad, MD, MPH'
   },
   {
-    'title': 'Cynical Theories: How Activist Scholarship Made Everything about Race, Geneder, and Identity—and Why This Harms Everybody',
+    'title': 'Cynical Theories: How Activist Scholarship Made Everything about Race, Gender, and Identity—and Why This Harms Everybody',
     'creds': 'Hellena Pluckrose, James Lindsay'
   },
 
