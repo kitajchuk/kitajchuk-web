@@ -1,5 +1,28 @@
 const books = [
   {
+    'title': 'Overdosed America: The Broken Promise of American Medicine',
+    'creds': 'John Abramson, MD'
+  },
+  {
+    'title': 'Sickening: How Government Ruined Healthcare and How to Fix It',
+    'creds': 'John Abramson, MD'
+  },
+  {
+    'title': 'Ending Medical Reversal: Improving Outcomes, Saving Lives',
+    'creds': 'Vinayak K. Prasad, MD, MPH'
+  },
+  {
+    'title': 'Malignant: How Bad Policy and Bad Evidence Harm People with Cancer',
+    'creds': 'Vinayak K. Prasad, MD, MPH'
+  },
+  {
+    'title': 'Cynical Theories: How Activist Scholarship Made Everything about Race, Geneder, and Identity—and Why This Harms Everybody',
+    'creds': 'Hellena Pluckrose, James Lindsay'
+  },
+
+  //...
+
+  {
     'title': 'Fortitude: American Resilience in the Era of Outrage',
     'creds': 'Dan Crenshaw'
   },
@@ -89,6 +112,10 @@ const books = [
   },
   {
     'title': '12 Rules for Life: An Antidote to Chaos',
+    'creds': 'Jordan Peterson'
+  },
+  {
+    'title': 'Beyond Order: 12 More Rules for Life',
     'creds': 'Jordan Peterson'
   },
   {

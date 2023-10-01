@@ -1,5 +1,7 @@
 .books {
   flex-direction: column;
+  max-width: $width-small;
+  margin: 0 auto;
 
   .book + .book {
     margin-top: 64px;
