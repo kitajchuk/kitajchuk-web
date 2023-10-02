@@ -37,6 +37,10 @@ export const footer = [
     link: '/dev/',
     label: 'dev',
   },
+  {
+    link: '/_books/',
+    label: '📚',
+  },
 ];
 
 export const apps = [
