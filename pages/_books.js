@@ -7,7 +7,7 @@ import books from "../src/lib/books";
 
 export default function Reads() {
   return (
-    <Layout>
+    <Layout title="books">
       <main className="navi books">
         <ul>
           {books.map((book) => {

@@ -2,7 +2,7 @@ import Layout from "../src/components/layout";
 
 export default function Dev() {
   return (
-    <Layout>
+    <Layout title="dev">
       <main className="dev">
         <header className="dev__head navi">
           <h1>dev story</h1>
