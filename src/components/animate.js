@@ -1,20 +1,20 @@
-import { useEffect, useRef, useState } from 'react';
-import classNames from 'classnames';
+import { useEffect, useRef, useState } from "react";
+import classNames from "classnames";
 
 export function withAnimate(WrappedComponent) {
-  return function WrapperComponent({...props}) {
+  return function WrapperComponent({ ...props }) {
     const elRef = useRef();
     const obRef = useRef();
     const [animated, setAnimated] = useState(false);
     const classes = {
-      'anim': true,
-      'is-animated': animated,
+      anim: true,
+      "is-animated": animated,
     };
 
     useEffect(() => {
       if (elRef.current) {
         obRef.current = new IntersectionObserver((entries) => {
-          if (entries[ 0 ].isIntersecting) {
+          if (entries[0].isIntersecting) {
             obRef.current.disconnect();
             setAnimated(true);
           }

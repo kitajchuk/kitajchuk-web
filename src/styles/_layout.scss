@@ -1,5 +1,5 @@
 body {
-  font-family: 'panicsans', monospace;
+  font-family: "panicsans", monospace;
   font-size: $font-base;
   line-height: 2;
   background-color: $white;
@@ -59,7 +59,8 @@ p {
 }
 
 ._404 {
-  p, h1 {
+  p,
+  h1 {
     display: inline;
   }
 }
@@ -159,8 +160,9 @@ p {
 .anim {
   opacity: 0;
   transform: translate3d(0, 32px, 0);
-  transition: opacity $anim-duration $anim-ease,
-              transform $anim-duration $anim-ease;
+  transition:
+    opacity $anim-duration $anim-ease,
+    transform $anim-duration $anim-ease;
 
   &.is-animated {
     opacity: 1;

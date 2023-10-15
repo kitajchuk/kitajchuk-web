@@ -1,6 +1,6 @@
-import { nanoid } from 'nanoid';
+import { nanoid } from "nanoid";
 
-import decks from './decks';
+import decks from "./decks";
 
 // https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
 function shuffle(a) {
@@ -47,9 +47,9 @@ export function getDeck(key) {
 }
 
 export function createDecks() {
-  const mingos = getDeck('mingo');
-  const shrimp = getDeck('shrimp');
-  const flames = getDeck('flame');
+  const mingos = getDeck("mingo");
+  const shrimp = getDeck("shrimp");
+  const flames = getDeck("flame");
 
   return {
     mingos,

@@ -1,14 +1,22 @@
-import { nanoid } from 'nanoid';
-import classNames from 'classnames';
+import { nanoid } from "nanoid";
+import classNames from "classnames";
 
-import Head from 'next/head';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+import Head from "next/head";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
-import Logo from './logo';
-import { navi, footer, apps, extras, description, instagram, ogImage } from '../lib/site';
+import Logo from "./logo";
+import {
+  navi,
+  footer,
+  apps,
+  extras,
+  description,
+  instagram,
+  ogImage,
+} from "../lib/site";
 
-function Item({obj}) {
+function Item({ obj }) {
   const router = useRouter();
   const regex = new RegExp(`^${obj.link}`);
   const classes = {
@@ -19,13 +27,13 @@ function Item({obj}) {
   return (
     <li className={classNames(classes)}>
       <Link href={obj.link}>
-        <a target={obj.open ? '_blank' : null}>{obj.label}</a>
+        <a target={obj.open ? "_blank" : null}>{obj.label}</a>
       </Link>
     </li>
   );
 }
 
-function Navi({data, label}) {
+function Navi({ data, label }) {
   return (
     <nav className="navi" aria-label={label}>
       <ul className="navi__list">
@@ -43,11 +51,13 @@ function Footer() {
   return (
     <footer className="navi footer">
       <p className="m">
-        all original content<br />
-        copyright{' '}
+        all original content
+        <br />
+        copyright{" "}
         <Link href={instagram} target="_blank">
           <a>@kitajchuk</a>
-        </Link>{''}.
+        </Link>
+        {""}.
       </p>
       <Navi data={footer} label="Portfolio Navigation" />
       <Navi data={apps} label="Web App Links" />
@@ -63,20 +73,21 @@ function NotFound() {
         <h1>404</h1>
         <div className="sep" role="separator" />
         <p>
-          end of line, but you can still check out my{' '}
+          end of line, but you can still check out my{" "}
           <Link href="/drawings/">
             <a>drawings</a>
-          </Link>{''}.
+          </Link>
+          {""}.
         </p>
       </div>
     </nav>
   );
 }
 
-export default function Layout({title = 'kitajchuk', preload = [], ...rest}) {
+export default function Layout({ title = "kitajchuk", preload = [], ...rest }) {
   const router = useRouter();
   const is404 = /404/.test(router.route);
-  const pageTitle = (title !== 'kitajchuk' ? `${title} \\\\ kitajchuk` : title);
+  const pageTitle = title !== "kitajchuk" ? `${title} \\\\ kitajchuk` : title;
 
   return (
     <>
@@ -90,10 +101,17 @@ export default function Layout({title = 'kitajchuk', preload = [], ...rest}) {
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/logo192.png" />
         <link rel="manifest" href="/manifest.json" />
-        <link rel="preload" href="/fonts/panicsans.woff" crossOrigin="anonymous" as="font" type="font/woff" />
-        {preload.length > 0 && preload.map((source) => {
-          return <link rel="preload" as="image" href={source} key={source} />;
-        })}
+        <link
+          rel="preload"
+          href="/fonts/panicsans.woff"
+          crossOrigin="anonymous"
+          as="font"
+          type="font/woff"
+        />
+        {preload.length > 0 &&
+          preload.map((source) => {
+            return <link rel="preload" as="image" href={source} key={source} />;
+          })}
       </Head>
       <header className="header">
         <Link href="/">

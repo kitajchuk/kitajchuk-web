@@ -1,4 +1,4 @@
-const withPreact = require('next-plugin-preact');
+const withPreact = require("next-plugin-preact");
 
 module.exports = withPreact({
   trailingSlash: true,

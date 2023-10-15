@@ -1,6 +1,6 @@
-import { useRef, useEffect, useCallback, useMemo } from 'react';
+import { useRef, useEffect, useCallback, useMemo } from "react";
 
-export default function Canvas({source}) {
+export default function Canvas({ source }) {
   const imagesRef = useRef([]);
   const canvasRef = useRef();
   const blitRef = useRef();
@@ -16,12 +16,7 @@ export default function Canvas({source}) {
   sourceRef.current = source;
 
   const clear = (ctx) => {
-    ctx.clearRect(
-      0,
-      0,
-      canvasRef.current.width,
-      canvasRef.current.height
-    );
+    ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
   };
 
   const draw = (ctx, img) => {
@@ -34,19 +29,22 @@ export default function Canvas({source}) {
       0,
       0,
       canvasRef.current.width,
-      canvasRef.current.height
+      canvasRef.current.height,
     );
   };
 
-  const handleBlit = useCallback((f) => {
-    if (canvasRef.current && imagesRef.current.length) {
-      const idx = (f % config.len);
-      const ctx = canvasRef.current.getContext('2d');
-      
-      clear(ctx);
-      draw(ctx, imagesRef.current[idx][sourceRef.current]);
-    }
-  }, [canvasRef, sourceRef, imagesRef, config]);
+  const handleBlit = useCallback(
+    (f) => {
+      if (canvasRef.current && imagesRef.current.length) {
+        const idx = f % config.len;
+        const ctx = canvasRef.current.getContext("2d");
+
+        clear(ctx);
+        draw(ctx, imagesRef.current[idx][sourceRef.current]);
+      }
+    },
+    [canvasRef, sourceRef, imagesRef, config],
+  );
 
   const loadImageSet = (obj) => {
     return new Promise((resolve) => {
@@ -98,7 +96,7 @@ export default function Canvas({source}) {
   });
 
   useEffect(() => {
-    import('properjs-blit').then((Blit) => {
+    import("properjs-blit").then((Blit) => {
       blitRef.current = new Blit.default({
         fps: config.fps,
         paused: true,

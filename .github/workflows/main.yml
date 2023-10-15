@@ -3,10 +3,10 @@ name: github
 on:
   push:
     branches:
-      - 'main'
+      - "main"
   pull_request:
     branches:
-      - '**'
+      - "**"
   workflow_dispatch:
 
 jobs:
@@ -41,4 +41,3 @@ jobs:
         if: ${{ github.ref == 'refs/heads/main' }}
         run: |
           ls -laR out
-          

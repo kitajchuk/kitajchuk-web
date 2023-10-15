@@ -1,8 +1,8 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import { nanoid } from 'nanoid';
+import { nanoid } from "nanoid";
 
-import Image from '../../src/components/image';
+import Image from "../../src/components/image";
 
 export default function Drawings({ collection, paths, scope }) {
   return (
@@ -27,13 +27,17 @@ export default function Drawings({ collection, paths, scope }) {
           );
         })}
       </ul>
-      <nav className="drawings__navi" aria-label={`${scope} Category Navigation`}>
+      <nav
+        className="drawings__navi"
+        aria-label={`${scope} Category Navigation`}
+      >
         {paths.map((obj) => {
           return (
-            <Link key={obj.params.slug} href={`/${scope.toLowerCase()}/${obj.params.slug}`}>
-              <a className="drawings__link">
-                {obj.params.slug}
-              </a>
+            <Link
+              key={obj.params.slug}
+              href={`/${scope.toLowerCase()}/${obj.params.slug}`}
+            >
+              <a className="drawings__link">{obj.params.slug}</a>
             </Link>
           );
         })}

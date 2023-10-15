@@ -1,9 +1,9 @@
-import Layout from '../src/components/layout';
-import Image from '../src/components/image';
+import Layout from "../src/components/layout";
+import Image from "../src/components/image";
 
-import { getPublicImage } from '../src/lib/utils';
+import { getPublicImage } from "../src/lib/utils";
 
-export default function Home({image}) {
+export default function Home({ image }) {
   return (
     <Layout preload={[image.src]}>
       <main className="hero">
@@ -22,7 +22,7 @@ export default function Home({image}) {
 }
 
 export async function getStaticProps() {
-  const image = await getPublicImage('kitajchuk_hero.webp');
+  const image = await getPublicImage("kitajchuk_hero.webp");
 
   return {
     props: {

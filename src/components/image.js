@@ -1,18 +1,18 @@
 const Image = ({
-  src = '',
-  alt = '',
+  src = "",
+  alt = "",
   aspect = 75,
   priority = false,
-  orientation = 'landscape',
+  orientation = "landscape",
   ...rest
 }) => {
   return (
     <div className={`image image--${orientation}`}>
-      <div className="image__fit" style={{paddingBottom: `${aspect}%`}}>
+      <div className="image__fit" style={{ paddingBottom: `${aspect}%` }}>
         <img
           src={src}
           alt={alt}
-          loading={priority ? undefined : 'lazy'}
+          loading={priority ? undefined : "lazy"}
           className="image__img"
           {...rest}
         />

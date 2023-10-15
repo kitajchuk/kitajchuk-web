@@ -24,6 +24,7 @@
     "next-plugin-preact": "^3.0.6",
     "preact": "^10.7.2",
     "preact-render-to-string": "^5.2.0",
+    "prettier": "^3.0.3",
     "properjs-blit": "^0.3.2",
     "react": "npm:@preact/compat",
     "react-dom": "npm:@preact/compat",
@@ -45,6 +46,7 @@
     "shelljs": "^0.8.5"
   },
   "lint-staged": {
-    "*.js": "yarn lint"
+    "*.{js,jsx}": "yarn lint",
+    "*.{js,jsx,css,scss,toml,md,json,yml}": "prettier --write"
   }
 }
