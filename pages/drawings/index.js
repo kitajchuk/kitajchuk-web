@@ -6,8 +6,8 @@ import { getPublicStaticPaths } from '../../src/lib/utils';
 export default function Drawings({paths}) {
   return (
     <Layout title="drawings">
-      <section className="drawings">
-        <nav className="drawings__navi">
+      <main className="drawings">
+        <nav className="drawings__navi" aria-label="Drawing Category Navigation">
           {paths.map((obj) => {
             return (
               <Link key={obj.params.slug} href={`/drawings/${obj.params.slug}`}>
@@ -18,7 +18,7 @@ export default function Drawings({paths}) {
             );
           })}
         </nav>
-      </section>
+      </main>
     </Layout>
   );
 }

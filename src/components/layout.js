@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import Logo from './logo';
-import { navi, footer, apps, description, instagram, ogImage } from '../lib/site';
+import { navi, footer, apps, extras, description, instagram, ogImage } from '../lib/site';
 
 function Item({obj}) {
   const router = useRouter();
@@ -25,9 +25,9 @@ function Item({obj}) {
   );
 }
 
-function Navi({data}) {
+function Navi({data, label}) {
   return (
-    <nav className="navi">
+    <nav className="navi" aria-label={label}>
       <ul className="navi__list">
         {data.map((nav) => {
           return <Item obj={nav} key={nanoid()} />;
@@ -42,21 +42,16 @@ function Footer() {
 
   return (
     <footer className="navi footer">
-      <div className="footer__copy">
-        <p>
-          copyright {date.getFullYear()}{' '}
-          <Link href={instagram}>
-            <a target="_blank">@kitajchuk</a>
-          </Link>
-          .
-        </p>
-      </div>
-      <div className="footer__navi">
-        <Navi data={footer} />
-      </div>
-      <div className="footer__apps">
-        <Navi data={apps} />
-      </div>
+      <p className="m">
+        all original content<br />
+        copyright{' '}
+        <Link href={instagram} target="_blank">
+          <a>@kitajchuk</a>
+        </Link>{''}.
+      </p>
+      <Navi data={footer} label="Portfolio Navigation" />
+      <Navi data={apps} label="Web App Links" />
+      <Navi data={extras} label="Self Interest Links" />
     </footer>
   );
 }
@@ -64,13 +59,16 @@ function Footer() {
 function NotFound() {
   return (
     <nav className="navi">
-      <p>
-        404 | things have changed, but you can still check out my{' '}
-        <Link href="/drawings/">
-          <a>drawings</a>
-        </Link>
-        .
-      </p>
+      <div className="_404">
+        <h1>404</h1>
+        <div className="sep" role="separator" />
+        <p>
+          end of line, but you can still check out my{' '}
+          <Link href="/drawings/">
+            <a>drawings</a>
+          </Link>{''}.
+        </p>
+      </div>
     </nav>
   );
 }
@@ -99,15 +97,13 @@ export default function Layout({title = 'kitajchuk', preload = [], ...rest}) {
       </Head>
       <header className="header">
         <Link href="/">
-          <a title="Home">
+          <a aria-label="Link to Home Page" title="Link to Home Page">
             <Logo fill="#000" />
           </a>
         </Link>
       </header>
-      {is404 ? <NotFound /> : <Navi data={navi} />}
-      <main className="main">
-        {rest.children}
-      </main>
+      {is404 ? <NotFound /> : <Navi data={navi} label="Professional Links" />}
+      {rest.children}
       <Footer />
     </>
   );

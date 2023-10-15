@@ -8,18 +8,22 @@ import books from '../src/lib/books';
 export default function Reads() {
   return (
     <Layout>
-      <div className="navi books">
+      <main className="navi books">
+        <ul>
         {books.map((book) => {
           return (
-            <div className="book" key={nanoid()}>
-              <Link href={`https://search.brave.com/search?q=${book.title}`}>
-                <a className="book__title" target="_blank">{book.title}</a>
-              </Link>
-              <div className="book__creds">{book.creds}</div>
-            </div>
+            <li className="book" key={nanoid()}>
+              <cite>
+                <Link href={`https://search.brave.com/search?q=${book.title}`}>
+                  <a className="book__title" target="_blank">{book.title}</a>
+                </Link>
+              </cite>
+              <div className="book__creds m">{book.creds}</div>
+            </li>
           );
         })}
-      </div>
+        </ul>
+      </main>
     </Layout>
   );
 }

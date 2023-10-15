@@ -3,11 +3,11 @@ import Layout from '../src/components/layout';
 export default function Dev() {
   return (
     <Layout>
-      <div className="dev">
-        <section className="dev__head navi">
-          <p>dev story</p>
-        </section>
-        <section className="dev__sites uwrap colf">
+      <main className="dev">
+        <header className="dev__head navi">
+          <h1>dev story</h1>
+        </header>
+        <div className="dev__sites uwrap colf">
           <p className="pp m">
             Current projects I actively tinker on. 
             Most are personal to me, involving family or friends, or just hobby projects.
@@ -30,8 +30,8 @@ export default function Dev() {
           <p className="pp m">
             <a href="https://2dk.kitajchuk.com" target="_blank" rel="noreferrer">2dk.kitajchuk.com</a> | <a href="https://github.com/kitajchuk/2dk" target="_blank" rel="noreferrer">github</a>
           </p>
-        </section>
-        <section className="dev__sqs uwrap colf">
+        </div>
+        <div className="dev__sqs uwrap colf">
           <p className="pp m">
             At <a href="https://www.instrument.com/" target="_blank" rel="noreferrer">Instrument</a> I developed the first <a href="https://github.com/kitajchuk/node-squarespace-server" target="_blank" rel="noreferrer">open-source dev tools for Squarespace</a>. 
             I made a lot of sqs sites, however I no longer do so because I prefer the <a href="https://jamstack.org/" target="_blank" rel="noreferrer">JAMstack</a> these days.
@@ -51,8 +51,8 @@ export default function Dev() {
           <p className="pp m">
             <a href="https://www.deemjournal.com" target="_blank" rel="noreferrer">deemjournal.com</a> | <a href="https://github.com/deemjournal/deemjournal-sqs" target="_blank" rel="noreferrer">github</a>
           </p>
-        </section>
-        <section className="dev__twitch uwrap colf">
+        </div>
+        <div className="dev__twitch uwrap colf">
           <p className="pp m">
             I developed some custom <a href="https://twitch.tv/" target="_blank" rel="noreferrer">Twitch</a> apps to gameify the streams for my <a href="https://www.twitch.tv/kitajchuk" target="_blank" rel="noreferrer">old affiliate channel</a> and for <a href="https://www.twitch.tv/brucecooper" target="_blank" rel="noreferrer">@BruceCooper</a>. 
             The former was a zelda inspired game HUD and the latter were zelda/pokemon themed mazes generated with <a href="https://sanojian.github.io/cellauto/" target="_blank" rel="noreferrer">cellular automata</a>.
@@ -63,8 +63,8 @@ export default function Dev() {
           <p className="pp m">
             <a href="https://github.com/kitajchuk/twitch-labyrinth" target="_blank" rel="noreferrer">twitch-labyrinth</a>
           </p>
-        </section>
-        <section className="dev__tools uwrap colf">
+        </div>
+        <div className="dev__tools uwrap colf">
           <p className="pp m">
             I&apos;ve always been interested in &quot;rolling your own&quot; as they say. 
             Over the years I&apos;ve built, maintained and deprecated a number of custom projects, libraries and frameworks.
@@ -78,8 +78,8 @@ export default function Dev() {
           <p className="pp m">
             <a href="https://github.com/kitajchuk/boxen" target="_blank" rel="noreferrer">boxen</a>
           </p>
-        </section>
-        <section className="dev__legacy uwrap colf">
+        </div>
+        <div className="dev__legacy uwrap colf">
           <p className="pp m">
             These are some older <a href="https://middlemanapp.com/" target="_blank" rel="noreferrer">middleman</a> projects I built while at <a href="https://www.instrument.com/" target="_blank" rel="noreferrer">Instrument</a>. 
             For posterity I have kept the static builds available on <a href="https://netlify.com/" target="_blank" rel="noreferrer">Netlify</a> because they are lovely.
@@ -90,8 +90,8 @@ export default function Dev() {
           <p className="pp m">
             <a href="https://legacy-maekan-prototype.netlify.app/kit-of-parts/" target="_blank" rel="noreferrer">maekan prototype</a> | <a href="https://github.com/kitajchuk/legacy-maekan-prototype" target="_blank" rel="noreferrer">github</a>
           </p>
-        </section>
-        <section className="dev__nodesqs uwrap colf">
+        </div>
+        <div className="dev__nodesqs uwrap colf">
           <p className="pp m">
             I built the first <a href="https://github.com/kitajchuk/node-squarespace-server" target="_blank" rel="noreferrer">open-source Squarespace dev tools</a> with nodejs. 
             A sqs engineer flew from New York to Portland to interview me about it and ultimately they developed <a href="https://developers.squarespace.com/tools" target="_blank" rel="noreferrer">official sqs dev tools</a> which I did some consulting on.
@@ -105,8 +105,8 @@ export default function Dev() {
           <p className="pp m">
             <a href="https://github.com/kitajchuk/node-squarespace-jsont" target="_blank" rel="noreferrer">node-squarespace-jsont</a>
           </p>
-        </section>
-      </div>
+        </div>
+      </main>
     </Layout>
   );
 }

@@ -37,10 +37,6 @@ export const footer = [
     link: '/dev/',
     label: 'dev',
   },
-  {
-    link: '/_books/',
-    label: '📚',
-  },
 ];
 
 export const apps = [
@@ -66,6 +62,13 @@ export const apps = [
   },
 ];
 
+export const extras = [
+  {
+    link: '/_books/',
+    label: '📚',
+  },
+];
+
 export const portfolio = {
   drawings: [
     'fallgirl',
@@ -75,15 +78,16 @@ export const portfolio = {
     'little-busters',
     'miscellaneous-digital',
     'miscellaneous-traditional',
+    'flamingos-card-game',
     'art-school',
-    'x-mas',
+    'holiday',
   ],
   comics: [
     'tabi-covers',
     'tabi-prequel',
-    'tabi-chapter-0',
-    'tabi-chapter-1-parents',
-    'tabi-chapter-1-childrens',
+    'tabi-chapter-zero',
+    'tabi-chapter-one-parents',
+    'tabi-chapter-one-childrens',
     'tabi-inktober',
     'tabi-cards',
   ],

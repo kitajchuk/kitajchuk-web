@@ -12,7 +12,7 @@ const Image = ({
         <img
           src={src}
           alt={alt}
-          loading={priority ? 'eager' : 'lazy'}
+          loading={priority ? undefined : 'lazy'}
           className="image__img"
           {...rest}
         />

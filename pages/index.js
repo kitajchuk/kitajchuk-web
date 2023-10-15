@@ -6,7 +6,7 @@ import { getPublicImage } from '../src/lib/utils';
 export default function Home({image}) {
   return (
     <Layout preload={[image.src]}>
-      <div className="hero">
+      <main className="hero">
         <Image
           src={image.src}
           alt={image.alt}
@@ -16,13 +16,13 @@ export default function Home({image}) {
           priority
           orientation="hero"
         />
-      </div>
+      </main>
     </Layout>
   );
 }
 
 export async function getStaticProps() {
-  const image = await getPublicImage('kitajchuk_hero.webp');
+  const image = await getPublicImage('kitajchuk_bear.webp');
 
   return {
     props: {

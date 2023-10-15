@@ -50,6 +50,20 @@ p {
   }
 }
 
+.sep {
+  display: inline;
+
+  &:before {
+    content: " | ";
+  }
+}
+
+._404 {
+  p, h1 {
+    display: inline;
+  }
+}
+
 .navi {
   padding: 96px $wrap-padding 64px;
   display: flex;
@@ -121,6 +135,10 @@ p {
 
   &--hero {
     max-width: $width-small;
+  }
+
+  &--hero-landscape {
+    max-width: $width-tablet-1;
   }
 
   &__fit {

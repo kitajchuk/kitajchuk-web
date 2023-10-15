@@ -6,7 +6,7 @@ import { getPublicImage } from '../src/lib/utils';
 export default function Page404({image}) {
   return (
     <Layout preload={[image.src]}>
-      <div className="hero">
+      <main className="hero">
         <Image
           src={image.src}
           alt={image.alt}
@@ -16,7 +16,7 @@ export default function Page404({image}) {
           priority
           orientation="hero"
         />
-      </div>
+      </main>
     </Layout>
   );
 }
