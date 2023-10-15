@@ -17,31 +17,32 @@ const s3 = new AWS.S3({
   s3.listObjects(listParams)
     .promise()
     .then((data) => {
-      data.Contents.forEach((listObj) => {
-        const file = path.join(process.cwd(), listObj.Key);
-        let dir = listObj.Key.split("/");
+      data.Contents.forEach(({ Key }) => {
+        const dir = Key.split("/");
+        const file = path.join(process.cwd(), Key);
 
         dir.pop();
-        dir = dir.join("/");
 
-        mkdirp(dir).then(() => {
+        const dirp = dir.join("/");
+
+        mkdirp(dirp).then(() => {
           const getParams = {
+            Key,
             Bucket: process.env.KITA_S3_REPOSITORY,
-            Key: listObj.Key,
           };
 
           if (!fs.existsSync(file)) {
             s3.getObject(getParams)
               .promise()
-              .then((getObj) => {
-                fs.writeFile(file, getObj.Body, (error) => {
+              .then(({ Body }) => {
+                fs.writeFile(file, Body, (error) => {
                   if (!error) {
-                    console.log(`Wrote file ${listObj.Key}`);
+                    console.log(`Wrote file ${file}`);
                   }
                 });
               });
           } else {
-            console.log(`File already downloaded ${listObj.Key}`);
+            console.log(`File already downloaded ${file}`);
           }
         });
       });
