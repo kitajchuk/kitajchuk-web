@@ -59,7 +59,7 @@ function Footer() {
         </Link>
         {""}.
       </p>
-      <Navi data={footer} label="Portfolio Navigation" />
+      <Navi data={footer} label="Professional Links" />
       <Navi data={apps} label="Web App Links" />
       <Navi data={extras} label="Self Interest Links" />
     </footer>
@@ -119,7 +119,7 @@ export default function Layout({ title = "kitajchuk", preload = [], ...rest }) {
           </a>
         </Link>
       </header>
-      {is404 ? <NotFound /> : <Navi data={navi} label="Professional Links" />}
+      {is404 ? <NotFound /> : <Navi data={navi} label="Portfolio Navigation" />}
       {rest.children}
       <Footer />
     </>
