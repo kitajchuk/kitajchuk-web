@@ -6,10 +6,13 @@ export default function Dev() {
       <main className="dev">
         <header className="dev__head navi">
           <h1>dev story</h1>
+          <p className="pp m">I&rsquo;m currently a full-time Staff Engineer at{" "}
+            <a href="https://digs.com/" target="_blank"
+              rel="noreferrer">Digs</a>.</p>
         </header>
         <div className="dev__sites uwrap colf">
           <p className="pp m">
-            Current projects I actively tinker on. Most are personal to me,
+            Projects I actively tinker on. Most are personal to me,
             involving family or friends, or just hobby projects.
           </p>
           <p className="pp m">
@@ -219,7 +222,7 @@ export default function Dev() {
               @BruceCooper
             </a>
             . The former was a zelda inspired game HUD and the latter were
-            zelda/pokemon themed mazes generated with{" "}
+            2D themed mazes generated with{" "}
             <a
               href="https://sanojian.github.io/cellauto/"
               target="_blank"

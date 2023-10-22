@@ -6,10 +6,10 @@ export const twitter = "https://www.twitter.com/kitajchuk/";
 
 export const ogImage = "https://www.kitajchuk.com/nlp.png";
 
-export const navi = [
+export const footer = [
   {
-    link: "mailto:bk@kitajchuk.com",
-    label: "email",
+    link: "https://www.linkedin.com/in/brandonleekitajchuk/",
+    label: "linkedin",
     open: true,
   },
   {
@@ -18,24 +18,25 @@ export const navi = [
     open: true,
   },
   {
-    link: "https://www.linkedin.com/in/brandonleekitajchuk/",
-    label: "linkedin",
+    link: "mailto:bk@kitajchuk.com",
+    label: "email",
     open: true,
   },
 ];
 
-export const footer = [
+export const navi = [
+
   {
-    link: "/drawings/",
-    label: "drawings",
+    link: "/dev/",
+    label: "dev",
   },
   {
     link: "/comics/",
     label: "comics",
   },
   {
-    link: "/dev/",
-    label: "dev",
+    link: "/drawings/",
+    label: "drawings",
   },
 ];
 
