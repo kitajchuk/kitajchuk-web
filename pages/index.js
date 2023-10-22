@@ -14,7 +14,7 @@ export default function Home({ image }) {
           height={image.dims.height}
           aspect={image.aspect}
           priority
-          orientation="landscape"
+          orientation="hero"
         />
       </main>
     </Layout>
@@ -22,7 +22,7 @@ export default function Home({ image }) {
 }
 
 export async function getStaticProps() {
-  const image = await getPublicImage("kitajchuk_nlp.webp");
+  const image = await getPublicImage("kitajchuk_hero.webp");
 
   return {
     props: {
