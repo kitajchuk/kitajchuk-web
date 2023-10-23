@@ -5,24 +5,14 @@ body {
   background-color: $white;
 
   &.is-dark-mode {
-    background-color: $black;
     color: $white;
-
-    *:not(a) {
-      color: $white;
-    }
-
-    p {
-      a {
-        border-bottom: 1px solid $white;
-      }
-    }
+    background-color: $black;
   }
 }
 
 p {
   a {
-    border-bottom: 1px solid $black;
+    border-bottom: 1px solid currentcolor;
   }
 }
 
@@ -67,20 +57,20 @@ p {
 
 .navi {
   padding: 96px $wrap-padding 64px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   text-align: center;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    grid-gap: 16px;
+  }
 
   &__item {
     &.active {
       text-decoration: line-through;
     }
-  }
-
-  &__item + &__item {
-    margin-top: 16px;
   }
 
   @media (max-width: $width-mobile) {

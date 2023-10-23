@@ -4,6 +4,26 @@ import { nanoid } from "nanoid";
 
 import Image from "../../src/components/image";
 
+export const DrawingsNavi = ({ scope, paths }) => {
+  return (
+    <nav
+      className="drawings__navi"
+      aria-label={`${scope} Category Navigation`}
+    >
+      {paths.map((obj) => {
+        return (
+          <Link
+            key={obj.params.slug}
+            href={`/${scope.toLowerCase()}/${obj.params.slug}`}
+          >
+            <a className="drawings__link"><span>{obj.params.slug}</span></a>
+          </Link>
+        );
+      })}
+    </nav>
+  );
+};
+
 export default function Drawings({ collection, paths, scope }) {
   return (
     <main className="drawings">
@@ -27,21 +47,7 @@ export default function Drawings({ collection, paths, scope }) {
           );
         })}
       </ul>
-      <nav
-        className="drawings__navi"
-        aria-label={`${scope} Category Navigation`}
-      >
-        {paths.map((obj) => {
-          return (
-            <Link
-              key={obj.params.slug}
-              href={`/${scope.toLowerCase()}/${obj.params.slug}`}
-            >
-              <a className="drawings__link">{obj.params.slug}</a>
-            </Link>
-          );
-        })}
-      </nav>
+      <DrawingsNavi scope={scope} paths={paths} />
     </main>
   );
 }

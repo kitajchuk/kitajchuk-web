@@ -22,7 +22,7 @@ export default function Page404({ image }) {
 }
 
 export async function getStaticProps() {
-  const image = await getPublicImage("kitajchuk_hollow.webp");
+  const image = await getPublicImage("kitajchuk_hero.webp");
 
   return {
     props: {

@@ -5,28 +5,15 @@ export default function Dev() {
     <Layout title="dev">
       <main className="dev">
         <header className="dev__head navi">
-          <h1>dev story</h1>
-          <p className="pp m">I&rsquo;m currently a full-time Staff Engineer at{" "}
+          <h1>I&rsquo;m currently a full-time Staff Software Engineer at{" "}
             <a href="https://digs.com/" target="_blank"
-              rel="noreferrer">Digs</a>.</p>
+              rel="noreferrer">Digs</a>.
+          </h1>
         </header>
         <div className="dev__sites uwrap colf">
           <p className="pp m">
             Projects I actively tinker on. Most are personal to me,
             involving family or friends, or just hobby projects.
-          </p>
-          <p className="pp m">
-            <a href="https://jambonz.org" target="_blank" rel="noreferrer">
-              jambonz.org
-            </a>{" "}
-            |{" "}
-            <a
-              href="https://github.com/jambonz/next-static-site"
-              target="_blank"
-              rel="noreferrer"
-            >
-              github
-            </a>
           </p>
           <p className="pp m">
             <a href="https://wordsup.press" target="_blank" rel="noreferrer">
@@ -41,9 +28,19 @@ export default function Dev() {
               github
             </a>
           </p>
-          {/* <p className="pp m">
-            <a href="https://www.brianswarthout.com/" target="_blank" rel="noreferrer">brianswarthout.com</a> | <a href="https://github.com/kitajchuk/bs.services" target="_blank" rel="noreferrer">github</a>
-          </p> */}
+          <p className="pp m">
+            <a href="https://hbjunkhauling.com" target="_blank" rel="noreferrer">
+              hbjunkhauling.com
+            </a>{" "}
+            |{" "}
+            <a
+              href="https://github.com/kitajchuk/hbjunkhauling-web"
+              target="_blank"
+              rel="noreferrer"
+            >
+              github
+            </a>
+          </p>
           <p className="pp m">
             <a
               href="https://letters.kitajchuk.com"
@@ -95,6 +92,19 @@ export default function Dev() {
               github
             </a>
           </p>
+          <p className="pp m">
+            <a href="https://jambonz.org" target="_blank" rel="noreferrer">
+              jambonz.org
+            </a>{" "}
+            |{" "}
+            <a
+              href="https://github.com/jambonz/next-static-site"
+              target="_blank"
+              rel="noreferrer"
+            >
+              github
+            </a>
+          </p>
         </div>
         <div className="dev__sqs uwrap colf">
           <p className="pp m">
@@ -120,19 +130,6 @@ export default function Dev() {
               JAMstack
             </a>{" "}
             these days.
-          </p>
-          <p className="pp m">
-            <a href="https://www.struck.com" target="_blank" rel="noreferrer">
-              struck.com
-            </a>{" "}
-            |{" "}
-            <a
-              href="https://github.com/kitajchuk/struck-sqs"
-              target="_blank"
-              rel="noreferrer"
-            >
-              github
-            </a>
           </p>
           <p className="pp m">
             <a href="https://www.garberco.com" target="_blank" rel="noreferrer">

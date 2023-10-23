@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import Layout from "../../src/components/layout";
+import { DrawingsNavi } from "../../src/components/drawings";
 import { getPublicStaticPaths } from "../../src/lib/utils";
 
 export default function Comics({ paths }) {
@@ -57,18 +58,7 @@ export default function Comics({ paths }) {
           </p>
         </div>
         <div className="drawings">
-          <nav
-            className="drawings__navi"
-            aria-label="Comics Category Navigation"
-          >
-            {paths.map((obj) => {
-              return (
-                <Link key={obj.params.slug} href={`/comics/${obj.params.slug}`}>
-                  <a className="drawings__link">{obj.params.slug}</a>
-                </Link>
-              );
-            })}
-          </nav>
+          <DrawingsNavi scope="Comics" paths={paths} />
         </div>
       </main>
     </Layout>

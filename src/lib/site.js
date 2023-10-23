@@ -42,6 +42,11 @@ export const navi = [
 
 export const apps = [
   {
+    link: "https://www.hbjunkhauling.com",
+    label: "hbjunkhauling",
+    open: true,
+  },
+  {
     link: "https://wordsup.press",
     label: "wordsup",
     open: true,

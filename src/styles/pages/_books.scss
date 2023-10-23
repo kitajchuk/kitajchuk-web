@@ -2,6 +2,7 @@
   flex-direction: column;
   max-width: 500px;
   margin: 0 auto;
+  text-align: center;
 
   .book + .book {
     margin-top: 64px;
@@ -12,6 +13,6 @@
   }
 
   .book__title {
-    text-decoration: underline;
+    border-bottom: 1px solid currentcolor;
   }
 }

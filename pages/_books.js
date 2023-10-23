@@ -8,8 +8,11 @@ import books from "../src/lib/books";
 export default function Reads() {
   return (
     <Layout title="books">
-      <main className="navi books">
-        <ul>
+      <main className="books">
+        <header className="navi">
+          <h1>__books__</h1>
+        </header>
+        <ul className="uwrap">
           {books.map((book) => {
             return (
               <li className="book" key={nanoid()}>

@@ -6,12 +6,20 @@
     padding: 0 16px;
   }
 
+  &__navi {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 32px;
+  }
+
   &__link {
     color: $white;
     text-align: center;
     display: block;
-    line-height: 4;
-    text-decoration: underline;
+
+    span {
+      border-bottom: 1px solid currentcolor;
+    }
   }
 
   &__title {
@@ -35,16 +43,14 @@
   &__collection {
     margin: 0 auto;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 64px;
 
     &__item {
-      margin-bottom: 64px;
       display: flex;
       justify-content: center;
       width: 100%;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
 
       @media (max-width: $width-tablet-1) {
         margin-bottom: 32px;
