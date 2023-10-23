@@ -47,18 +47,18 @@
     flex-direction: column;
     grid-gap: 64px;
 
+    @media (max-width: $width-tablet-1) {
+      grid-gap: 32px;
+    }
+
+    @media (max-width: $width-mobile) {
+      grid-gap: 16px;
+    }
+
     &__item {
       display: flex;
       justify-content: center;
       width: 100%;
-
-      @media (max-width: $width-tablet-1) {
-        margin-bottom: 32px;
-      }
-
-      @media (max-width: $width-mobile) {
-        margin-bottom: 16px;
-      }
     }
   }
 }
