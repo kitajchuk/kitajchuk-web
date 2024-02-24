@@ -8,7 +8,8 @@ const shellCmd = "find ./data -type f";
 const shellOpts = { silent: true };
 
 // The width for the `webp` versions
-const imgSize = 1440;
+const imgMaxPortrait = 768 * 2;
+const imgMaxLandscape = 1440 * 2;
 
 // Viable local source image formats
 const rImage = /\.(png|jpg|jpeg)$/;
@@ -39,7 +40,11 @@ files.forEach(async (file) => {
   const outFile = pubFile.replace(rImage, ".webp");
 
   if (!fs.existsSync(outFile)) {
-    await sharp(file).resize(imgSize).toFile(outFile);
-    console.log(`Making file: ${outFile}`);
+    const metadata = await sharp(file).metadata();
+    const isPortrait = metadata.width < metadata.height;
+    const targetSize = isPortrait ? imgMaxPortrait : imgMaxLandscape;
+    const newWidth = metadata.width < targetSize ? metadata.width : targetSize;
+    await sharp(file).resize(newWidth).toFile(outFile);
+    console.log(`Making file: ${outFile} at ${newWidth}px ${isPortrait ? "portrait" : "landscape"}`);
   }
 });
