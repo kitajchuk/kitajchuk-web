@@ -9,7 +9,6 @@
     "dev": "next",
     "start": "next start",
     "build": "next build",
-    "export": "next export",
     "upload": "env-cmd --file .env yarn upload-s3",
     "upload-s3": "aws s3 sync ./public/img s3://${KITA_S3_REPOSITORY}/public/img --exclude '*.DS_Store' --delete",
     "postupload-s3": "aws s3 sync ./public/media s3://${KITA_S3_REPOSITORY}/public/media --exclude '*.DS_Store' --delete",
