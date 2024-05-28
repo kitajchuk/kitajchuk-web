@@ -26,6 +26,7 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@netlify/plugin-nextjs": "^5.3.1",
     "aws-sdk": "^2.919.0",
     "axios": "^0.24.0",
     "env-cmd": "^10.1.0",
