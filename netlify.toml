@@ -11,5 +11,5 @@
 [context.branch-deploy]
   environment = { NODE_VERSION = "18.17.0" }
 
-# [[plugins]]
-#   package = "@netlify/plugin-nextjs"
+[[plugins]]
+  package = "@netlify/plugin-nextjs@5"
