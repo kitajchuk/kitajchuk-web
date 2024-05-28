@@ -34,9 +34,7 @@ jobs:
           export KITA_AWS_SECRET_ACCESS_KEY="${{ secrets.KITA_AWS_SECRET_ACCESS_KEY }}"
           yarn download-s3
       - name: Lint, Test and Build
-        run: |
-          yarn build
-          yarn export
+        run: yarn build
       - name: Deploy Production
         if: ${{ github.ref == 'refs/heads/main' }}
         run: |
