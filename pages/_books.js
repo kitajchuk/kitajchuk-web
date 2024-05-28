@@ -19,10 +19,9 @@ export default function Reads() {
                 <cite>
                   <Link
                     href={`https://search.brave.com/search?q=${book.title}`}
+                    className="book__title" target="_blank"
                   >
-                    <a className="book__title" target="_blank">
-                      {book.title}
-                    </a>
+                    {book.title}
                   </Link>
                 </cite>
                 <div className="book__creds m">{book.creds}</div>

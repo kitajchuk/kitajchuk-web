@@ -26,8 +26,8 @@ function Item({ obj }) {
 
   return (
     <li className={classNames(classes)}>
-      <Link href={obj.link}>
-        <a target={obj.open ? "_blank" : null}>{obj.label}</a>
+      <Link href={obj.link} target={obj.open ? "_blank" : null}>
+        {obj.label}
       </Link>
     </li>
   );
@@ -55,7 +55,7 @@ function Footer() {
         <br />
         copyright{" "}
         <Link href={instagram} target="_blank">
-          <a>@kitajchuk</a>
+          @kitajchuk
         </Link>
         {""}.
       </p>
@@ -75,7 +75,7 @@ function NotFound() {
         <p>
           end of line, but you can still check out my{" "}
           <Link href="/drawings/">
-            <a>drawings</a>
+            drawings
           </Link>
           {""}.
         </p>
@@ -113,10 +113,10 @@ export default function Layout({ title = "kitajchuk", preload = [], ...rest }) {
           })}
       </Head>
       <header className="header">
-        <Link href="/">
-          <a aria-label="Link to Home Page" title="Link to Home Page">
-            <Logo fill="#000" />
-          </a>
+        <Link href="/" aria-label="Link to Home Page" title="Link to Home Page">
+
+          <Logo fill="#000" />
+
         </Link>
       </header>
       {is404 ? <NotFound /> : <Navi data={navi} label="Portfolio Navigation" />}

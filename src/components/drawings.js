@@ -15,8 +15,9 @@ export const DrawingsNavi = ({ scope, paths }) => {
           <Link
             key={obj.params.slug}
             href={`/${scope.toLowerCase()}/${obj.params.slug}`}
+            className="drawings__link"
           >
-            <a className="drawings__link"><span>{obj.params.slug}</span></a>
+            <span>{obj.params.slug}</span>
           </Link>
         );
       })}

@@ -52,7 +52,7 @@ export default function Comics({ paths }) {
             some other comic projects. For now I manage to post illustrations
             periodically to my{" "}
             <Link href="/drawings/">
-              <a>drawings</a>
+              drawings
             </Link>
             .
           </p>

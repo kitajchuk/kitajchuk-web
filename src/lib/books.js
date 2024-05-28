@@ -1,5 +1,9 @@
 const books = [
   {
+    title: "The Canceling of the American Mind: Cancel Culture Undermines Trust and Threatens Us All―But There Is a Solution",
+    creds: "Greg Lukianoff, Rikki Schlott",
+  },
+  {
     title: "Black Rednecks and White Liberals",
     creds: "Thomas Sowell",
   },
@@ -189,14 +193,6 @@ const books = [
   {
     title: "Animal Farm",
     creds: "George Orwell",
-  },
-  {
-    title: "The Screwtape Letters",
-    creds: "C.S. Lewis",
-  },
-  {
-    title: "Raptor Red",
-    creds: "Robert T. Baker",
   },
 ];
 
