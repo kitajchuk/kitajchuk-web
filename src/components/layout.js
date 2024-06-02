@@ -84,7 +84,7 @@ function NotFound() {
   );
 }
 
-export default function Layout({ title = "kitajchuk", preload = [], ...rest }) {
+export default function Layout({ title = "kitajchuk", children }) {
   const router = useRouter();
   const is404 = /404/.test(router.route);
 
@@ -107,20 +107,14 @@ export default function Layout({ title = "kitajchuk", preload = [], ...rest }) {
           as="font"
           type="font/woff"
         />
-        {preload.length > 0 &&
-          preload.map((source) => {
-            return <link rel="preload" as="image" href={source} key={source} />;
-          })}
       </Head>
       <header className="header">
         <Link href="/" aria-label="Link to Home Page" title="Link to Home Page">
-
           <Logo fill="#000" />
-
         </Link>
       </header>
       {is404 ? <NotFound /> : <Navi data={navi} label="Portfolio Navigation" />}
-      {rest.children}
+      {children}
       <Footer />
     </>
   );

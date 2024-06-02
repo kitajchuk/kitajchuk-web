@@ -1,11 +1,13 @@
 import Layout from "../src/components/layout";
 import Image from "../src/components/image";
+import Preload from "../src/components/preload";
 
 import { getPublicImage } from "../src/lib/utils";
 
 export default function Page404({ image }) {
   return (
-    <Layout preload={[image.src]}>
+    <Layout>
+      <Preload preload={[image.src]} />
       <main className="hero">
         <Image
           src={image.src}

@@ -1,5 +1,6 @@
 import Layout from "../../src/components/layout";
 import Drawings from "../../src/components/drawings";
+import Preload from "../../src/components/preload";
 import {
   readPublicImageDirectory,
   getPublicStaticPaths,
@@ -7,7 +8,8 @@ import {
 
 export default function Comics({ collection, paths }) {
   return (
-    <Layout title={collection.title} preload={[collection.images[0].src]}>
+    <Layout title={collection.title}>
+      <Preload preload={[collection.images[0].src]} />
       <Drawings collection={collection} paths={paths} scope="Comics" />
     </Layout>
   );
