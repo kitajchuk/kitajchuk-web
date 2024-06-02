@@ -1,10 +1,10 @@
-import Layout from "../../src/components/layout";
-import Drawings from "../../src/components/drawings";
-import Preload from "../../src/components/preload";
+import Layout from "@/components/layout";
+import Drawings from "@/components/drawings";
+import Preload from "@/components/preload";
 import {
   readPublicImageDirectory,
   getPublicStaticPaths,
-} from "../../src/lib/utils";
+} from "@/lib/utils";
 
 export default function DrawingsPage({ collection, paths }) {
   return (

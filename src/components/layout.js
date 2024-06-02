@@ -5,7 +5,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import Logo from "./logo";
+import Logo from "@/components/logo";
 import {
   navi,
   footer,
@@ -14,7 +14,7 @@ import {
   description,
   instagram,
   ogImage,
-} from "../lib/site";
+} from "@/lib/site";
 
 function Item({ obj }) {
   const router = useRouter();

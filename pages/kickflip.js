@@ -1,8 +1,8 @@
-import Layout from "../src/components/layout";
-import Canvas from "../src/components/canvas";
-import Preload from "../src/components/preload";
-import { useDarkMode } from "../src/components/hooks";
-import { readPublicImageDirectory } from "../src/lib/utils";
+import Layout from "@/components/layout";
+import Canvas from "@/components/canvas";
+import Preload from "@/components/preload";
+import { useDarkMode } from "@/components/hooks";
+import { readPublicImageDirectory } from "@/lib/utils";
 
 export default function Kickflip({ collection }) {
   useDarkMode();

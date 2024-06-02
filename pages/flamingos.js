@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-import Layout from "../src/components/layout";
-import { createDecks } from "../src/lib/flamingos/tools";
+import Layout from "@/components/layout";
+import { createDecks } from "@/lib/flamingos/tools";
 
 export default function FlamingOs() {
   const [decks, setDecks] = useState(null);

@@ -1,8 +1,8 @@
-import Layout from "../src/components/layout";
-import Image from "../src/components/image";
-import Preload from "../src/components/preload";
+import Layout from "@/components/layout";
+import Image from "@/components/image";
+import Preload from "@/components/preload";
 
-import { getPublicImage } from "../src/lib/utils";
+import { getPublicImage } from "@/lib/utils";
 
 export default function Page404({ image }) {
   return (

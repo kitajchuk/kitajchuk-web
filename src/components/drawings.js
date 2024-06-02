@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { nanoid } from "nanoid";
 
-import Image from "../../src/components/image";
+import Image from "@/components/image";
 
 export const DrawingsNavi = ({ scope, paths }) => {
   return (

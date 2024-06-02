@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const imageSize = require("image-size");
-const { portfolio } = require("./site");
+const { portfolio } = require("@/lib/site");
 
 function readDirectory(dir) {
   return fs.readdirSync(dir).filter((file) => {

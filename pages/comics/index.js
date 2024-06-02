@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-import Layout from "../../src/components/layout";
-import { DrawingsNavi } from "../../src/components/drawings";
-import { getPublicStaticPaths } from "../../src/lib/utils";
+import Layout from "@/components/layout";
+import { DrawingsNavi } from "@/components/drawings";
+import { getPublicStaticPaths } from "@/lib/utils";
 
 export default function Comics({ paths }) {
   return (

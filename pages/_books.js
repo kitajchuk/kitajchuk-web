@@ -2,8 +2,8 @@ import { nanoid } from "nanoid";
 
 import Link from "next/link";
 
-import Layout from "../src/components/layout";
-import books from "../src/lib/books";
+import Layout from "@/components/layout";
+import books from "@/lib/books";
 
 export default function Reads() {
   return (

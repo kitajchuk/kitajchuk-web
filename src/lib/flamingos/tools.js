@@ -1,6 +1,6 @@
 import { nanoid } from "nanoid";
 
-import decks from "./decks";
+import decks from "@/lib/flamingos/decks";
 
 // https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
 function shuffle(a) {
