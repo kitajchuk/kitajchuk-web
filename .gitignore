@@ -32,3 +32,4 @@ yarn-error.log*
 /data/
 /public/media/
 /public/img/
+/notes/

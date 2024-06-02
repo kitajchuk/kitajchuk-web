@@ -8,6 +8,4 @@ export function useDarkMode() {
       document.body.classList.remove("is-dark-mode");
     };
   });
-
-  return null;
 }

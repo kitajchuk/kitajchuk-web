@@ -1,12 +1,16 @@
-import Layout from "@/components/layout";
 import Image from "@/components/image";
 import Preload from "@/components/preload";
-
 import { getPublicImage } from "@/lib/utils";
 
-export default function Home({ image }) {
+export async function getPageImage() {
+  return await getPublicImage("kitajchuk_hero.webp");
+};
+
+export default async function Page() {
+  const image = await getPageImage();
+
   return (
-    <Layout>
+    <>
       <Preload preload={[image.src]} />
       <main className="hero">
         <Image
@@ -19,16 +23,6 @@ export default function Home({ image }) {
           orientation="hero"
         />
       </main>
-    </Layout>
+    </>
   );
-}
-
-export async function getStaticProps() {
-  const image = await getPublicImage("kitajchuk_hero.webp");
-
-  return {
-    props: {
-      image,
-    },
-  };
 }

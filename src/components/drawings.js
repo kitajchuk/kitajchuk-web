@@ -13,11 +13,11 @@ export const DrawingsNavi = ({ scope, paths }) => {
       {paths.map((obj) => {
         return (
           <Link
-            key={obj.params.slug}
-            href={`/${scope.toLowerCase()}/${obj.params.slug}`}
+            key={obj.slug}
+            href={`/${scope.toLowerCase()}/${obj.slug}`}
             className="drawings__link"
           >
-            <span>{obj.params.slug}</span>
+            <span>{obj.slug}</span>
           </Link>
         );
       })}

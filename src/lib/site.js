@@ -70,7 +70,7 @@ export const apps = [
 
 export const extras = [
   {
-    link: "/_books/",
+    link: "/books/",
     label: "📚",
   },
 ];

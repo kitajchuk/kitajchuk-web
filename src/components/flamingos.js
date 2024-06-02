@@ -1,6 +1,7 @@
+"use client";
+
 import { useEffect, useState } from "react";
 
-import Layout from "@/components/layout";
 import { createDecks } from "@/lib/flamingos/tools";
 
 export default function FlamingOs() {
@@ -19,14 +20,14 @@ export default function FlamingOs() {
   };
 
   return (
-    <Layout title="flamingOs">
+    <>
+      <div className="ctrls">
+        <button onClick={onClickShuffle}>Shuffle Decks</button>
+      </div>
       {decks &&
         Object.keys(decks).map((key) => {
           return (
             <div key={key}>
-              <div className="ctrls">
-                <button onClick={onClickShuffle}>Shuffle Decks</button>
-              </div>
               <div className="deck">
                 <img src={decks[key].back} key="back" alt={key} />
                 {decks[key].cards.map((card) => {
@@ -36,6 +37,6 @@ export default function FlamingOs() {
             </div>
           );
         })}
-    </Layout>
+    </>
   );
 }

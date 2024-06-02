@@ -52,13 +52,10 @@ async function readPublicImageDirectory(key) {
   };
 }
 
+// Updated for use with Next.js app router API
 function getPublicStaticPaths(scope) {
   return portfolio[scope].map((slug) => {
-    return {
-      params: {
-        slug,
-      },
-    };
+    return { slug };
   });
 }
 
