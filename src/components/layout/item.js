@@ -7,10 +7,9 @@ import { usePathname } from "next/navigation";
 
 export default function Item({ obj }) {
   const pathname = usePathname();
-  const regex = new RegExp(`^${obj.link}`);
   const classes = {
     navi__item: true,
-    active: regex.test(pathname),
+    active: pathname.startsWith(obj.link),
   };
 
   return (
