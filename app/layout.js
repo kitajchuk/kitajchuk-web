@@ -1,5 +1,3 @@
-import Head from "next/head";
-
 import "@/styles/global.scss";
 
 import {
@@ -18,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         {/* title comes from page metadata */}
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -35,7 +33,7 @@ export default function RootLayout({
           as="font"
           type="font/woff"
         />
-      </Head>
+      </head>
       <body>
         {children}
       </body>
