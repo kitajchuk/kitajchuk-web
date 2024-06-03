@@ -15,7 +15,7 @@ export async function generateStaticParams() {
   return getPublicStaticPaths("drawings");
 }
 
-export async function getPagePathsAndCollection(params) {
+async function getPagePathsAndCollection(params) {
   const collection = await readPublicImageDirectory(`drawings/${params.slug}`);
   const paths = getPublicStaticPaths("drawings").filter(
     (obj) => obj.slug !== params.slug,

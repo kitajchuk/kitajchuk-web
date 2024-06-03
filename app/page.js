@@ -2,12 +2,8 @@ import Image from "@/components/image";
 import Preload from "@/components/preload";
 import { getPublicImage } from "@/lib/utils";
 
-export async function getPageImage() {
-  return await getPublicImage("kitajchuk_hero.webp");
-};
-
 export default async function Page() {
-  const image = await getPageImage();
+  const image = await getPublicImage("kitajchuk_hero.webp");
 
   return (
     <>

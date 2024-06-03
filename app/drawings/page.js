@@ -5,12 +5,8 @@ export const metadata = {
   title: "drawings",
 };
 
-export async function getPagePaths() {
-  return getPublicStaticPaths("drawings");
-}
-
 export default async function Page() {
-  const paths = await getPagePaths();
+  const paths = await getPublicStaticPaths("drawings");
 
   return (
     <main className="drawings">

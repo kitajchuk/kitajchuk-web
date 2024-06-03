@@ -4,12 +4,8 @@ import Image from "@/components/image";
 import Preload from "@/components/preload";
 import { getPublicImage } from "@/lib/utils";
 
-export async function getPageImage() {
-  return await getPublicImage("kitajchuk_hollow.webp");
-};
-
 export default async function NotFound() {
-  const image = await getPageImage();
+  const image = await getPublicImage("kitajchuk_hollow.webp");
 
   return (
     <>

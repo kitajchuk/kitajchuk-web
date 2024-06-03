@@ -7,12 +7,8 @@ export const metadata = {
   title: "comics",
 };
 
-export async function getPagePaths() {
-  return getPublicStaticPaths("comics");
-}
-
 export default async function Page() {
-  const paths = await getPagePaths();
+  const paths = await getPublicStaticPaths("comics");
 
   return (
     <main className="comics">

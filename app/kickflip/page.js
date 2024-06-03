@@ -6,12 +6,8 @@ export const metadata = {
   title: "kickflip",
 };
 
-export async function getPageCollection() {
-  return await readPublicImageDirectory("kickflip/retro");
-}
-
 export default async function Page() {
-  const collection = await getPageCollection();
+  const collection = await readPublicImageDirectory("kickflip/retro");
 
   return (
     <>
