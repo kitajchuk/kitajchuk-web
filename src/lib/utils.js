@@ -6,7 +6,7 @@ const { portfolio } = require("@/lib/site");
 function readDirectory(dir) {
   return fs.readdirSync(dir).filter((file) => {
     return !/^\./.test(file);
-  });
+  }).sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
 }
 
 async function getPublicImage(key) {
