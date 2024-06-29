@@ -87,6 +87,7 @@ export const portfolio = {
     "flamingos-card-game",
     "art-school",
     "holiday",
+    "prints",
   ],
   comics: [
     "tabi-covers",
