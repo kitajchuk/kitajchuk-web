@@ -79,6 +79,7 @@ export const portfolio = {
   drawings: [
     "fallgirl",
     "lost-kids",
+    "panda-girl",
     "fallgirl-2.0",
     "digital-dance",
     "little-busters",
