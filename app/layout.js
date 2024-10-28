@@ -1,4 +1,10 @@
 import "@/styles/global.scss";
+import Link from "next/link";
+
+import { navi } from "@/lib/site";
+import Navi from "@/components/layout/navi";
+import Logo from "@/components/logo";
+import Footer from "@/components/layout/footer";
 
 import {
   ogImage,
@@ -35,7 +41,16 @@ export default function RootLayout({
         />
       </head>
       <body>
-        {children}
+        <>
+          <header className="header">
+            <Link href="/" aria-label="Link to Home Page" title="Link to Home Page">
+              <Logo fill="#000" />
+            </Link>
+          </header>
+          <Navi data={navi} label="Portfolio Navigation" />
+          {children}
+          <Footer />
+        </>
       </body>
     </html>
   )
