@@ -14,6 +14,7 @@ import {
 export const metadata = {
   title: {
     default: "kitajchuk",
+    template: "%s | kitajchuk",
   },
 };
 
