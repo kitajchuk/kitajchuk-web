@@ -1,5 +1,9 @@
 const books = [
   {
+    title: "The Anxious Generation: How the Great Rewiring of Childhood Is Causing an Epidemic of Mental Illness",
+    creds: "Jonathan Haidt",
+  },
+  {
     title: "The Canceling of the American Mind: Cancel Culture Undermines Trust and Threatens Us All―But There Is a Solution",
     creds: "Greg Lukianoff, Rikki Schlott",
   },
