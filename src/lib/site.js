@@ -82,6 +82,7 @@ export const portfolio = {
     "panda-girl",
     "fallgirl-2.0",
     "digital-dance",
+    "adventure-crew",
     "little-busters",
     "miscellaneous-digital",
     "miscellaneous-traditional",
