@@ -5,14 +5,14 @@ import Preload from "@/components/preload";
 import { getPublicImage } from "@/lib/utils";
 
 export default async function NotFound() {
-  const image = await getPublicImage("kitajchuk_hollow.webp");
+  const image = await getPublicImage("kitajchuk_hero.webp");
 
   return (
     <>
       <Preload preload={[image.src]} />
       <nav className="navi">
         <div className="_404">
-          <h1>404</h1>
+          <h1 className="emo">🙈</h1>
           <div className="sep" role="separator" />
           <p>
             end of line, but you can still check out my{" "}

@@ -1,5 +1,12 @@
 const books = [
   {
+    title: "Wild New World: The Epic Story of Animals & People in America",
+    creds: "Dan Flores",
+  },
+
+  // ...
+
+  {
     title: "The Anxious Generation: How the Great Rewiring of Childhood Is Causing an Epidemic of Mental Illness",
     creds: "Jonathan Haidt",
   },

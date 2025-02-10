@@ -3,7 +3,7 @@ import Preload from "@/components/preload";
 import { getPublicImage } from "@/lib/utils";
 
 export default async function Page() {
-  const image = await getPublicImage("kitajchuk_hero.webp");
+  const image = await getPublicImage("kitajchuk_hollow.webp");
 
   return (
     <>

@@ -8,8 +8,9 @@ import { usePathname } from "next/navigation";
 export default function Item({ obj }) {
   const pathname = usePathname();
   const classes = {
-    navi__item: true,
+    emo: obj.emoji ?? false,
     active: pathname.startsWith(obj.link),
+    navi__item: true,
   };
 
   return (

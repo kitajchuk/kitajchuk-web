@@ -70,8 +70,14 @@ export const apps = [
 
 export const extras = [
   {
+    link: "/kickflip/",
+    label: "🛹",
+    emoji: true,
+  },
+  {
     link: "/books/",
     label: "📚",
+    emoji: true,
   },
 ];
 

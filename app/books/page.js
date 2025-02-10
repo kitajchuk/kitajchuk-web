@@ -11,7 +11,7 @@ export default function Page() {
   return (
     <main className="books">
       <header className="navi">
-        <h1>__books__</h1>
+        <h1>good reads</h1>
       </header>
       <ul className="uwrap">
         {books.map((book) => {

@@ -35,8 +35,7 @@ export default async function Page() {
       </div>
       <div className="comics__text uwrap">
         <p className="pp m">
-          The prequel is complete, however the inside cover has placeholder
-          text as we had to pause work on Tabi. The{" "}
+          The prequel is complete (finally <span className="emo">😅</span>). The{" "}
           <a
             href="https://www.kickstarter.com/projects/1086577669/tabi-no-hana-issue-1-in-all-its-forms"
             target="_blank"
