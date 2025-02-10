@@ -18,7 +18,6 @@ export default async function Page() {
           <a
             href="/media/Tabi_No_Hana_Book_01.pdf"
             target="_blank"
-            download="Tabi_No_Hana_Book_01.pdf"
           >
             A Flower for Every Time, Book 1
           </a>
@@ -27,7 +26,6 @@ export default async function Page() {
           <a
             href="/media/Tabi_No_Hana_Prequel_01.pdf"
             target="_blank"
-            download="Tabi_No_Hana_Prequel_01.pdf"
           >
             A Day in Her Life, Prequel 1
           </a>
