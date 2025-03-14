@@ -17,11 +17,6 @@ export const footer = [
     label: "github",
     open: true,
   },
-  {
-    link: "mailto:bk@kitajchuk.com",
-    label: "email",
-    open: true,
-  },
 ];
 
 export const navi = [
