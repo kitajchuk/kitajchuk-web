@@ -1,3 +1,6 @@
+
+export const title = "kitajchuk";
+
 export const description = "Once a day unlearn something new.";
 
 export const instagram = "https://www.instagram.com/kitajchuk/";

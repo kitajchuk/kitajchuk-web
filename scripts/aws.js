@@ -1,7 +1,8 @@
-const fs = require("fs");
-const path = require("path");
-const mkdirp = require("mkdirp");
-const AWS = require("aws-sdk");
+import fs from "fs";
+import path from "path";
+import mkdirp from "mkdirp";
+import AWS from "aws-sdk";
+
 const s3 = new AWS.S3({
   region: process.env.KITA_AWS_REGION,
   accessKeyId: process.env.KITA_AWS_ACCESS_KEY_ID,

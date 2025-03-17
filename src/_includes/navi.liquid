@@ -1,0 +1,12 @@
+<nav class="navi" aria-label={{ label }}>
+  <ul class="navi__list">
+    {% for item in data %}
+      <li class="navi__item">
+        {% comment %} todo: add active class if current page and emoji class if emoji is true {% endcomment %}
+        <a href="{{ item.link }}" class="navi__link">
+          {{ item.label }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

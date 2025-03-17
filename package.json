@@ -1,14 +1,16 @@
 {
   "name": "kitajchuk-web",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Once a day unlearn something new.",
   "private": true,
+  "type": "module",
   "scripts": {
-    "prepare": "husky install",
-    "lint": "next lint",
-    "dev": "next",
-    "start": "next start",
-    "build": "next build",
+    "prepare": "husky",
+    "start": "netlify dev",
+    "predev": "rm -rf ./_site",
+    "dev": "npx @11ty/eleventy --serve",
+    "prebuild": "rm -rf ./_site",
+    "build": "npx @11ty/eleventy",
     "upload": "env-cmd --file .env yarn upload-s3",
     "upload-s3": "aws s3 sync ./public/img s3://${KITA_S3_REPOSITORY}/public/img --exclude '*.DS_Store' --delete",
     "postupload-s3": "aws s3 sync ./public/media s3://${KITA_S3_REPOSITORY}/public/media --exclude '*.DS_Store' --delete",
@@ -16,32 +18,23 @@
     "download-s3": "node ./scripts/aws.js",
     "makewebp": "node ./scripts/webp.js"
   },
-  "dependencies": {
-    "classnames": "^2.2.6",
-    "nanoid": "^3.1.22",
-    "next": "^14.2.3",
-    "prettier": "^3.0.3",
-    "properjs-blit": "^0.3.2",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^5.3.1",
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-plugin-vite": "^6.0.0",
     "aws-sdk": "^2.919.0",
     "axios": "^0.24.0",
     "env-cmd": "^10.1.0",
-    "eslint": "^8.18.0",
-    "eslint-config-next": "12.1.6",
-    "husky": "^6.0.0",
-    "image-size": "^1.0.0",
-    "lint-staged": "^12.4.1",
+    "husky": "^9.1.7",
+    "image-size": "^2.0.0",
+    "lint-staged": "^15.4.3",
     "mkdirp": "^1.0.4",
-    "sass": "^1.32.8",
-    "sharp": "^0.30.4",
+    "prettier": "^3.5.0",
+    "prettier-plugin-toml": "^2.0.2",
+    "sass-embedded": "^1.85.1",
+    "sharp": "^0.33.5",
     "shelljs": "^0.8.5"
   },
   "lint-staged": {
-    "*.{js,jsx}": "yarn lint",
-    "*.{js,jsx,css,scss,toml,md,json,yml}": "prettier --write"
+    "*.{js,css,scss,toml,md,json,yml}": "prettier --write"
   }
 }

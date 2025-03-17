@@ -1,0 +1,20 @@
+<footer class="navi footer">
+  <p class="m">
+    all original content
+    <br/>
+    copyright
+    <a href={{ site.instagram }} target="_blank">
+      @kitajchuk
+    </a>
+    .
+  </p>
+  {% render "navi"
+    , data: site.footer
+    , label: "Professional Links" %}
+  {% render "navi"
+    , data: site.apps
+    , label: "Web App Links" %}
+  {% render "navi"
+    , data: site.extras
+    , label: "Self Interest Links" %}
+</footer>

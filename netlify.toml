@@ -1,6 +1,6 @@
 [build]
-  command = "yarn download-s3 && yarn build"
-  publish = "out"
+  command = "npm run download-s3 && npm run build"
+  publish = "_site"
 
 [context.production]
   environment = { NODE_VERSION = "20.18.0" }
@@ -10,11 +10,3 @@
 
 [context.branch-deploy]
   environment = { NODE_VERSION = "20.18.0" }
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-
-[[redirects]]
-  from = "/*"
-  to = "/404"
-  status = 404
