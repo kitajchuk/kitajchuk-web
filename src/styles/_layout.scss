@@ -7,9 +7,9 @@ body {
   line-height: 2;
   background-color: vars.$white;
 
-  &.is-dark-mode {
+  @media (prefers-color-scheme: dark) {
     color: vars.$white;
-    background-color: vars.$black;
+    background-color: vars.$grey-black;
   }
 }
 
