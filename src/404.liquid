@@ -2,5 +2,24 @@
 layout: layout.liquid
 ---
 
-<h1>404</h1>
-<p>Page not found</p>
+<nav class="navi">
+  <div class="_404">
+    <h1 class="emo">🙈</h1>
+    <div class="sep" role="separator"></div>
+    <p>
+      end of line, but you can still check out my
+      <a href="/drawings/">drawings</a>.
+    </p>
+  </div>
+</nav>
+<main class="hero">
+  {% render "image"
+    , src: image.src
+    , alt: image.alt
+    , width: image.width
+    , height: image.height
+    , aspect: image.aspect
+    , loading: "eager"
+    , orientation: image.orientation
+  %}
+</main>
