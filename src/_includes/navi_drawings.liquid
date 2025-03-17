@@ -1,0 +1,7 @@
+<nav class="drawings__navi" aria-label="{{ scope }} Category Navigation">
+  {% for obj in paths %}
+    <a href="/{{ scope | downcase }}/{{ obj.slug }}/" class="drawings__link">
+      <span>{{ obj.slug }}</span>
+    </a>
+  {% endfor %}
+</nav>

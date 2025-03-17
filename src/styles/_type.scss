@@ -1,5 +1,7 @@
+@use "./vars.scss";
+
 .m {
-  font-size: $font-small;
+  font-size: vars.$font-small;
 }
 
 .pp {
@@ -14,6 +16,6 @@
 }
 
 .emo {
-  font-size: $font-title;
+  font-size: vars.$font-title;
   line-height: 1;
 }

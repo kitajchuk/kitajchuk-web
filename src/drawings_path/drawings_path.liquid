@@ -1,0 +1,14 @@
+---
+layout: layout.liquid
+pagination:
+  data: paths
+  size: 1
+  alias: item
+permalink: "/drawings/{{ item.slug }}/"
+---
+
+{% render "drawings"
+  , collection: collection
+  , paths: rest_paths
+  , scope: "Drawings"
+%}

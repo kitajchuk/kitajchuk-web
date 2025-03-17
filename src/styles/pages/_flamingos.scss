@@ -1,3 +1,5 @@
+@use "../vars.scss";
+
 .deck {
   display: flex;
   flex-wrap: wrap;
@@ -14,10 +16,10 @@
   padding: 32px;
 
   button {
-    color: $white;
+    color: vars.$white;
     padding: 10px 20px;
-    background-color: $pink;
-    font-size: $font-small;
+    background-color: vars.$pink;
+    font-size: vars.$font-small;
     border: 0;
     outline: 0;
     cursor: pointer;

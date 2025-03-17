@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>
+      {% if title %}
+        {{ title }} |
+      {% endif %}
+      {{ site.title }}
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content={{ site.description }} />
+    <meta
+      name="image"
+      property="og:image"
+      content={{ site.ogImage }} />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/logo192.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link
+      rel="preload"
+      href="/fonts/panicsans.woff"
+      crossorigin="anonymous"
+      as="font"
+      type="font/woff" />
+    <link rel="stylesheet" href="/styles/global.scss" />
+  </head>
+  <body>
+    <header class="header">
+      <a
+        href="/"
+        {% if page.url == "/" %}
+        aria-current="page"
+        {% endif %}
+        aria-label="Link to Home Page"
+        title="Link to Home Page">
+        {% render "logo" %}
+      </a>
+    </header>
+    {% render "navi"
+      , data: site.navi
+      , label: "Portfolio Navigation"
+      , page: page %}
+    {{ content }}
+    {% render "footer"
+      , site: site
+      , page: page %}
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<main class="drawings">
+  <header>
+    <h1 class="drawings__title">{{ collection.title }}</h1>
+  </header>
+  <ul class="drawings__collection">
+    {% for img in collection.images %}
+      {% assign loading = "lazy" %}
+      {% if forloop.first %}
+        {% assign loading = "eager" %}
+      {% endif %}
+      <li class="drawings__collection__item">
+        {% render "image"
+          , src: img.src
+          , alt: img.alt
+          , width: img.width
+          , height: img.height
+          , aspect: img.aspect
+          , loading: loading
+          , orientation: img.orientation
+        %}
+      </li>
+    {% endfor %}
+  </ul>
+  {% render "navi_drawings"
+    , scope: scope
+    , paths: paths
+  %}
+</main>

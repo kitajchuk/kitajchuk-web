@@ -1,0 +1,15 @@
+---
+layout: layout.liquid
+---
+
+<main class="hero">
+  {% render "image"
+    , src: image.src
+    , alt: image.alt
+    , width: image.width
+    , height: image.height
+    , aspect: image.aspect
+    , loading: "eager"
+    , orientation: "hero"
+  %}
+</main>
