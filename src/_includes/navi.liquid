@@ -1,9 +1,26 @@
+{% assign slug = page.url | remove_first: "/" | remove_last: "/" | split: "/" | first %}
+
 <nav class="navi" aria-label={{ label }}>
   <ul class="navi__list">
     {% for item in data %}
-      <li class="navi__item">
-        {% comment %} todo: add active class if current page and emoji class if emoji is true {% endcomment %}
-        <a href="{{ item.link }}" class="navi__link">
+      {% assign link_slug = item.link | remove_first: "/" | remove_last: "/" %}
+      {% assign classes = "navi__item" %}
+      {% if slug == link_slug %}
+        {% assign classes = classes | append: " active" %}
+      {% endif %}
+      {% if item.emoji %}
+        {% assign classes = classes | append: " emo" %}
+      {% endif %}
+      <li class="{{ classes }}">
+        <a
+          href="{{ item.link }}"
+          {% if slug == link_slug %}
+          aria-current="page"
+          {% endif %}
+          {% if item.open %}
+          target="_blank"
+          rel="noreferrer"
+          {% endif %}>
           {{ item.label }}
         </a>
       </li>

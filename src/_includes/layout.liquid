@@ -36,9 +36,11 @@
     </header>
     {% render "navi"
       , data: site.navi
-      , label: "Portfolio Navigation" %}
+      , label: "Portfolio Navigation"
+      , page: page %}
     {{ content }}
     {% render "footer"
-      , site: site %}
+      , site: site
+      , page: page %}
   </body>
 </html>

@@ -6,12 +6,12 @@
     <a href={{ site.instagram }} target="_blank">@kitajchuk</a>.
   </p>
   {% render "navi"
+    , page: page
     , data: site.footer
     , label: "Professional Links" %}
   {% render "navi"
     , data: site.apps
-    , label: "Web App Links" %}
-  {% render "navi"
-    , data: site.extras
-    , label: "Self Interest Links" %}
+    , label: "Web App Links"
+    , page: page
+  %}
 </footer>
