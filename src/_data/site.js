@@ -78,7 +78,6 @@ export const portfolio = {
     "miscellaneous-traditional",
     "flamingos-card-game",
     "little-busters",
-    "sophies-stack",
     "art-school",
     "holiday",
     "prints",
