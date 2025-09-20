@@ -40,8 +40,13 @@ export const navi = [
 
 export const apps = [
   {
+    link: "https://www.missjennysschool.com/",
+    label: "miss-jennys-school",
+    open: true,
+  },
+  {
     link: "https://www.hbjunkhauling.com",
-    label: "hbjunkhauling",
+    label: "hb-junk-hauling",
     open: true,
   },
   {
