@@ -72,6 +72,7 @@ export const portfolio = {
     "lost-kids",
     "panda-girl",
     "fallgirl-2.0",
+    "tabi-concepts",
     "digital-dance",
     "adventure-crew",
     "miscellaneous-digital",
