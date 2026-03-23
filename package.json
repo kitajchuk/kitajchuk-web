@@ -16,7 +16,9 @@
     "postupload-s3": "aws s3 sync ./public/media s3://${KITA_S3_REPOSITORY}/public/media --exclude '*.DS_Store' --delete",
     "download": "npx env-cmd --file .env yarn download-s3",
     "download-s3": "node ./scripts/aws.js",
-    "makewebp": "node ./scripts/webp.js"
+    "makewebp": "node ./scripts/webp.js",
+    "deploy": "npm run makewebp && npm run upload && npm run deploy-netlify",
+    "deploy-netlify": "env-cmd --file .env sh -c 'curl -X POST -d {} ${KITA_BUILD_HOOK}'"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
