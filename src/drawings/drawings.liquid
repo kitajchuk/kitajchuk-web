@@ -3,7 +3,18 @@ layout: layout.liquid
 title: drawings
 ---
 
-<main class="drawings">
+<main>
+  <div class="hero">
+    {% render "image"
+      , src: image.src
+      , alt: image.alt
+      , width: image.width
+      , height: image.height
+      , aspect: image.aspect
+      , loading: "eager"
+      , orientation: "hero"
+    %}
+  </div>
   <div class="drawings">
     {% render "navi_drawings"
       , scope: "Drawings"

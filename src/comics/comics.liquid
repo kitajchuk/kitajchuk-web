@@ -4,6 +4,17 @@ title: comics
 ---
 
 <main class="comics">
+  <div class="hero">
+    {% render "image"
+      , src: image.src
+      , alt: image.alt
+      , width: image.width
+      , height: image.height
+      , aspect: image.aspect
+      , loading: "eager"
+      , orientation: "hero"
+    %}
+  </div>
   <div class="comics__books navi">
     <h1>Tabi No Hana comics (PDF):</h1>
     <p>

@@ -20,7 +20,7 @@ const files = shell
   .stdout.split("\n")
   .filter((f) => rImage.test(f));
 
-// Process each file for Next's public directory
+// Process each file for the public directory
 files.forEach(async (file) => {
   // Trim filename to build directories
   const fileDir = file
