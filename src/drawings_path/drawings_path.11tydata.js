@@ -1,4 +1,7 @@
-import { getPublicStaticPaths, getPublicImageCollection } from "../../lib/utils.js";
+import {
+  getPublicStaticPaths,
+  getPublicImageCollection,
+} from "../../lib/utils.js";
 
 export default async function () {
   const paths = await getPublicStaticPaths("drawings");
@@ -14,7 +17,9 @@ export default async function () {
         return rest_paths;
       },
       collection: async (data) => {
-        const collection = await getPublicImageCollection(`drawings/${data.item.slug}`);
+        const collection = await getPublicImageCollection(
+          `drawings/${data.item.slug}`,
+        );
         return collection;
       },
     },

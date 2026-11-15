@@ -45,6 +45,8 @@ files.forEach(async (file) => {
     const targetSize = isPortrait ? imgMaxPortrait : imgMaxLandscape;
     const newWidth = metadata.width < targetSize ? metadata.width : targetSize;
     await sharp(file).resize(newWidth).toFile(outFile);
-    console.log(`Making file: ${outFile} at ${newWidth}px ${isPortrait ? "portrait" : "landscape"}`);
+    console.log(
+      `Making file: ${outFile} at ${newWidth}px ${isPortrait ? "portrait" : "landscape"}`,
+    );
   }
 });

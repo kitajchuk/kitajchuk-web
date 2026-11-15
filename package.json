@@ -18,7 +18,8 @@
     "download-s3": "node ./scripts/aws.js",
     "makewebp": "node ./scripts/webp.js",
     "deploy": "npm run makewebp && npm run upload && npm run deploy-netlify",
-    "deploy-netlify": "env-cmd --file .env sh -c 'curl -X POST -d {} ${KITA_BUILD_HOOK}'"
+    "deploy-netlify": "env-cmd --file .env sh -c 'curl -X POST -d {} ${KITA_BUILD_HOOK}'",
+    "format": "prettier --write ."
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",

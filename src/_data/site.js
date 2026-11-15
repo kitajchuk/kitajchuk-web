@@ -1,4 +1,3 @@
-
 export const title = "kitajchuk";
 
 export const description = "Once a day unlearn something new.";
@@ -23,7 +22,6 @@ export const footer = [
 ];
 
 export const navi = [
-
   {
     link: "/dev/",
     label: "dev",
